@@ -34,30 +34,14 @@ import Control.Monad.Catch
 
 TODO:
 
-- Process monad, where txns can only happen in an open process
-- exit closes handles & kills process
-- codify actions
+Monero.Client.Process
 
-data WalletQuery
-  = Address
-  | Balance
-  | Payments [PaymentId]
-  | TxInfo TransactionId
+creating a wallet should be a oneshot execution of simplewallet; i.e.
+run with --generate-wallet-file foo etc, enter in the chosen password via
+stdin, then just exit.
 
-data WalletSign
-  = Sign FilePath
-  | Verify FilePath
-
-data WalletAuthQuery
-  = Seed
-  | SpendKey
-  | ViewKey
-
-data WalletUpdate
-  = Transfer
-      { transferMixins :: Int
-      , payees :: [(Address, Double)]
-      }
+Opening a wallet is where all the real work needs to be done - opened process
+monad?
 
 -}
 

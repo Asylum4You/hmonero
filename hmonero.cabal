@@ -16,7 +16,8 @@ Library
   Exposed-Modules:      Monero
                         Monero.Types
                        -- Monero.Client
-                        Monero.Client.RPC
+                        Monero.Wallet.RPC
+                        Monero.Daemon.RPC
                         Data.Json.RPC
   Build-Depends:        base >= 4.8 && < 5
                       , aeson

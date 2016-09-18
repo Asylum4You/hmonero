@@ -7,8 +7,6 @@
   , FlexibleContexts
   #-}
 
-module Data.Json.RPC where
-
 {-|
 Module : Data.Json.RPC
 Copyright : (c) 2016 Athan Lawrence Clark
@@ -19,8 +17,9 @@ Portability : GHC
 
 A simple abstraction over JSON RPC 2.0 for use with monero's
 simplewallet and monerod.
-
 -}
+
+module Data.Json.RPC where
 
 import Data.Aeson as A
 import Data.Aeson.Types as A

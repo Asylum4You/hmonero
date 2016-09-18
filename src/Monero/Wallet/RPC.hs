@@ -4,10 +4,8 @@
   , RecordWildCards
   #-}
 
-module Monero.Client.RPC where
-
 {-|
-Module : Monero.Client.RPC
+Module : Monero.Wallet.RPC
 Copyright : (c) 2016 Athan Lawrence Clark
 License : BSD-style
 Maintainer : athan.clark@gmail.com
@@ -16,8 +14,9 @@ Portability : GHC
 
 Verbatim copy of
 <https://getmonero.org/knowledge-base/developer-guides/wallet-rpc simplewallet's RPC endpoints>.
-
 -}
+
+module Monero.Wallet.RPC where
 
 import Monero.Types
 import Data.Json.RPC

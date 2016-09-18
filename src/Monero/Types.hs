@@ -2,7 +2,19 @@
     OverloadedStrings
   , GeneralizedNewtypeDeriving
   , RecordWildCards
+  , ScopedTypeVariables
   #-}
+
+{-|
+Module : Monero.Types
+Copyright : (c) 2016 Athan Lawrence Clark
+License : BSD-style
+Maintainer : athan.clark@gmail.com
+Stability : experimental
+Portability : GHC
+
+Casual types occurring throughout simplewallet and monerod
+-}
 
 module Monero.Types where
 
@@ -13,21 +25,11 @@ import Data.Word (Word64)
 import Data.Char (isHexDigit)
 import Data.Monoid
 import qualified Data.Text as T
+import Network (PortNumber)
+import Text.Read (readMaybe)
 
 
-
-data Balance = Balance
-  { balance         :: Word64
-  , unlockedBalance :: Word64
-  } deriving (Show, Eq)
-
-instance FromJSON Balance where
-  parseJSON (Object o) = do
-    b <- o .: "balance"
-    u <- o .: "unlocked_balance"
-    pure $ Balance b u
-  parseJSON x = typeMismatch "GotBalance" x
-
+-- * Components
 
 newtype Address = Address
   { getAddress :: T.Text
@@ -58,6 +60,21 @@ instance FromJSON TxHash where
         in  (TxHash . getHexString) <$> parseJSON (String s'')
       _ -> fail "improperly formatted"
   parseJSON x = typeMismatch "TxHash" x
+
+
+-- * Slightly Larger Components
+
+data Balance = Balance
+  { balance         :: Word64
+  , unlockedBalance :: Word64
+  } deriving (Show, Eq)
+
+instance FromJSON Balance where
+  parseJSON (Object o) = do
+    b <- o .: "balance"
+    u <- o .: "unlocked_balance"
+    pure $ Balance b u
+  parseJSON x = typeMismatch "GotBalance" x
 
 
 data Payment = Payment
@@ -105,6 +122,167 @@ instance FromJSON Transfer where
              <*> o .: "tx_hash"
              <*> o .: "tx_size"
   parseJSON x = typeMismatch "Transfer" x
+
+
+data BlockHeader = BlockHeader
+  { blockHeaderDepth        :: Word64
+  , blockHeaderDifficulty   :: Word64
+  , blockHeaderHash         :: HexString
+  , blockHeaderHeight       :: Word64
+  , blockHeaderMajorVersion :: Word64
+  , blockHeaderMinorVersion :: Word64
+  , blockHeaderNonce        :: Word64
+  , blockHeaderOrphanStatus :: Bool
+  , blockHeaderPrevHash     :: HexString
+  , blockHeaderReward       :: Word64
+  , blockHeaderTimestamp    :: Word64
+  } deriving (Show, Eq)
+
+instance FromJSON BlockHeader where
+  parseJSON (Object o) =
+    BlockHeader <$> o .: "depth"
+                <*> o .: "difficulty"
+                <*> o .: "hash"
+                <*> o .: "height"
+                <*> o .: "major_version"
+                <*> o .: "minor_version"
+                <*> o .: "nonce"
+                <*> o .: "orphan_status"
+                <*> o .: "prev_hash"
+                <*> o .: "reward"
+                <*> o .: "timestamp"
+  parseJSON x = typeMismatch "BlockHeader" x
+
+
+data TxDestination = TxDestination
+  { txDestinationAmount :: Word64
+  , txDestinationTarget :: HexString -- FIXME: TxHash?
+  } deriving (Show, Eq)
+instance FromJSON TxDestination where
+  parseJSON (Object o) = do
+    a <- o .: "amount"
+    k <- do
+      t <- o .: "target"
+      case t of
+        Object o' -> o .: "key"
+        x -> typeMismatch "TxDestination" x
+    pure $ TxDestination a k
+  parseJSON x = typeMismatch "TxDestination" x
+
+
+newtype TxInputHeight = TxInputHeight
+  { getTxInputHeight :: Word64
+  } deriving (Show, Eq)
+instance FromJSON TxInputHeight where
+  parseJSON (Object o) = do
+    g <- o .: "gen"
+    case g of
+      Object o ->
+        TxInputHeight <$> o .: "height"
+      x -> typeMismatch "TxInputHeight" x
+  parseJSON x = typeMismatch "TxInputHeight" x
+
+
+data MinerTx = MinerTx
+  { minerTxVersion :: Word64
+  , minerTxUnlockTime :: Word64 -- FIXME: Block height as a newtype
+  , minerTxVin        :: [TxInputHeight] -- ^ is nested in an object
+  , minerTxVout       :: [TxDestination]
+  , minerTxExtra      :: [Word64]
+  , minerTxSignatures :: [HexString]
+  } deriving (Show, Eq)
+instance FromJSON MinerTx where
+  parseJSON (Object o) =
+    MinerTx <$> o .: "version"
+            <*> o .: "unlock_time"
+            <*> o .: "vin"
+            <*> o .: "vout"
+            <*> o .: "extra"
+            <*> o .: "signatures"
+  parseJSON x = typeMismatch "MinerTx" x
+
+
+data BlockDetails = BlockDetails
+  { blockDetailsMajorVersion :: Word64
+  , blockDetailsMinorVersion :: Word64
+  , blockDetailsTimestamp    :: Word64
+  , blockDetailsPrevId       :: HexString
+  , blockDetailsNonce        :: Word64
+  , blockDetailsMinerTx      :: MinerTx
+  , blockDetailsTxHashes     :: [TxHash]
+  } deriving (Show, Eq)
+
+instance FromJSON BlockDetails where
+  parseJSON (Object o) =
+    BlockDetails <$> o .: "major_version"
+                 <*> o .: "minor_version"
+                 <*> o .: "timestamp"
+                 <*> o .: "prev_id"
+                 <*> o .: "nonce"
+                 <*> o .: "miner_tx"
+                 <*> o .: "tx_hashes"
+  parseJSON x = typeMismatch "BlockDetails" x
+
+
+data Connection = Connection
+  { connectionAvgDownload     :: Word64
+  , connectionAvgUpload       :: Word64
+  , connectionCurrentDownload :: Word64
+  , connectionCurrentUpload   :: Word64
+  , connectionIncoming        :: Bool
+  , connectionIp              :: T.Text -- FIXME: ipv4 or v6?
+  , connectionLiveTime        :: Word64
+  , connectionLocalIp         :: Bool
+  , connectionLocalhost       :: Bool
+  , connectionPeerId          :: HexString
+  , connectionPort            :: PortNumber
+  , connectionRecvCount       :: Word64
+  , connectionRecvIdleTime    :: Word64
+  , connectionSendCount       :: Word64
+  , connectionSendIdleTime    :: Word64
+  , connectionState           :: T.Text -- FIXME: Possible states?
+  } deriving (Show, Eq)
+
+instance FromJSON Connection where
+  parseJSON x@(Object o) = do
+    ad <- o .: "avg_download"
+    au <- o .: "avg_upload"
+    cd <- o .: "current_download"
+    cu <- o .: "current_upload"
+    i  <- o .: "incoming"
+    ip <- o .: "ip"
+    lt <- o .: "live_time"
+    li <- o .: "local_ip"
+    lh <- o .: "localhost"
+    pi <- o .: "peer_id"
+    p  <- do p' <- o .: "port"
+             case readMaybe $ T.unpack p' of
+               Nothing         -> typeMismatch "Connection" x
+               Just (i :: Int) -> pure $ fromIntegral i
+    rc <- o .: "recv_count"
+    ri <- o .: "recv_idle_time"
+    sc <- o .: "send_count"
+    si <- o .: "send_idle_time"
+    st <- o .: "state"
+    pure Connection
+      { connectionAvgDownload     = ad
+      , connectionAvgUpload       = au
+      , connectionCurrentDownload = cd
+      , connectionCurrentUpload   = cu
+      , connectionIncoming        = i
+      , connectionIp              = ip
+      , connectionLiveTime        = lt
+      , connectionLocalIp         = li
+      , connectionLocalhost       = lh
+      , connectionPeerId          = pi
+      , connectionPort            = p
+      , connectionRecvCount       = rc
+      , connectionRecvIdleTime    = ri
+      , connectionSendCount       = sc
+      , connectionSendIdleTime    = si
+      , connectionState           = st
+      }
+  parseJSON x = typeMismatch "Connection" x
 
 
 -- * Utils
