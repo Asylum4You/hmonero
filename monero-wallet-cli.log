@@ -1,0 +1,11 @@
+2016-Sep-18 17:46:05.999134 Monero 'Hydrogen Helix' (v0.9.4.0-e06530e)
+2016-Sep-18 17:46:05.999181 Setting log level = 0
+2016-Sep-18 17:46:05.999197 default_log: monero-wallet-cli.log
+2016-Sep-18 17:46:06.047174 Logging at log level 0 to /home/athan/dev/moneybit/hmonero/monero-wallet-cli.log
+2016-Sep-18 17:57:10.189528 Monero 'Hydrogen Helix' (v0.9.4.0-e06530e)
+2016-Sep-18 17:57:10.189592 Setting log level = 0
+2016-Sep-18 17:57:10.189626 default_log: monero-wallet-cli.log
+2016-Sep-18 17:57:10.189688 Logging at log level 0 to /home/athan/dev/moneybit/hmonero/monero-wallet-cli.log
+2016-Sep-18 18:39:34.883217 ERROR /home/athan/dev/monero/contrib/epee/include/net/http_client.h:867 failed to connect localhost:18081
+2016-Sep-18 18:39:35.105902 Error: wallet failed to connect to daemon: http://localhost:18081. Daemon either is not started or wrong port was passed. Please make sure daemon is running or restart the wallet with the correct daemon address.
+2016-Sep-18 18:39:35.106037 Error: wallet failed to connect to daemon: http://localhost:18081. Daemon either is not started or wrong port was passed. Please make sure daemon is running or restart the wallet with the correct daemon address.

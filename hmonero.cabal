@@ -17,15 +17,21 @@ Library
                         Monero.Types
                        -- Monero.Client
                         Monero.Wallet.RPC
+                        Monero.Wallet.Process
                         Monero.Daemon.RPC
                         Data.Json.RPC
+                        Data.Process
   Build-Depends:        base >= 4.8 && < 5
                       , aeson
                       , bytestring
                       , exceptions
+                      , filepath
                       , http-client
                       , mtl
                       , network
+                      --, pipes
+                      --, pipes-text
+                      , process
                       , text
 
 Test-Suite spec

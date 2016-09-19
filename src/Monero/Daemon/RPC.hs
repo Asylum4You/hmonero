@@ -23,7 +23,6 @@ import Data.Json.RPC
 
 import Data.Aeson as A
 import Data.Aeson.Types as A
-import Data.Maybe (fromMaybe)
 import Data.Word (Word64)
 import qualified Data.Text as T
 import qualified Data.Text.Lazy.Encoding as LT
