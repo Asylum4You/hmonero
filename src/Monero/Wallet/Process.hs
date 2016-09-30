@@ -12,6 +12,8 @@ import Monero.Wallet.RPC
 
 import qualified Data.Text as T
 import qualified Data.Text.IO as T
+import Data.IP (IPv4)
+import Data.Default
 import Control.Monad (void)
 
 import System.FilePath
@@ -25,8 +27,18 @@ import Network (PortNumber)
 data WalletProcessConfig = WalletProcessConfig
   { walletsDir          :: FilePath -- ^ Directory where wallets are stored
   , moneroWalletCliPath :: FilePath -- ^ Executable path for `monero-wallet-cli`
+  , walletRpcIp         :: IPv4
   , walletRpcPort       :: PortNumber
   } deriving (Show, Eq)
+
+
+instance Default WalletProcessConfig where
+  def = WalletProcessConfig
+          { walletsDir = "."
+          , moneroWalletCliPath = "monero-wallet-cli"
+          , walletRpcIp = "127.0.0.1"
+          , walletRpcPort = 18082
+          }
 
 
 data WalletLanguage
@@ -68,6 +80,7 @@ makeWallet WalletProcessConfig{..} MakeWalletConfig{..} = do
       args = [ "--generate-new-wallet=" ++ name'
              , "--log-file=" ++ name' ++ ".log"
              , "--password=" ++ T.unpack makeWalletPassword
+             , "--rpc-bind-ip=" ++ show walletRpcIp
              , "--rpc-bind-port=" ++ show (fromIntegral walletRpcPort :: Int)
              ]
   hs@ProcessHandles{..} <- mkProcess moneroWalletCliPath args
@@ -76,7 +89,7 @@ makeWallet WalletProcessConfig{..} MakeWalletConfig{..} = do
   T.hPutStrLn stdinHandle . T.pack . show $ walletLanguageCode makeWalletLanguage
   putStrLn "language in"
 
-  cfg <- newRPCConfig "127.0.0.1" walletRpcPort
+  cfg <- newRPCConfig walletRpcIp walletRpcPort
   pure (cfg, hs)
 
 
@@ -96,11 +109,12 @@ openWallet WalletProcessConfig{..} OpenWalletConfig{..} = do
       args = [ "--wallet-file=" ++ name'
              , "--log-file=" ++ name' ++ ".log"
              , "--password=" ++ T.unpack openWalletPassword
+             , "--rpc-bind-ip=" ++ show walletRpcIp
              , "--rpc-bind-port=" ++ show (fromIntegral walletRpcPort :: Int)
              ]
   hs@ProcessHandles{..} <- mkProcess moneroWalletCliPath args
 
-  cfg <- newRPCConfig "127.0.0.1" walletRpcPort
+  cfg <- newRPCConfig walletRpcIp walletRpcPort
   pure (cfg, hs)
 
 

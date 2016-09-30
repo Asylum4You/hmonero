@@ -23,15 +23,14 @@ Library
                         Data.Process
   Build-Depends:        base >= 4.8 && < 5
                       , aeson
-                      -- , base58-bytestring
                       , bytestring
+                      , data-default
                       , exceptions
                       , filepath
                       , http-client
+                      , iproute
                       , mtl
                       , network
-                      --, pipes
-                      --, pipes-text
                       , process
                       , text
 

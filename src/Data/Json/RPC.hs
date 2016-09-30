@@ -26,12 +26,13 @@ import Data.Aeson.Types as A
 import Data.STRef
 import qualified Data.Text as T
 import qualified Data.ByteString.Lazy as LBS
+import Data.IP (IPv4)
 import Control.Applicative
 import Control.Monad.Catch
 import Control.Monad.State
 import Control.Monad.ST
 
-import Network (HostName, PortNumber)
+import Network (PortNumber)
 import Network.HTTP.Client ( Manager, newManager, defaultManagerSettings
                            , httpLbs, parseUrl, RequestBody (RequestBodyLBS)
                            , requestBody, requestHeaders, method, responseBody
@@ -93,19 +94,19 @@ instance FromJSON rs => FromJSON (RPCResponse rs) where
 
 
 data RPCConfig = RPCConfig
-  { rpcHostname :: HostName
+  { rpcIp       :: IPv4
   , rpcPort     :: PortNumber
   , rpcManager  :: Manager
   , rpcId       :: STRef RealWorld Int
   }
 
 
-newRPCConfig :: HostName -> PortNumber -> IO RPCConfig
-newRPCConfig h p = do
+newRPCConfig :: IPv4 -> PortNumber -> IO RPCConfig
+newRPCConfig ip p = do
   m <- newManager defaultManagerSettings
   i <- stToIO $ newSTRef 0
   pure RPCConfig
-    { rpcHostname = h
+    { rpcIp       = ip
     , rpcPort     = p
     , rpcManager  = m
     , rpcId       = i
@@ -121,7 +122,7 @@ rpc :: ( ToJSON ps
          -> Maybe ps -- ^ Params
          -> IO rs
 rpc RPCConfig{..} method mx = do
-  let host = rpcHostname ++ ":" ++ show (fromIntegral rpcPort :: Int)
+  let host = show rpcIp ++ ":" ++ show (fromIntegral rpcPort :: Int)
   r   <- parseUrl $ "http://" ++ host ++ "/json_rpc" -- FIXME Tls support
   idx <- freshId rpcId
   let req = RPCRequest
