@@ -20,9 +20,8 @@ module Monero.Types where
 
 import Data.Aeson as A
 import Data.Aeson.Types as A
-import Data.String (IsString)
 import Data.Word (Word64)
-import Data.Char (isHexDigit)
+import Data.Char (isHexDigit, isAlphaNum, isAscii)
 import Data.Monoid
 import qualified Data.Text as T
 import Network (PortNumber)
@@ -32,23 +31,21 @@ import Text.Read (readMaybe)
 -- * Components
 
 newtype Address = Address
-  { getAddress :: T.Text
+  { getAddress :: Base58String
   } deriving (Show, Eq, FromJSON, ToJSON)
 
 
 newtype PaymentId = PaymentId
-  { getPaymentId :: T.Text
-  } deriving (Show, Eq, ToJSON, IsString)
-instance FromJSON PaymentId where
-  parseJSON x = (PaymentId . getHexString) <$> parseJSON x
+  { getPaymentId :: HexString
+  } deriving (Show, Eq, FromJSON, ToJSON)
 
 
 newtype TxHash = TxHash
-  { getTxHash :: T.Text
+  { getTxHash :: HexString
   } deriving (Show, Eq)
 
 instance ToJSON TxHash where
-  toJSON TxHash{..} = String $! "<" <> getTxHash <> ">"
+  toJSON TxHash{..} = String $! "<" <> getHexString getTxHash <> ">"
 instance FromJSON TxHash where
   parseJSON (String s) =
     case T.uncons s of
@@ -57,7 +54,7 @@ instance FromJSON TxHash where
                  && T.last s' == '>'
                   ->
         let s'' = T.dropEnd 1 s'
-        in  (TxHash . getHexString) <$> parseJSON (String s'')
+        in  TxHash <$> parseJSON (String s'')
       _ -> fail "improperly formatted"
   parseJSON x = typeMismatch "TxHash" x
 
@@ -164,8 +161,8 @@ instance FromJSON TxDestination where
     k <- do
       t <- o .: "target"
       case t of
-        Object o' -> o .: "key"
-        x -> typeMismatch "TxDestination" x
+        Object o -> o .: "key"
+        x        -> typeMismatch "TxDestination" x
     pure $ TxDestination a k
   parseJSON x = typeMismatch "TxDestination" x
 
@@ -177,9 +174,8 @@ instance FromJSON TxInputHeight where
   parseJSON (Object o) = do
     g <- o .: "gen"
     case g of
-      Object o ->
-        TxInputHeight <$> o .: "height"
-      x -> typeMismatch "TxInputHeight" x
+      Object o -> TxInputHeight <$> o .: "height"
+      x        -> typeMismatch "TxInputHeight" x
   parseJSON x = typeMismatch "TxInputHeight" x
 
 
@@ -293,4 +289,17 @@ newtype HexString = HexString
 instance FromJSON HexString where
   parseJSON (String s) | T.all isHexDigit s = pure $ HexString s
                        | otherwise = fail "Not hexadecimal"
+  parseJSON x = typeMismatch "HexString" x
+
+
+newtype Base58String = Base58String
+  { getBase58String :: T.Text
+  } deriving (Show, Eq, ToJSON)
+instance FromJSON Base58String where
+  parseJSON (String s) | T.all isBase58Digit s = pure $ Base58String s
+                       | otherwise = fail "Not base58"
+    where
+      isBase58Digit c = isAlphaNum c && isAscii c && isntMistakeable
+        where
+          isntMistakeable = c /= 'I' && c /= 'l' && c /= '0' && c /= 'O'
   parseJSON x = typeMismatch "HexString" x

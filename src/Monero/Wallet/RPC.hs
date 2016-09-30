@@ -246,7 +246,7 @@ newtype MakeIntegratedAddress = MakeIntegratedAddress
   } deriving (Show, Eq)
 instance ToJSON MakeIntegratedAddress where
   toJSON MakeIntegratedAddress{..} = object
-    ["payment_id" .= fromMaybe "" makeIntegratedAddress']
+    ["payment_id" .= fromMaybe (PaymentId $ HexString "") makeIntegratedAddress']
 
 newtype MadeIntegratedAddress = MadeIntegratedAddress
   { madeIntegratedAddress :: Address

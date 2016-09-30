@@ -10,6 +10,8 @@ import GHC.Generics
 import GHC.IO.Handle (Handle)
 
 
+-- * Processes
+
 data ProcessHandles = ProcessHandles
   { stdinHandle  :: Handle
   , stdoutHandle :: Handle
