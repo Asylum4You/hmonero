@@ -1,21 +1,23 @@
 {-# LANGUAGE
     RecordWildCards
+  , NamedFieldPuns
   , OverloadedStrings
   #-}
 
 module Monero.Wallet.Process where
 
 import Data.Process
+import Data.Json.RPC
+import Monero.Wallet.RPC
 
 import qualified Data.Text as T
 import qualified Data.Text.IO as T
-import Control.Monad.Catch
+import Control.Monad (void)
 
 import System.FilePath
 import System.IO
-import System.IO.Error (isEOFError)
-import System.Timeout (timeout)
 import Control.Concurrent (threadDelay)
+import Network (PortNumber)
 
 
 
@@ -23,6 +25,7 @@ import Control.Concurrent (threadDelay)
 data WalletProcessConfig = WalletProcessConfig
   { walletsDir          :: FilePath -- ^ Directory where wallets are stored
   , moneroWalletCliPath :: FilePath -- ^ Executable path for `monero-wallet-cli`
+  , walletRpcPort       :: PortNumber
   } deriving (Show, Eq)
 
 
@@ -48,76 +51,67 @@ walletLanguageCode l =
     Japanese   -> 6
 
 
+-- * Wallet Creation
+
 data MakeWalletConfig = MakeWalletConfig
-  { walletName     :: T.Text -- ^ Names need to be unique
-  , walletPassword :: T.Text
-  , walletLanguage :: WalletLanguage
+  { makeWalletName     :: T.Text -- ^ Names need to be unique
+  , makeWalletPassword :: T.Text
+  , makeWalletLanguage :: WalletLanguage
   } deriving (Show, Eq)
 
 
 makeWallet :: WalletProcessConfig
            -> MakeWalletConfig
-           -> IO ()
+           -> IO (RPCConfig, ProcessHandles)
 makeWallet WalletProcessConfig{..} MakeWalletConfig{..} = do
-  let name' = walletsDir </> T.unpack walletName
+  let name' = walletsDir </> T.unpack makeWalletName
       args = [ "--generate-new-wallet=" ++ name'
              , "--log-file=" ++ name' ++ ".log"
+             , "--password=" ++ T.unpack makeWalletPassword
+             , "--rpc-bind-port=" ++ show (fromIntegral walletRpcPort :: Int)
              ]
-  ProcessHandles{..} <- mkProcess moneroWalletCliPath args
+  hs@ProcessHandles{..} <- mkProcess moneroWalletCliPath args
 
-  waitFor ("Logging at log level " `T.isPrefixOf`) stdoutHandle
-  T.hPutStrLn stdinHandle walletPassword
-  threadDelay second
-  T.hPutStrLn stdinHandle walletPassword
-  putStrLn "passwords in"
-
-  -- waitFor ("6 : Jap" `T.isPrefixOf`) stdoutHandle
   threadDelay (2 * second)
-  T.hPutStrLn stdinHandle . T.pack . show $ walletLanguageCode walletLanguage
+  T.hPutStrLn stdinHandle . T.pack . show $ walletLanguageCode makeWalletLanguage
   putStrLn "language in"
 
-  threadDelay (5 * second)
-  T.hPutStrLn stdinHandle "exit"
+  cfg <- newRPCConfig "127.0.0.1" walletRpcPort
+  pure (cfg, hs)
 
+
+-- * Opening Existing Wallet
+
+data OpenWalletConfig = OpenWalletConfig
+  { openWalletName     :: T.Text
+  , openWalletPassword :: T.Text
+  } deriving (Show, Eq)
+
+
+openWallet :: WalletProcessConfig
+           -> OpenWalletConfig
+           -> IO (RPCConfig, ProcessHandles)
+openWallet WalletProcessConfig{..} OpenWalletConfig{..} = do
+  let name' = walletsDir </> T.unpack openWalletName
+      args = [ "--wallet-file=" ++ name'
+             , "--log-file=" ++ name' ++ ".log"
+             , "--password=" ++ T.unpack openWalletPassword
+             , "--rpc-bind-port=" ++ show (fromIntegral walletRpcPort :: Int)
+             ]
+  hs@ProcessHandles{..} <- mkProcess moneroWalletCliPath args
+
+  cfg <- newRPCConfig "127.0.0.1" walletRpcPort
+  pure (cfg, hs)
+
+
+-- * Close Wallet Connection
+
+closeWallet :: RPCConfig
+            -> ProcessHandles
+            -> IO ()
+closeWallet cfg ProcessHandles{..} = do
+  void $ stopWallet cfg
   mapM_ hClose [stdinHandle, stdoutHandle, stderrHandle]
-
-
--- | blocks until the prompt is available
-waitFor :: (T.Text -> Bool) -> Handle -> IO ()
-waitFor isS h = do
-  r <- timeout (60 * second) $ do
-    threadDelay second
-    ml <- getLastLine h
-    print ml
-    case ml of
-      Just l | isS l -> pure ()
-      _              -> waitFor isS h
-
-  case r of
-    Nothing -> throwM StdoutBlockTimeout
-                 { stdoutBlockTimeoutHandle = h
-                 }
-    Just () -> pure ()
-
-
--- | grabs the last line in a handle, consuming
-getLastLine :: Handle -> IO (Maybe T.Text)
-getLastLine h =
-  go Nothing False
-  where
-    go :: Maybe T.Text -> Bool -> IO (Maybe T.Text)
-    go soFar True = pure soFar
-    go soFar False =
-      getLn `catch` (\e -> if isEOFError e
-                           then go soFar True
-                           else throwM e)
-      where
-        getLn :: IO (Maybe T.Text)
-        getLn = do
-          r <- timeout second $ T.hGetLine h
-          case r of
-            Nothing   -> go soFar True
-            Just next -> go (Just next) False
 
 
 second :: Int

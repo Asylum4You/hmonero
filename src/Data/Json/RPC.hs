@@ -32,7 +32,8 @@ import Control.Monad.State
 import Control.Monad.ST
 
 import Network (HostName, PortNumber)
-import Network.HTTP.Client ( Manager, httpLbs, parseUrl, RequestBody (RequestBodyLBS)
+import Network.HTTP.Client ( Manager, newManager, defaultManagerSettings
+                           , httpLbs, parseUrl, RequestBody (RequestBodyLBS)
                            , requestBody, requestHeaders, method, responseBody
                            )
 
@@ -97,6 +98,18 @@ data RPCConfig = RPCConfig
   , rpcManager  :: Manager
   , rpcId       :: STRef RealWorld Int
   }
+
+
+newRPCConfig :: HostName -> PortNumber -> IO RPCConfig
+newRPCConfig h p = do
+  m <- newManager defaultManagerSettings
+  i <- stToIO $ newSTRef 0
+  pure RPCConfig
+    { rpcHostname = h
+    , rpcPort     = p
+    , rpcManager  = m
+    , rpcId       = i
+    }
 
 
 -- | Invoke an RPC call. See "Monero.Client.RPC" for usage.
