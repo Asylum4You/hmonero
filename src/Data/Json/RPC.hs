@@ -27,6 +27,7 @@ import Data.STRef
 import qualified Data.Text as T
 import qualified Data.ByteString.Lazy as LBS
 import Data.IP (IPv4)
+import Text.Read (readMaybe)
 import Control.Applicative
 import Control.Monad.Catch
 import Control.Monad.State
@@ -86,7 +87,9 @@ instance FromJSON rs => FromJSON (RPCResponse rs) where
       i <- o .: "id"
       r <-  (Left  <$> o .: "error")
         <|> (Right <$> o .: "result")
-      pure $ RPCResponse i r
+      case readMaybe $ T.unpack i of
+        Nothing -> fail "id isn't an Int string"
+        Just i  -> pure $ RPCResponse i r
   parseJSON x = typeMismatch "RPCResponse" x
 
 

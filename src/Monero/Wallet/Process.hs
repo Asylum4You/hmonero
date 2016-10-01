@@ -19,9 +19,11 @@ import Control.Monad (void)
 
 import System.FilePath
 import System.IO
+import System.IO.Error (isEOFError)
 import System.Directory (getCurrentDirectory)
-import System.Process (waitForProcess)
+import System.Process (waitForProcess, interruptProcessGroupOf)
 import System.Exit (ExitCode (..))
+import System.Timeout (timeout)
 import Control.Concurrent (threadDelay)
 import Network (HostName, PortNumber)
 
@@ -82,30 +84,37 @@ data MakeWalletConfig = MakeWalletConfig
 
 makeWallet :: WalletProcessConfig
            -> MakeWalletConfig
-           -> IO (RPCConfig, ProcessHandles)
+           -> IO ()
 makeWallet WalletProcessConfig{..} MakeWalletConfig{..} = do
   dir <- if walletsDir == "."
          then getCurrentDirectory
          else pure walletsDir
   let name' = dir </> T.unpack makeWalletName
       args = [ "--generate-new-wallet=" ++ name'
-             , "--log-file=" ++ name' ++ ".log"
-             , "--password=" ++ T.unpack makeWalletPassword
-             , "--rpc-bind-ip=" ++ show walletRpcIp
+             , "--log-file="            ++ name' ++ ".log"
+             , "--password="            ++ T.unpack makeWalletPassword
+             -- , "--rpc-bind-ip="         ++ show walletRpcIp
              -- , "--rpc-bind-port"
              -- , show (fromIntegral walletRpcPort :: Int)
-             , "--daemon-host=" ++ walletDaemonHost
-             , "--daemon-port=" ++ show (fromIntegral walletDaemonPort :: Int)
+             , "--daemon-host="         ++ walletDaemonHost
+             , "--daemon-port="         ++ show (fromIntegral walletDaemonPort :: Int)
              ]
-  hs@ProcessHandles{..} <- mkProcess moneroWalletCliPath args
+  ProcessHandles{..} <- mkProcess moneroWalletCliPath args
 
   threadDelay (2 * second)
   T.hPutStrLn stdinHandle . T.pack . show $ walletLanguageCode makeWalletLanguage
   hFlush stdinHandle
-  putStrLn "language in"
 
-  cfg <- newRPCConfig walletRpcIp walletRpcPort
-  pure (cfg, hs)
+  let loop = do
+        mL <- timeout second $ hGetLine stdoutHandle
+        case mL of
+          Nothing -> pure ()
+          Just _  -> loop -- needs to refresh
+
+  loop `catch` (\e -> if isEOFError e then pure () else throwM e)
+
+  interruptProcessGroupOf processHandle
+  mapM_ hClose [stdinHandle, stdoutHandle, stderrHandle]
 
 
 -- * Opening Existing Wallet
@@ -124,15 +133,24 @@ openWallet WalletProcessConfig{..} OpenWalletConfig{..} = do
          then getCurrentDirectory
          else pure walletsDir
   let name' = dir </> T.unpack openWalletName
-      args = [ "--wallet-file=" ++ name'
-             , "--log-file=" ++ name' ++ ".log"
-             , "--password=" ++ T.unpack openWalletPassword
-             , "--rpc-bind-ip=" ++ show walletRpcIp
+      args = [ "--wallet-file="   ++ name'
+             , "--log-file="      ++ name' ++ ".log"
+             , "--password="      ++ T.unpack openWalletPassword
+             , "--rpc-bind-ip="   ++ show walletRpcIp
              , "--rpc-bind-port=" ++ show (fromIntegral walletRpcPort :: Int)
-             , "--daemon-host=" ++ walletDaemonHost
-             , "--daemon-port=" ++ show (fromIntegral walletDaemonPort :: Int)
+             , "--daemon-host="   ++ walletDaemonHost
+             , "--daemon-port="   ++ show (fromIntegral walletDaemonPort :: Int)
              ]
   hs@ProcessHandles{..} <- mkProcess moneroWalletCliPath args
+
+  threadDelay (3 * second)
+  let loop = do
+        mL <- timeout second $ hGetLine stdoutHandle
+        case mL of
+          Nothing -> pure ()
+          Just _  -> loop -- needs to refresh
+
+  loop `catch` (\e -> if isEOFError e then pure () else throwM e)
 
   cfg <- newRPCConfig walletRpcIp walletRpcPort
   pure (cfg, hs)
@@ -147,7 +165,8 @@ closeWallet cfg ProcessHandles{..} = do
   void $ stopWallet cfg
   e <- waitForProcess processHandle
   case e of
-    ExitSuccess   -> mapM_ hClose [stdinHandle, stdoutHandle, stderrHandle]
+    ExitSuccess   -> do interruptProcessGroupOf processHandle
+                        mapM_ hClose [stdinHandle, stdoutHandle, stderrHandle]
     ExitFailure i -> throwM $ NonZeroExitCode i
 
 
