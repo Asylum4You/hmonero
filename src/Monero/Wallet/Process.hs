@@ -108,7 +108,6 @@ makeWallet WalletProcessConfig{..} MakeWalletConfig{..} = do
   hFlush stdinHandle
 
   threadDelay (2 * second) -- FIXME: don't start neglecting until active?
-
   neglectFile (name' ++ ".log") second
 
   interruptProcessGroupOf processHandle
@@ -143,7 +142,6 @@ openWallet WalletProcessConfig{..} OpenWalletConfig{..} = do
   hs@ProcessHandles{..} <- mkProcess moneroWalletCliPath args
 
   threadDelay (2 * second)
-
   neglectFile (name' ++ ".log") second
 
   cfg <- newRPCConfig walletRpcIp walletRpcPort
