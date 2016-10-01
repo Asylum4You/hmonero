@@ -93,10 +93,10 @@ makeWallet WalletProcessConfig{..} MakeWalletConfig{..} = do
   let name' = dir </> T.unpack makeWalletName
       args = [ "--generate-new-wallet=" ++ name'
              , "--log-file="            ++ name' ++ ".log"
+             , "--log-level=2"
              , "--password="            ++ T.unpack makeWalletPassword
              -- , "--rpc-bind-ip="         ++ show walletRpcIp
-             -- , "--rpc-bind-port"
-             -- , show (fromIntegral walletRpcPort :: Int)
+             -- , "--rpc-bind-port"        ++ show (fromIntegral walletRpcPort :: Int)
              , "--daemon-host="         ++ walletDaemonHost
              , "--daemon-port="         ++ show (fromIntegral walletDaemonPort :: Int)
              ]
@@ -136,6 +136,7 @@ openWallet WalletProcessConfig{..} OpenWalletConfig{..} = do
   let name' = dir </> T.unpack openWalletName
       args = [ "--wallet-file="   ++ name'
              , "--log-file="      ++ name' ++ ".log"
+             , "--log-level=2"
              , "--password="      ++ T.unpack openWalletPassword
              , "--rpc-bind-ip="   ++ show walletRpcIp
              , "--rpc-bind-port=" ++ show (fromIntegral walletRpcPort :: Int)

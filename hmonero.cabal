@@ -28,6 +28,7 @@ Library
                       , directory
                       , exceptions
                       , filepath
+                      , hinotify
                       , http-client
                       , iproute
                       , mtl
