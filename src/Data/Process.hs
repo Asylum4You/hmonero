@@ -13,28 +13,28 @@ import GHC.IO.Handle (Handle)
 -- * Processes
 
 data ProcessHandles = ProcessHandles
-  { stdinHandle  :: Handle
-  , stdoutHandle :: Handle
-  , stderrHandle :: Handle
+  { stdinHandle   :: Handle
+  , stdoutHandle  :: Handle
+  , stderrHandle  :: Handle
+  , processHandle :: ProcessHandle
   }
 
 
--- mkProcess :: FilePath -> [String] -> IO ProcessHandles
-mkProcess :: String -> IO ProcessHandles
--- mkProcess cmd args = do
-mkProcess cmd = do
-  let p = shell cmd -- proc cmd args
+mkProcess :: FilePath -> [String] -> IO ProcessHandles
+mkProcess cmd args = do
+  let p = proc cmd args
   r <- createProcess p
         { std_in  = CreatePipe
         , std_out = CreatePipe
         , std_err = CreatePipe
         }
   case r of
-    (Just sIn, Just sOut, Just sErr, _) ->
+    (Just sIn, Just sOut, Just sErr, h) ->
       pure ProcessHandles
-        { stdinHandle  = sIn
-        , stdoutHandle = sOut
-        , stderrHandle = sErr
+        { stdinHandle   = sIn
+        , stdoutHandle  = sOut
+        , stderrHandle  = sErr
+        , processHandle = h
         }
     _ ->
       throwM NotEnoughHandles
@@ -52,5 +52,10 @@ data MakeProcessException
       { stdoutBlockTimeoutHandle :: Handle
       }
   deriving (Show, Eq, Generic)
-
 instance Exception MakeProcessException
+
+
+data CloseProcessException
+  = NonZeroExitCode Int
+  deriving (Show, Eq, Generic)
+instance Exception CloseProcessException

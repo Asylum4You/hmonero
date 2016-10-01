@@ -1,0 +1,102 @@
+2016-Sep-30 17:08:29.869497 Monero 'Wolfram Warptangent' (v0.10.0.0-release)
+2016-Sep-30 17:08:29.869617 Setting log level = 0
+2016-Sep-30 17:08:29.869666 default_log: monero-wallet-cli.log
+2016-Sep-30 17:08:29.869764 Logging at log level 0 to /home/athan/dev/moneybit/hmonero/monero-wallet-cli.log
+2016-Sep-30 17:08:29.869889 Loading wallet...
+2016-Sep-30 17:08:29.922254 Loaded wallet keys file, with public address: 4Ade5C5YsnpTc7fcQwQu3CB4ErTLVsACqZhirbjEy2B5QoXLVH2StcG1zU6FHUDw7PhE8CUDcNyxL77zTrPHy5CY6ycsriT
+2016-Sep-30 17:08:30.022233 ERROR /home/athan/dev/monero/contrib/epee/include/net/http_client.h:869 failed to connect localhost:18081
+2016-Sep-30 17:08:30.022274 ERROR /home/athan/dev/monero/src/wallet/wallet2.cpp:774 !r. THROW EXCEPTION: error::no_connection_to_daemon
+2016-Sep-30 17:08:30.022304 /home/athan/dev/monero/src/wallet/wallet2.cpp:774:N5tools5error23no_connection_to_daemonE: no connection to daemon, request = getblocks.bin
+2016-Sep-30 17:08:30.022334 Exception: tools::error::no_connection_to_daemon
+2016-Sep-30 17:08:30.022356 Unwinded call stack:
+2016-Sep-30 17:08:30.022667      1                  0x726a00 __cxa_throw + 0x70
+2016-Sep-30 17:08:30.022892      2                  0x6869db void tools::error::throw_wallet_ex<tools::error::no_connection_to_daemon, char [14]>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&, char const (&) [14]) [clone .constprop.1043] + 0x17b
+2016-Sep-30 17:08:30.023116      3                  0x518869 tools::wallet2::pull_blocks(unsigned long, unsigned long&, std::__cxx11::list<crypto::hash, std::allocator<crypto::hash> > const&, std::__cxx11::list<cryptonote::block_complete_entry, std::allocator<cryptonote::block_complete_entry> >&, std::vector<cryptonote::COMMAND_RPC_GET_BLOCKS_FAST::block_output_indices, std::allocator<cryptonote::COMMAND_RPC_GET_BLOCKS_FAST::block_output_indices> >&) + 0x2b99
+2016-Sep-30 17:08:30.023358      4                  0x52a2f8 tools::wallet2::refresh(unsigned long, unsigned long&, bool&) + 0x1a8
+2016-Sep-30 17:08:30.023580      5                  0x52b2a3 tools::wallet2::refresh() + 0x23
+2016-Sep-30 17:08:30.023791      6                  0x496918 main + 0x1be8
+2016-Sep-30 17:08:30.024033      7                  0x7f5c1203c830 __libc_start_main + 0xf0
+2016-Sep-30 17:08:30.024240      8                  0x4a8859 _start + 0x29
+2016-Sep-30 17:08:30.024450      9                  0x0
+2016-Sep-30 17:08:30.024583 ERROR /home/athan/dev/monero/src/simplewallet/simplewallet.cpp:3901 Wallet initialization failed: no connection to daemon
+2016-Sep-30 17:16:16.326022 Monero 'Wolfram Warptangent' (v0.10.0.0-release)
+2016-Sep-30 17:16:16.326075 Setting log level = 0
+2016-Sep-30 17:16:16.326097 default_log: monero-wallet-cli.log
+2016-Sep-30 17:16:16.326149 Logging at log level 0 to /home/athan/dev/moneybit/hmonero/monero-wallet-cli.log
+2016-Sep-30 17:16:16.326235 Loading wallet...
+2016-Sep-30 17:16:16.384924 Loaded wallet keys file, with public address: 4A75rMzyV9zVk8drf5ggJr64QVCtDfqB3EoDtJLD3Sx2LyU9YrMVi1nKJuF5fekmq5SQ3uE5xzUa9L4C4XTW5E9eQuPwn9Q
+2016-Sep-30 17:16:16.744512 ERROR /home/athan/dev/monero/contrib/epee/include/net/http_client.h:869 failed to connect localhost:18081
+2016-Sep-30 17:16:16.744564 ERROR /home/athan/dev/monero/src/wallet/wallet2.cpp:774 !r. THROW EXCEPTION: error::no_connection_to_daemon
+2016-Sep-30 17:16:16.744599 /home/athan/dev/monero/src/wallet/wallet2.cpp:774:N5tools5error23no_connection_to_daemonE: no connection to daemon, request = getblocks.bin
+2016-Sep-30 17:16:16.744635 Exception: tools::error::no_connection_to_daemon
+2016-Sep-30 17:16:16.744656 Unwinded call stack:
+2016-Sep-30 17:16:16.744985      1                  0x726a00 __cxa_throw + 0x70
+2016-Sep-30 17:16:16.745255      2                  0x6869db void tools::error::throw_wallet_ex<tools::error::no_connection_to_daemon, char [14]>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&, char const (&) [14]) [clone .constprop.1043] + 0x17b
+2016-Sep-30 17:16:16.745527      3                  0x518869 tools::wallet2::pull_blocks(unsigned long, unsigned long&, std::__cxx11::list<crypto::hash, std::allocator<crypto::hash> > const&, std::__cxx11::list<cryptonote::block_complete_entry, std::allocator<cryptonote::block_complete_entry> >&, std::vector<cryptonote::COMMAND_RPC_GET_BLOCKS_FAST::block_output_indices, std::allocator<cryptonote::COMMAND_RPC_GET_BLOCKS_FAST::block_output_indices> >&) + 0x2b99
+2016-Sep-30 17:16:16.745801      4                  0x52a2f8 tools::wallet2::refresh(unsigned long, unsigned long&, bool&) + 0x1a8
+2016-Sep-30 17:16:16.746059      5                  0x52b2a3 tools::wallet2::refresh() + 0x23
+2016-Sep-30 17:16:16.746324      6                  0x496918 main + 0x1be8
+2016-Sep-30 17:16:16.746617      7                  0x7fb81ac0b830 __libc_start_main + 0xf0
+2016-Sep-30 17:16:16.746876      8                  0x4a8859 _start + 0x29
+2016-Sep-30 17:16:16.747142      9                  0x0
+2016-Sep-30 17:16:16.747294 ERROR /home/athan/dev/monero/src/simplewallet/simplewallet.cpp:3901 Wallet initialization failed: no connection to daemon
+2016-Sep-30 17:16:25.415430 Monero 'Wolfram Warptangent' (v0.10.0.0-release)
+2016-Sep-30 17:16:25.415514 Setting log level = 0
+2016-Sep-30 17:16:25.415541 default_log: monero-wallet-cli.log
+2016-Sep-30 17:16:25.415659 Logging at log level 0 to /home/athan/dev/moneybit/hmonero/monero-wallet-cli.log
+2016-Sep-30 17:16:25.415785 Loading wallet...
+2016-Sep-30 17:16:25.474985 Loaded wallet keys file, with public address: 4A75rMzyV9zVk8drf5ggJr64QVCtDfqB3EoDtJLD3Sx2LyU9YrMVi1nKJuF5fekmq5SQ3uE5xzUa9L4C4XTW5E9eQuPwn9Q
+2016-Sep-30 17:16:28.879263 Loaded ok
+2016-Sep-30 17:16:28.898615 Binding on 127.0.0.1:18082
+2016-Sep-30 17:16:28.898839 Starting wallet rpc server
+2016-Sep-30 17:16:28.898902 Run net_service loop( 1 threads)...
+2016-Sep-30 17:18:43.104668 [SRV_MAIN]net_service loop stopped.
+2016-Sep-30 17:18:43.104753 [SRV_MAIN]Stopped wallet rpc server
+2016-Sep-30 17:18:43.104783 [SRV_MAIN]Storing wallet...
+2016-Sep-30 17:18:43.770468 [SRV_MAIN]Stored ok
+2016-Sep-30 17:18:44.969793 Monero 'Wolfram Warptangent' (v0.10.0.0-release)
+2016-Sep-30 17:18:44.969840 Setting log level = 0
+2016-Sep-30 17:18:44.969856 default_log: monero-wallet-cli.log
+2016-Sep-30 17:18:44.969900 Logging at log level 0 to /home/athan/dev/moneybit/hmonero/monero-wallet-cli.log
+2016-Sep-30 17:18:44.969954 Loading wallet...
+2016-Sep-30 17:18:45.028463 Loaded wallet keys file, with public address: 4A75rMzyV9zVk8drf5ggJr64QVCtDfqB3EoDtJLD3Sx2LyU9YrMVi1nKJuF5fekmq5SQ3uE5xzUa9L4C4XTW5E9eQuPwn9Q
+2016-Sep-30 17:18:49.553384 Loaded ok
+2016-Sep-30 17:18:49.553679 Binding on 127.0.0.1:18082
+2016-Sep-30 17:18:49.553893 Starting wallet rpc server
+2016-Sep-30 17:18:49.553956 Run net_service loop( 1 threads)...
+2016-Sep-30 17:24:17.889896 [SRV_MAIN]net_service loop stopped.
+2016-Sep-30 17:24:17.889989 [SRV_MAIN]Stopped wallet rpc server
+2016-Sep-30 17:24:17.890051 [SRV_MAIN]Storing wallet...
+2016-Sep-30 17:24:18.167938 [SRV_MAIN]Stored ok
+2016-Sep-30 17:35:52.842241 Monero 'Wolfram Warptangent' (v0.10.0.0-release)
+2016-Sep-30 17:35:52.842284 Setting log level = 0
+2016-Sep-30 17:35:52.842300 default_log: monero-wallet-cli.log
+2016-Sep-30 17:35:52.842340 Logging at log level 0 to /home/athan/dev/moneybit/hmonero/monero-wallet-cli.log
+2016-Sep-30 17:36:49.354474 Monero 'Wolfram Warptangent' (v0.10.0.0-release)
+2016-Sep-30 17:36:49.354556 Setting log level = 0
+2016-Sep-30 17:36:49.354581 default_log: monero-wallet-cli.log
+2016-Sep-30 17:36:49.354642 Logging at log level 0 to /home/athan/dev/moneybit/hmonero/monero-wallet-cli.log
+2016-Sep-30 17:36:49.354719 Loading wallet...
+2016-Sep-30 17:36:49.407314 Loaded wallet keys file, with public address: 48Jb7RCCZr2KkHqosu3tU8DSroCyYDNZFEkaSqmdJPsP2YyVjJPaWFL7GduwdxryGqX3QomCQacEX8TneYeeJDn2PFQQUpE
+2016-Sep-30 17:36:50.419630 Loaded ok
+2016-Sep-30 17:36:50.419970 Binding on 127.0.0.1:18082
+2016-Sep-30 17:36:50.420286 Starting wallet rpc server
+2016-Sep-30 17:36:50.420353 Run net_service loop( 1 threads)...
+2016-Sep-30 17:38:53.322422 [SRV_MAIN]net_service loop stopped.
+2016-Sep-30 17:38:53.322501 [SRV_MAIN]Stopped wallet rpc server
+2016-Sep-30 17:38:53.322545 [SRV_MAIN]Storing wallet...
+2016-Sep-30 17:38:53.615184 [SRV_MAIN]Stored ok
+2016-Sep-30 17:38:59.527430 Monero 'Wolfram Warptangent' (v0.10.0.0-release)
+2016-Sep-30 17:38:59.527535 Setting log level = 0
+2016-Sep-30 17:38:59.527664 default_log: monero-wallet-cli.log
+2016-Sep-30 17:38:59.527750 Logging at log level 0 to /home/athan/dev/moneybit/hmonero/monero-wallet-cli.log
+2016-Sep-30 17:38:59.527859 Loading wallet...
+2016-Sep-30 17:38:59.585892 Loaded wallet keys file, with public address: 48Jb7RCCZr2KkHqosu3tU8DSroCyYDNZFEkaSqmdJPsP2YyVjJPaWFL7GduwdxryGqX3QomCQacEX8TneYeeJDn2PFQQUpE
+2016-Sep-30 17:39:00.885565 Loaded ok
+2016-Sep-30 17:39:00.885850 Binding on 127.0.0.1:18082
+2016-Sep-30 17:39:00.886068 Starting wallet rpc server
+2016-Sep-30 17:39:00.886143 Run net_service loop( 1 threads)...
+2016-Sep-30 17:41:18.002034 [SRV_MAIN]net_service loop stopped.
+2016-Sep-30 17:41:18.002097 [SRV_MAIN]Stopped wallet rpc server
+2016-Sep-30 17:41:18.002131 [SRV_MAIN]Storing wallet...
+2016-Sep-30 17:41:18.453848 [SRV_MAIN]Stored ok

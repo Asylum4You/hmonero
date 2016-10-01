@@ -44,7 +44,7 @@ import Network.HTTP.Client ( Manager, newManager, defaultManagerSettings
 data RPCRequest ps = RPCRequest
   { rpcReqMethod  :: T.Text -- ^ User Data
   , rpcReqParams  :: Maybe ps
-  , rpcReqId      :: Int -- ^ Hardcode for our threading
+  , rpcReqId      :: Int
   } deriving (Show, Eq)
 
 instance ToJSON ps => ToJSON (RPCRequest ps) where
@@ -52,7 +52,7 @@ instance ToJSON ps => ToJSON (RPCRequest ps) where
     object $
       [ "jsonrpc" .= ("2.0" :: T.Text)
       , "method"  .= rpcReqMethod
-      , "id"      .= rpcReqId
+      , "id"      .= show rpcReqId
       ] ++ case rpcReqParams of
              Nothing -> []
              Just ps -> ["params" .= ps]
