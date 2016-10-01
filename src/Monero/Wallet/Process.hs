@@ -14,6 +14,7 @@ import qualified Data.Text as T
 import qualified Data.Text.IO as T
 import Data.IP (IPv4)
 import Data.Default
+import Data.IORef
 import Control.Monad.Catch
 import Control.Monad (void)
 
@@ -24,6 +25,7 @@ import System.Directory (getCurrentDirectory)
 import System.Process (waitForProcess, interruptProcessGroupOf)
 import System.Exit (ExitCode (..))
 import System.Timeout (timeout)
+import System.INotify
 import Control.Concurrent (threadDelay)
 import Network (HostName, PortNumber)
 
@@ -106,13 +108,31 @@ makeWallet WalletProcessConfig{..} MakeWalletConfig{..} = do
   T.hPutStrLn stdinHandle . T.pack . show $ walletLanguageCode makeWalletLanguage
   hFlush stdinHandle
 
-  let loop = do
-        mL <- timeout second $ hGetLine stdoutHandle
-        case mL of
-          Nothing -> pure ()
-          Just _  -> loop -- needs to refresh
+  expectation <- newIORef (0 :: Int)
+  debounced   <- newIORef (0 :: Int)
+  watch <- withINotify $ \notify ->
+    addWatch notify [AllEvents] (name' ++ ".log") $ \_ -> do
+      modifyIORef expectation (+1)
+      threadDelay 1000000
+      modifyIORef debounced (+1)
 
-  loop `catch` (\e -> if isEOFError e then pure () else throwM e)
+  let loop = do
+        e <- readIORef expectation
+        d <- readIORef debounced
+        if e == d
+        then removeWatch watch
+        else do threadDelay 1000000
+                loop
+
+  loop
+
+  -- let loop = do
+  --       mL <- timeout second $ hGetLine stdoutHandle
+  --       case mL of
+  --         Nothing -> pure ()
+  --         Just _  -> loop -- needs to refresh
+
+  -- loop `catch` (\e -> if isEOFError e then pure () else throwM e)
 
   interruptProcessGroupOf processHandle
   mapM_ hClose [stdinHandle, stdoutHandle, stderrHandle]
