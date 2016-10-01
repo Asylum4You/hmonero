@@ -24,9 +24,10 @@ mkProcess :: FilePath -> [String] -> IO ProcessHandles
 mkProcess cmd args = do
   let p = proc cmd args
   r <- createProcess p
-        { std_in  = CreatePipe
-        , std_out = CreatePipe
-        , std_err = CreatePipe
+        { std_in       = CreatePipe
+        , std_out      = CreatePipe
+        , std_err      = CreatePipe
+        , create_group = True
         }
   case r of
     (Just sIn, Just sOut, Just sErr, h) ->
