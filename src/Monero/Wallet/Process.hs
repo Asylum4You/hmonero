@@ -82,6 +82,7 @@ data MakeWalletConfig = MakeWalletConfig
   } deriving (Show, Eq)
 
 
+-- TODO: Recover!
 makeWallet :: WalletProcessConfig
            -> MakeWalletConfig
            -> IO ()
@@ -165,9 +166,11 @@ closeWallet cfg ProcessHandles{..} = do
   void $ stopWallet cfg
   e <- waitForProcess processHandle
   case e of
-    ExitSuccess   -> do interruptProcessGroupOf processHandle
-                        mapM_ hClose [stdinHandle, stdoutHandle, stderrHandle]
-    ExitFailure i -> throwM $ NonZeroExitCode i
+    ExitSuccess -> do
+      interruptProcessGroupOf processHandle
+      mapM_ hClose [stdinHandle, stdoutHandle, stderrHandle]
+    ExitFailure i ->
+      throwM $ NonZeroExitCode i
 
 
 second :: Int

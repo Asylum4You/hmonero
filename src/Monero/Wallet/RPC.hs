@@ -235,7 +235,16 @@ data QueriedKey
 instance FromJSON QueriedKey where
   parseJSON (String s) -} -- FIXME attoparsec hexadecimal
 
-queryKey :: RPCConfig -> QueryKey -> IO T.Text -- FIXME account for either
+
+newtype QueriedKey = QueriedKey
+  { getQueriedKey :: T.Text
+  } deriving (Show, Eq)
+instance FromJSON QueriedKey where
+  parseJSON (Object o) = QueriedKey <$> o .: "key"
+  parseJSON x = typeMismatch "QueriedKey" x
+
+
+queryKey :: RPCConfig -> QueryKey -> IO QueriedKey -- FIXME account for either
 queryKey cfg q = rpc cfg "query_key" $ Just q
 
 
