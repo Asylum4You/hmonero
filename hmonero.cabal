@@ -27,8 +27,8 @@ Library
                       , data-default
                       , directory
                       , exceptions
+                      , fileneglect
                       , filepath
-                      , hinotify
                       , http-client
                       , iproute
                       , mtl
