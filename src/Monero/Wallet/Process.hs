@@ -18,6 +18,7 @@ import Control.Monad (void)
 
 import System.FilePath
 import System.IO
+import System.Directory (getCurrentDirectory)
 import Control.Concurrent (threadDelay)
 import Network (PortNumber)
 
@@ -76,17 +77,24 @@ makeWallet :: WalletProcessConfig
            -> MakeWalletConfig
            -> IO (RPCConfig, ProcessHandles)
 makeWallet WalletProcessConfig{..} MakeWalletConfig{..} = do
-  let name' = walletsDir </> T.unpack makeWalletName
-      args = [ "--generate-new-wallet=" ++ name'
-             , "--log-file=" ++ name' ++ ".log"
-             , "--password=" ++ T.unpack makeWalletPassword
-             , "--rpc-bind-ip=" ++ show walletRpcIp
-             , "--rpc-bind-port=" ++ show (fromIntegral walletRpcPort :: Int)
+  dir <- if walletsDir == "."
+         then getCurrentDirectory
+         else pure walletsDir
+  let name' = dir </> T.unpack makeWalletName
+      args = [ "--generate-new-wallet=" ++ show name'
+             , "--log-file=" ++ show (name' ++ ".log")
+             , "--password=" ++ show (T.unpack makeWalletPassword)
+             , "--rpc-bind-ip=" ++ show (show walletRpcIp)
+             -- , "--rpc-bind-port"
+             -- , show (fromIntegral walletRpcPort :: Int)
              ]
-  hs@ProcessHandles{..} <- mkProcess moneroWalletCliPath args
+  let cmd = unwords $ moneroWalletCliPath : args
+  putStrLn cmd
+  hs@ProcessHandles{..} <- mkProcess cmd -- moneroWalletCliPath args
 
   threadDelay (2 * second)
   T.hPutStrLn stdinHandle . T.pack . show $ walletLanguageCode makeWalletLanguage
+  hFlush stdinHandle
   putStrLn "language in"
 
   cfg <- newRPCConfig walletRpcIp walletRpcPort
@@ -105,14 +113,17 @@ openWallet :: WalletProcessConfig
            -> OpenWalletConfig
            -> IO (RPCConfig, ProcessHandles)
 openWallet WalletProcessConfig{..} OpenWalletConfig{..} = do
-  let name' = walletsDir </> T.unpack openWalletName
-      args = [ "--wallet-file=" ++ name'
-             , "--log-file=" ++ name' ++ ".log"
-             , "--password=" ++ T.unpack openWalletPassword
-             , "--rpc-bind-ip=" ++ show walletRpcIp
-             , "--rpc-bind-port=" ++ show (fromIntegral walletRpcPort :: Int)
+  dir <- if walletsDir == "."
+         then getCurrentDirectory
+         else pure walletsDir
+  let name' = dir </> T.unpack openWalletName
+      args = [ "--wallet-file=" ++ show name'
+             , "--log-file=" ++ show (name' ++ ".log")
+             , "--password=" ++ show (T.unpack openWalletPassword)
+             , "--rpc-bind-ip=" ++ show (show walletRpcIp)
+             , "--rpc-bind-port=" ++ show (show (fromIntegral walletRpcPort :: Int))
              ]
-  hs@ProcessHandles{..} <- mkProcess moneroWalletCliPath args
+  hs@ProcessHandles{..} <- mkProcess "" -- moneroWalletCliPath args
 
   cfg <- newRPCConfig walletRpcIp walletRpcPort
   pure (cfg, hs)
@@ -130,3 +141,5 @@ closeWallet cfg ProcessHandles{..} = do
 
 second :: Int
 second = 1000000
+
+-- * Utils

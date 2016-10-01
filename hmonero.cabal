@@ -25,6 +25,7 @@ Library
                       , aeson
                       , bytestring
                       , data-default
+                      , directory
                       , exceptions
                       , filepath
                       , http-client

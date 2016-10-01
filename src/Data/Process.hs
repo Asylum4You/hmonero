@@ -19,9 +19,11 @@ data ProcessHandles = ProcessHandles
   }
 
 
-mkProcess :: FilePath -> [String] -> IO ProcessHandles
-mkProcess cmd args = do
-  let p = proc cmd args
+-- mkProcess :: FilePath -> [String] -> IO ProcessHandles
+mkProcess :: String -> IO ProcessHandles
+-- mkProcess cmd args = do
+mkProcess cmd = do
+  let p = shell cmd -- proc cmd args
   r <- createProcess p
         { std_in  = CreatePipe
         , std_out = CreatePipe
@@ -34,10 +36,11 @@ mkProcess cmd args = do
         , stdoutHandle = sOut
         , stderrHandle = sErr
         }
-    _ -> throwM $ NotEnoughHandles
-           { notEnoughHandlesCmd  = cmd
-           , notEnoughHandlesArgs = args
-           }
+    _ ->
+      throwM NotEnoughHandles
+        { notEnoughHandlesCmd  = cmd
+        , notEnoughHandlesArgs = [] -- args
+        }
 
 
 data MakeProcessException
