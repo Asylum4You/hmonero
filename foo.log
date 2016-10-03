@@ -7099,3 +7099,232 @@ Please, wait for confirmation for your balance to be unlocked.
 2016-Oct-03 01:39:27.348166 [SRV_MAIN]Stopped wallet rpc server
 2016-Oct-03 01:39:27.348198 [SRV_MAIN]Storing wallet...
 2016-Oct-03 01:39:27.788256 [SRV_MAIN]Stored ok
+2016-Oct-03 02:01:02.467643 Monero 'Wolfram Warptangent' (v0.10.0.0-release)
+2016-Oct-03 02:01:02.467701 Setting log level = 2
+2016-Oct-03 02:01:02.467719 default_log: monero-wallet-cli.log
+2016-Oct-03 02:01:02.467760 Logging at log level 2 to /home/athan/dev/moneybit/hmonero/foo.log
+2016-Oct-03 02:01:02.467812 Loading wallet...
+2016-Oct-03 02:01:02.553757 Loaded wallet keys file, with public address: 48aPXdzu2Qt1KVVuPUunjeVTm6zf6Vg3kf38VhSCunCzQjWBzH3rpJjSwDgnE8ocJWYGeEqhEoBWqeoVwbyYs3se6cGdjTx
+2016-Oct-03 02:01:02.601011 Trying to decrypt cache data
+2016-Oct-03 02:01:03.604242 Block is already in blockchain: b5f5bef5cf34097be93fcf351c71b10167fc5fb69e66092b066d733d9cd6157a
+2016-Oct-03 02:01:04.484846 Found new pool tx: <07b9316b863f8ea53a0c881cca667a1a0e5374c7db2194135ebf0b4bee9e2b8d>
+2016-Oct-03 02:01:04.712587 Found new pool tx: <ad8f0dce9d03f19029caf5b9acaa463dcb790a7ca77acd0a5e566e31bc6e405c>
+2016-Oct-03 02:01:04.953381 Found new pool tx: <8bb7ec427c253351218489966ec5adf8bc82b6cacd1cc990fbd45c4109fc7d85>
+2016-Oct-03 02:01:05.193446 Found new pool tx: <72bad2d72c4ded7a1620ae49c2f1c299d2e07a0f27847682fd522050a41ba84f>
+2016-Oct-03 02:01:05.412638 Found new pool tx: <f66be0c27ba04b9b159cf451e6d95abc0df1a3d52db9edb6e6bdd036f4ad958a>
+2016-Oct-03 02:01:05.644116 Found new pool tx: <5d68093f95f9d52d8a464effb0c1932f5ccbcc156346a42dc60eae4d5eed2214>
+2016-Oct-03 02:01:05.871667 Found new pool tx: <adf4c00ee629051913b8893b93fc1be4ddfbba51fa0870d3e6200bc423e8d1bc>
+2016-Oct-03 02:01:06.217493 Found new pool tx: <3e4fe224c762b7c5e90e1fab6af056c7cdebd63ccbc1408e79b1b3eb7aeac6b4>
+2016-Oct-03 02:01:06.456622 Found new pool tx: <680ab67bf9fa179e75a0cf090a2a5b098b98a9037be2b1405ffd1899a8bda0d0>
+2016-Oct-03 02:01:06.678114 Refresh done, blocks received: 0, balance: 2.040000000000, unlocked: 1.060000000000
+2016-Oct-03 02:01:06.678183 Loaded ok
+2016-Oct-03 02:01:06.678365 Binding on 127.0.0.1:18082
+2016-Oct-03 02:01:06.678520 Starting wallet rpc server
+2016-Oct-03 02:01:06.678556 Run net_service loop( 1 threads)...
+2016-Oct-03 02:01:26.931158 [RPC0]Block is already in blockchain: b5f5bef5cf34097be93fcf351c71b10167fc5fb69e66092b066d733d9cd6157a
+2016-Oct-03 02:01:28.155922 [RPC0]Found new pool tx: <07b9316b863f8ea53a0c881cca667a1a0e5374c7db2194135ebf0b4bee9e2b8d>
+2016-Oct-03 02:01:28.452665 [RPC0]Found new pool tx: <ad8f0dce9d03f19029caf5b9acaa463dcb790a7ca77acd0a5e566e31bc6e405c>
+2016-Oct-03 02:01:28.796197 [RPC0]Found new pool tx: <8bb7ec427c253351218489966ec5adf8bc82b6cacd1cc990fbd45c4109fc7d85>
+2016-Oct-03 02:01:29.113125 [RPC0]Found new pool tx: <72bad2d72c4ded7a1620ae49c2f1c299d2e07a0f27847682fd522050a41ba84f>
+2016-Oct-03 02:01:29.433071 [RPC0]Found new pool tx: <f66be0c27ba04b9b159cf451e6d95abc0df1a3d52db9edb6e6bdd036f4ad958a>
+2016-Oct-03 02:01:29.774786 [RPC0]Found new pool tx: <5d68093f95f9d52d8a464effb0c1932f5ccbcc156346a42dc60eae4d5eed2214>
+2016-Oct-03 02:01:31.198011 [RPC0]Found new pool tx: <adf4c00ee629051913b8893b93fc1be4ddfbba51fa0870d3e6200bc423e8d1bc>
+2016-Oct-03 02:01:31.861467 [RPC0]Found new pool tx: <3e4fe224c762b7c5e90e1fab6af056c7cdebd63ccbc1408e79b1b3eb7aeac6b4>
+2016-Oct-03 02:01:32.182464 [RPC0]Found new pool tx: <680ab67bf9fa179e75a0cf090a2a5b098b98a9037be2b1405ffd1899a8bda0d0>
+2016-Oct-03 02:01:32.416735 [RPC0]Refresh done, blocks received: 0, balance: 2.040000000000, unlocked: 1.060000000000
+2016-Oct-03 02:01:52.670298 [RPC0]Block is already in blockchain: b5f5bef5cf34097be93fcf351c71b10167fc5fb69e66092b066d733d9cd6157a
+2016-Oct-03 02:01:53.657170 [RPC0]Found new pool tx: <07b9316b863f8ea53a0c881cca667a1a0e5374c7db2194135ebf0b4bee9e2b8d>
+2016-Oct-03 02:01:54.069364 [RPC0]Found new pool tx: <ad8f0dce9d03f19029caf5b9acaa463dcb790a7ca77acd0a5e566e31bc6e405c>
+2016-Oct-03 02:01:54.437505 [RPC0]Found new pool tx: <8bb7ec427c253351218489966ec5adf8bc82b6cacd1cc990fbd45c4109fc7d85>
+2016-Oct-03 02:01:54.758215 [RPC0]Found new pool tx: <72bad2d72c4ded7a1620ae49c2f1c299d2e07a0f27847682fd522050a41ba84f>
+2016-Oct-03 02:01:55.100945 [RPC0]Found new pool tx: <f66be0c27ba04b9b159cf451e6d95abc0df1a3d52db9edb6e6bdd036f4ad958a>
+2016-Oct-03 02:01:55.462731 [RPC0]Found new pool tx: <5d68093f95f9d52d8a464effb0c1932f5ccbcc156346a42dc60eae4d5eed2214>
+2016-Oct-03 02:01:55.689782 [RPC0]Found new pool tx: <adf4c00ee629051913b8893b93fc1be4ddfbba51fa0870d3e6200bc423e8d1bc>
+2016-Oct-03 02:01:55.966807 [RPC0]Found new pool tx: <3e4fe224c762b7c5e90e1fab6af056c7cdebd63ccbc1408e79b1b3eb7aeac6b4>
+2016-Oct-03 02:01:56.342788 [RPC0]Found new pool tx: <680ab67bf9fa179e75a0cf090a2a5b098b98a9037be2b1405ffd1899a8bda0d0>
+2016-Oct-03 02:01:56.574773 [RPC0]Refresh done, blocks received: 0, balance: 2.040000000000, unlocked: 1.060000000000
+2016-Oct-03 02:02:16.869728 [RPC0]Block is already in blockchain: b5f5bef5cf34097be93fcf351c71b10167fc5fb69e66092b066d733d9cd6157a
+2016-Oct-03 02:02:17.900369 [RPC0]Found new pool tx: <07b9316b863f8ea53a0c881cca667a1a0e5374c7db2194135ebf0b4bee9e2b8d>
+2016-Oct-03 02:02:18.195635 [RPC0]Found new pool tx: <ad8f0dce9d03f19029caf5b9acaa463dcb790a7ca77acd0a5e566e31bc6e405c>
+2016-Oct-03 02:02:18.534317 [RPC0]Found new pool tx: <8bb7ec427c253351218489966ec5adf8bc82b6cacd1cc990fbd45c4109fc7d85>
+2016-Oct-03 02:02:18.900796 [RPC0]Found new pool tx: <72bad2d72c4ded7a1620ae49c2f1c299d2e07a0f27847682fd522050a41ba84f>
+2016-Oct-03 02:02:19.231707 [RPC0]Found new pool tx: <f66be0c27ba04b9b159cf451e6d95abc0df1a3d52db9edb6e6bdd036f4ad958a>
+2016-Oct-03 02:02:19.576078 [RPC0]Found new pool tx: <5d68093f95f9d52d8a464effb0c1932f5ccbcc156346a42dc60eae4d5eed2214>
+2016-Oct-03 02:02:19.872753 [RPC0]Found new pool tx: <adf4c00ee629051913b8893b93fc1be4ddfbba51fa0870d3e6200bc423e8d1bc>
+2016-Oct-03 02:02:20.254332 [RPC0]Found new pool tx: <3e4fe224c762b7c5e90e1fab6af056c7cdebd63ccbc1408e79b1b3eb7aeac6b4>
+2016-Oct-03 02:02:20.530262 [RPC0]Found new pool tx: <680ab67bf9fa179e75a0cf090a2a5b098b98a9037be2b1405ffd1899a8bda0d0>
+2016-Oct-03 02:02:22.048985 [RPC0]Refresh done, blocks received: 0, balance: 2.040000000000, unlocked: 1.060000000000
+2016-Oct-03 02:02:42.229165 [RPC0]Block is already in blockchain: b5f5bef5cf34097be93fcf351c71b10167fc5fb69e66092b066d733d9cd6157a
+2016-Oct-03 02:02:44.012761 [RPC0]Found new pool tx: <07b9316b863f8ea53a0c881cca667a1a0e5374c7db2194135ebf0b4bee9e2b8d>
+2016-Oct-03 02:02:44.365059 [RPC0]Found new pool tx: <ad8f0dce9d03f19029caf5b9acaa463dcb790a7ca77acd0a5e566e31bc6e405c>
+2016-Oct-03 02:02:44.722135 [RPC0]Found new pool tx: <8bb7ec427c253351218489966ec5adf8bc82b6cacd1cc990fbd45c4109fc7d85>
+2016-Oct-03 02:02:45.044951 [RPC0]Found new pool tx: <72bad2d72c4ded7a1620ae49c2f1c299d2e07a0f27847682fd522050a41ba84f>
+2016-Oct-03 02:02:45.272454 [RPC0]Found new pool tx: <f66be0c27ba04b9b159cf451e6d95abc0df1a3d52db9edb6e6bdd036f4ad958a>
+2016-Oct-03 02:02:45.494105 [RPC0]Found new pool tx: <5d68093f95f9d52d8a464effb0c1932f5ccbcc156346a42dc60eae4d5eed2214>
+2016-Oct-03 02:02:45.810898 [RPC0]Found new pool tx: <adf4c00ee629051913b8893b93fc1be4ddfbba51fa0870d3e6200bc423e8d1bc>
+2016-Oct-03 02:02:46.062221 [RPC0]Found new pool tx: <3e4fe224c762b7c5e90e1fab6af056c7cdebd63ccbc1408e79b1b3eb7aeac6b4>
+2016-Oct-03 02:02:46.314508 [RPC0]Found new pool tx: <680ab67bf9fa179e75a0cf090a2a5b098b98a9037be2b1405ffd1899a8bda0d0>
+2016-Oct-03 02:02:46.540516 [RPC0]Refresh done, blocks received: 0, balance: 2.040000000000, unlocked: 1.060000000000
+2016-Oct-03 02:02:48.936222 [RPC0]HTTP [127.0.0.1] POST /json_rpc
+2016-Oct-03 02:02:48.936303 [RPC0]/json_rpc[getbalance] processed with 0/0/0ms
+2016-Oct-03 02:02:48.937152 [RPC0]HTTP [127.0.0.1] POST /json_rpc
+2016-Oct-03 02:02:48.937236 [RPC0]/json_rpc[getaddress] processed with 0/0/0ms
+2016-Oct-03 02:02:48.976340 [RPC0]HTTP [127.0.0.1] POST /json_rpc
+2016-Oct-03 02:02:48.976568 [RPC0]/json_rpc[getheight] processed with 1/0/0ms
+2016-Oct-03 02:02:49.016241 [RPC0]HTTP [127.0.0.1] POST /json_rpc
+2016-Oct-03 02:02:49.491635 [RPC0]Using v2 rules
+2016-Oct-03 02:02:50.572703 [RPC0]Not using v3 rules
+2016-Oct-03 02:04:35.102286 [RPC0]/json_rpc[sweep_dust] processed with 0/106086/0ms
+2016-Oct-03 02:04:35.307428 [RPC0]Block is already in blockchain: b5f5bef5cf34097be93fcf351c71b10167fc5fb69e66092b066d733d9cd6157a
+2016-Oct-03 02:04:35.811203 [RPC0]Found new pool tx: <18ccc0985f34a317146342705b82bffae28904c79eb632f80bbff39f5df4c8de>
+2016-Oct-03 02:04:36.051567 [RPC0]Found new pool tx: <07b9316b863f8ea53a0c881cca667a1a0e5374c7db2194135ebf0b4bee9e2b8d>
+2016-Oct-03 02:04:36.274306 [RPC0]Found new pool tx: <ad8f0dce9d03f19029caf5b9acaa463dcb790a7ca77acd0a5e566e31bc6e405c>
+2016-Oct-03 02:04:36.496175 [RPC0]Found new pool tx: <8bb7ec427c253351218489966ec5adf8bc82b6cacd1cc990fbd45c4109fc7d85>
+2016-Oct-03 02:04:36.730342 [RPC0]Found new pool tx: <72bad2d72c4ded7a1620ae49c2f1c299d2e07a0f27847682fd522050a41ba84f>
+2016-Oct-03 02:04:36.979058 [RPC0]Found new pool tx: <f66be0c27ba04b9b159cf451e6d95abc0df1a3d52db9edb6e6bdd036f4ad958a>
+2016-Oct-03 02:04:37.191017 [RPC0]Found new pool tx: <5d68093f95f9d52d8a464effb0c1932f5ccbcc156346a42dc60eae4d5eed2214>
+2016-Oct-03 02:04:37.419084 [RPC0]Found new pool tx: <adf4c00ee629051913b8893b93fc1be4ddfbba51fa0870d3e6200bc423e8d1bc>
+2016-Oct-03 02:04:37.831312 [RPC0]Found new pool tx: <3e4fe224c762b7c5e90e1fab6af056c7cdebd63ccbc1408e79b1b3eb7aeac6b4>
+2016-Oct-03 02:04:38.092908 [RPC0]Found new pool tx: <680ab67bf9fa179e75a0cf090a2a5b098b98a9037be2b1405ffd1899a8bda0d0>
+2016-Oct-03 02:04:38.308869 [RPC0]Refresh done, blocks received: 0, balance: 2.040000000000, unlocked: 1.060000000000
+2016-Oct-03 02:04:38.311955 [RPC0]HTTP [127.0.0.1] POST /json_rpc
+2016-Oct-03 02:04:38.312984 [RPC0]/json_rpc[query_key] processed with 0/1/0ms
+2016-Oct-03 02:04:38.352362 [RPC0]HTTP [127.0.0.1] POST /json_rpc
+2016-Oct-03 02:04:38.352670 [RPC0]/json_rpc[incoming_transfers] processed with 0/0/0ms
+2016-Oct-03 02:04:38.392514 [RPC0]HTTP [127.0.0.1] POST /json_rpc
+2016-Oct-03 02:04:38.392649 [RPC0]/json_rpc[make_integrated_address] processed with 0/0/0ms
+2016-Oct-03 02:04:38.432316 [RPC0]HTTP [127.0.0.1] POST /json_rpc
+2016-Oct-03 02:04:38.808812 [RPC0]/json_rpc[store] processed with 0/377/0ms
+2016-Oct-03 02:04:38.848460 [RPC0]HTTP [127.0.0.1] POST /json_rpc
+2016-Oct-03 02:04:38.848558 [RPC0]/json_rpc[get_payments] processed with 0/0/0ms
+2016-Oct-03 02:04:38.888455 [RPC0]HTTP [127.0.0.1] POST /json_rpc
+2016-Oct-03 02:04:38.888612 [RPC0]/json_rpc[get_payments] processed with 0/0/0ms
+2016-Oct-03 02:04:38.928438 [RPC0]HTTP [127.0.0.1] POST /json_rpc
+2016-Oct-03 02:04:38.928560 [RPC0]/json_rpc[get_bulk_payments] processed with 0/0/0ms
+2016-Oct-03 02:04:38.968305 [RPC0]HTTP [127.0.0.1] POST /json_rpc
+2016-Oct-03 02:04:38.968452 [RPC0]/json_rpc[split_integrated_address] processed with 0/1/0ms
+2016-Oct-03 02:04:39.008496 [RPC0]HTTP [127.0.0.1] POST /json_rpc
+2016-Oct-03 02:04:39.507299 [RPC0]Using v2 rules
+2016-Oct-03 02:04:39.507357 [RPC0]Requested mixin 1 too low for hard fork 2, using 2
+2016-Oct-03 02:04:40.028519 [RPC0]Using v2 rules
+2016-Oct-03 02:04:41.152449 [RPC0]Not using v4 rules
+2016-Oct-03 02:04:41.751791 [RPC0]Not using v3 rules
+2016-Oct-03 02:04:41.751855 [RPC0]transfer: adding 0.001000000000, for a total of 0.001000000000
+2016-Oct-03 02:04:41.751886 [RPC0]Starting with 3 non-dust outputs and 0 dust outputs
+2016-Oct-03 02:04:41.751926 [RPC0]Picking output 5, amount 0.900000000000
+2016-Oct-03 02:04:41.751979 [RPC0]We can fully pay 48iZ4NPuYsTfZEiYYXzKbTeZotimqEsfUB2LgykPAksdHkz4daHT46ZFsnkwRygxu2KR3KmkhpLvNQMtszjC3TsVFMLSNwK for 0.001000000000
+2016-Oct-03 02:04:41.752016 [RPC0]Considering whether to create a tx now, 1 inputs, tx limit 74400
+2016-Oct-03 02:04:41.752047 [RPC0]Trying to create a tx now, with 1 destinations and 1 outputs
+2016-Oct-03 02:04:42.401187 [RPC0]Using v2 rules
+2016-Oct-03 02:04:42.401254 [RPC0]transfer: starting with fee 0.000000000000
+2016-Oct-03 02:04:42.401274 [RPC0]transfer: adding 0.001000000000, for a total of 0.001000000000
+2016-Oct-03 02:04:42.401308 [RPC0]wanted 0.001000000000, found 0.900000000000, fee 0.000000000000
+2016-Oct-03 02:04:42.401339 [RPC0]fake_outputs_count: 2
+2016-Oct-03 02:04:42.752465 [RPC0]base_requested_outputs_count: 5
+2016-Oct-03 02:04:42.752542 [RPC0]404122 outputs of size 0.900000000000
+2016-Oct-03 02:04:42.752612 [RPC0]asking for output 199987 for 0.900000000000
+2016-Oct-03 02:04:42.752645 [RPC0]asking for output 231678 for 0.900000000000
+2016-Oct-03 02:04:42.752669 [RPC0]asking for output 353617 for 0.900000000000
+2016-Oct-03 02:04:42.752692 [RPC0]asking for output 366168 for 0.900000000000
+2016-Oct-03 02:04:42.752715 [RPC0]asking for output 404116 for 0.900000000000
+2016-Oct-03 02:04:43.109987 [RPC0]Looking for 3 outputs of size 0.900000000000
+2016-Oct-03 02:04:43.110043 [RPC0]Index 3/5: idx 366168 (real 404116), unlocked 1, key <ba188c16d8543821828e3d477e9e30002ca1c3820b787a9b932d4567b6cc25ef>
+2016-Oct-03 02:04:43.110078 [RPC0]Index 0/5: idx 199987 (real 404116), unlocked 1, key <a524ac22b001686ab1eb1c537a193399bfd78ed1106e0574cd5c811eeed531fc>
+2016-Oct-03 02:04:43.110512 [RPC0]amount=0.900000000000, real_output=2, real_output_in_tx_index=2, indexes: 199987 366168 404116 
+2016-Oct-03 02:04:43.113730 [RPC0]Made a 395 kB tx, with 0.899000000000 available for fee (0.010000000000 needed)
+2016-Oct-03 02:04:43.113751 [RPC0]We made a tx, adjusting fee and saving it
+2016-Oct-03 02:04:43.751133 [RPC0]Using v2 rules
+2016-Oct-03 02:04:43.751198 [RPC0]transfer: starting with fee 0.010000000000
+2016-Oct-03 02:04:43.751219 [RPC0]transfer: adding 0.001000000000, for a total of 0.011000000000
+2016-Oct-03 02:04:43.751238 [RPC0]wanted 0.011000000000, found 0.900000000000, fee 0.010000000000
+2016-Oct-03 02:04:43.751255 [RPC0]fake_outputs_count: 2
+2016-Oct-03 02:04:44.088762 [RPC0]base_requested_outputs_count: 5
+2016-Oct-03 02:04:44.088844 [RPC0]404122 outputs of size 0.900000000000
+2016-Oct-03 02:04:44.088918 [RPC0]asking for output 244674 for 0.900000000000
+2016-Oct-03 02:04:44.088959 [RPC0]asking for output 304753 for 0.900000000000
+2016-Oct-03 02:04:44.088998 [RPC0]asking for output 342122 for 0.900000000000
+2016-Oct-03 02:04:44.089034 [RPC0]asking for output 402569 for 0.900000000000
+2016-Oct-03 02:04:44.089055 [RPC0]asking for output 404116 for 0.900000000000
+2016-Oct-03 02:04:44.429718 [RPC0]Looking for 3 outputs of size 0.900000000000
+2016-Oct-03 02:04:44.429779 [RPC0]Index 3/5: idx 402569 (real 404116), unlocked 1, key <455fe7ea780eca8e94dbb91fe24387fb1e71c74a3bfdea49a3f262ce63d25fde>
+2016-Oct-03 02:04:44.429821 [RPC0]Index 0/5: idx 244674 (real 404116), unlocked 1, key <453110acfef84a46f3417044f4ebaca44863aed728e725c46d17e68690974fcb>
+2016-Oct-03 02:04:44.430490 [RPC0]amount=0.900000000000, real_output=2, real_output_in_tx_index=2, indexes: 244674 402569 404116 
+2016-Oct-03 02:04:44.436823 [RPC0]Made a final 1 kB tx, with 0.019000000000 fee  and 0.880000000000 change
+2016-Oct-03 02:04:44.436896 [RPC0]Done creating 1 transactions, 0.019000000000 total fee, 0.880000000000 total change
+2016-Oct-03 02:04:44.436931 [RPC0]  Transaction 1/1: 1 kB, sending 0.900000000000 in 1 outputs to 1 destination(s), including 0.019000000000 fee, 0.880000000000 change
+2016-Oct-03 02:04:44.832743 [RPC0]transaction <ad168701d933b9e81970a56724b8c7a8780c123e6c8fbde23a13866f1af1ec1f> generated ok and sent to daemon, key_images: [<993cf5a0d65d902324c5efc45e35410aae7ffb6e5ee0c2204b10883a17015b07> ]
+2016-Oct-03 02:04:44.832808 [RPC0]Setting SPENT at 0: ki <993cf5a0d65d902324c5efc45e35410aae7ffb6e5ee0c2204b10883a17015b07>, amount 0.900000000000
+2016-Oct-03 02:04:44.832848 [RPC0]Transaction successfully sent. <<ad168701d933b9e81970a56724b8c7a8780c123e6c8fbde23a13866f1af1ec1f>>
+Commission: 0.019000000000 (dust sent to dust addr: 0.000000000000)
+Balance: 2.020000000000
+Unlocked: 0.160000000000
+Please, wait for confirmation for your balance to be unlocked.
+2016-Oct-03 02:04:44.832947 [RPC0]/json_rpc[transfer] processed with 0/5824/0ms
+2016-Oct-03 02:04:44.872421 [RPC0]HTTP [127.0.0.1] POST /json_rpc
+2016-Oct-03 02:04:45.432662 [RPC0]Using v2 rules
+2016-Oct-03 02:04:46.072780 [RPC0]Not using v4 rules
+2016-Oct-03 02:04:46.672752 [RPC0]Not using v3 rules
+2016-Oct-03 02:04:46.672817 [RPC0]transfer: adding 0.001000000000, for a total of 0.001000000000
+2016-Oct-03 02:04:46.672837 [RPC0]Starting with 2 non-dust outputs and 0 dust outputs
+2016-Oct-03 02:04:46.672864 [RPC0]Picking output 3, amount 0.080000000000
+2016-Oct-03 02:04:46.672891 [RPC0]We can fully pay 48iZ4NPuYsTfZEiYYXzKbTeZotimqEsfUB2LgykPAksdHkz4daHT46ZFsnkwRygxu2KR3KmkhpLvNQMtszjC3TsVFMLSNwK for 0.001000000000
+2016-Oct-03 02:04:46.672908 [RPC0]Considering whether to create a tx now, 1 inputs, tx limit 74400
+2016-Oct-03 02:04:46.672924 [RPC0]Trying to create a tx now, with 1 destinations and 1 outputs
+2016-Oct-03 02:04:47.552739 [RPC0]Using v2 rules
+2016-Oct-03 02:04:47.552806 [RPC0]transfer: starting with fee 0.000000000000
+2016-Oct-03 02:04:47.552836 [RPC0]transfer: adding 0.001000000000, for a total of 0.001000000000
+2016-Oct-03 02:04:47.552867 [RPC0]wanted 0.001000000000, found 0.080000000000, fee 0.000000000000
+2016-Oct-03 02:04:47.552906 [RPC0]fake_outputs_count: 3
+2016-Oct-03 02:04:47.840657 [RPC0]base_requested_outputs_count: 7
+2016-Oct-03 02:04:47.840736 [RPC0]233560 outputs of size 0.080000000000
+2016-Oct-03 02:04:47.840805 [RPC0]asking for output 33741 for 0.080000000000
+2016-Oct-03 02:04:47.840837 [RPC0]asking for output 82396 for 0.080000000000
+2016-Oct-03 02:04:47.840874 [RPC0]asking for output 128377 for 0.080000000000
+2016-Oct-03 02:04:47.840913 [RPC0]asking for output 172681 for 0.080000000000
+2016-Oct-03 02:04:47.841051 [RPC0]asking for output 199912 for 0.080000000000
+2016-Oct-03 02:04:47.841088 [RPC0]asking for output 204492 for 0.080000000000
+2016-Oct-03 02:04:47.841126 [RPC0]asking for output 233547 for 0.080000000000
+2016-Oct-03 02:04:48.278318 [RPC0]Looking for 4 outputs of size 0.080000000000
+2016-Oct-03 02:04:48.278371 [RPC0]Index 1/7: idx 82396 (real 233547), unlocked 1, key <3b0ea25b50bfdd2b052d3cf696ade6c723cfdfc23c8c837fc6e595d75aa2148c>
+2016-Oct-03 02:04:48.278413 [RPC0]Index 5/7: idx 204492 (real 233547), unlocked 1, key <ddab176018e4c228b8d9cfa38d74d12c9341f4ef133e471b087cdc3fe91c0e6d>
+2016-Oct-03 02:04:48.278471 [RPC0]Index 4/7: idx 199912 (real 233547), unlocked 1, key <f66bc14689df40c30f9eb9dddb0128d916d234d5d40889406d8c3d903e65e397>
+2016-Oct-03 02:04:48.278891 [RPC0]amount=0.080000000000, real_output=3, real_output_in_tx_index=1, indexes: 82396 199912 204492 233547 
+2016-Oct-03 02:04:48.282100 [RPC0]Made a 422 kB tx, with 0.079000000000 available for fee (0.010000000000 needed)
+2016-Oct-03 02:04:48.282138 [RPC0]We made a tx, adjusting fee and saving it
+2016-Oct-03 02:04:48.871766 [RPC0]Using v2 rules
+2016-Oct-03 02:04:48.871848 [RPC0]transfer: starting with fee 0.010000000000
+2016-Oct-03 02:04:48.871891 [RPC0]transfer: adding 0.001000000000, for a total of 0.011000000000
+2016-Oct-03 02:04:48.871927 [RPC0]wanted 0.011000000000, found 0.080000000000, fee 0.010000000000
+2016-Oct-03 02:04:48.871961 [RPC0]fake_outputs_count: 3
+2016-Oct-03 02:04:49.190811 [RPC0]base_requested_outputs_count: 7
+2016-Oct-03 02:04:49.190871 [RPC0]233560 outputs of size 0.080000000000
+2016-Oct-03 02:04:49.190916 [RPC0]asking for output 99821 for 0.080000000000
+2016-Oct-03 02:04:49.190935 [RPC0]asking for output 127031 for 0.080000000000
+2016-Oct-03 02:04:49.190951 [RPC0]asking for output 148460 for 0.080000000000
+2016-Oct-03 02:04:49.190966 [RPC0]asking for output 167999 for 0.080000000000
+2016-Oct-03 02:04:49.190982 [RPC0]asking for output 195255 for 0.080000000000
+2016-Oct-03 02:04:49.190997 [RPC0]asking for output 225988 for 0.080000000000
+2016-Oct-03 02:04:49.191016 [RPC0]asking for output 233547 for 0.080000000000
+2016-Oct-03 02:04:49.552059 [RPC0]Looking for 4 outputs of size 0.080000000000
+2016-Oct-03 02:04:49.552118 [RPC0]Index 6/7: idx 233547 (real 233547), unlocked 1, key <2363dc31a16cdf75a31e97f4331c7c06381419a2b6ef92c3a5c1ea75cedf7083>
+2016-Oct-03 02:04:49.552143 [RPC0]Index 1/7: idx 127031 (real 233547), unlocked 1, key <1ab2993294e4182df77465dd3a6529c96ac60105fbce3282ef7e2a90060ca157>
+2016-Oct-03 02:04:49.552164 [RPC0]Index 5/7: idx 225988 (real 233547), unlocked 1, key <d3ae5db932dbdfd81f59dd396896d0caa3cf7d010bb7053a0e84fa388b6eb2ab>
+2016-Oct-03 02:04:49.552184 [RPC0]Index 0/7: idx 99821 (real 233547), unlocked 1, key <d29f425663d9180c5a9c46d6edc96bd226038f7c5b8dd74a3f80c6e091be6187>
+2016-Oct-03 02:04:49.552692 [RPC0]amount=0.080000000000, real_output=3, real_output_in_tx_index=1, indexes: 99821 127031 225988 233547 
+2016-Oct-03 02:04:49.556784 [RPC0]Made a final 1 kB tx, with 0.019000000000 fee  and 0.060000000000 change
+2016-Oct-03 02:04:49.556820 [RPC0]Done creating 1 transactions, 0.019000000000 total fee, 0.060000000000 total change
+2016-Oct-03 02:04:49.556839 [RPC0]  Transaction 1/1: 1 kB, sending 0.080000000000 in 1 outputs to 1 destination(s), including 0.019000000000 fee, 0.060000000000 change
+2016-Oct-03 02:04:49.952684 [RPC0]transaction <284735a457690933a5afd0b601457f424d296df841517bf1ea474940ed6bd0d7> generated ok and sent to daemon, key_images: [<4b180bfacae4798f48a75dd3177f5a35daab40834f6487c61697c071f91b75ba> ]
+2016-Oct-03 02:04:49.952750 [RPC0]Setting SPENT at 0: ki <4b180bfacae4798f48a75dd3177f5a35daab40834f6487c61697c071f91b75ba>, amount 0.080000000000
+2016-Oct-03 02:04:49.952778 [RPC0]Transaction successfully sent. <<284735a457690933a5afd0b601457f424d296df841517bf1ea474940ed6bd0d7>>
+Commission: 0.019000000000 (dust sent to dust addr: 0.000000000000)
+Balance: 2.000000000000
+Unlocked: 0.080000000000
+Please, wait for confirmation for your balance to be unlocked.
+2016-Oct-03 02:04:49.952842 [RPC0]/json_rpc[transfer_split] processed with 0/5080/0ms
+2016-Oct-03 02:04:49.992694 [RPC0]HTTP [127.0.0.1] POST /json_rpc
+2016-Oct-03 02:04:50.345950 [RPC0]/json_rpc[stop_wallet] processed with 0/353/0ms
+2016-Oct-03 02:04:50.384081 [SRV_MAIN]net_service loop stopped.
+2016-Oct-03 02:04:50.384132 [SRV_MAIN]Stopped wallet rpc server
+2016-Oct-03 02:04:50.384145 [SRV_MAIN]Storing wallet...
+2016-Oct-03 02:04:50.765258 [SRV_MAIN]Stored ok

@@ -82,7 +82,7 @@ main = do
                       { makeTransferDestinations =
                           [ TransferDestination 1000000000 $ Address $ Base58String "48iZ4NPuYsTfZEiYYXzKbTeZotimqEsfUB2LgykPAksdHkz4daHT46ZFsnkwRygxu2KR3KmkhpLvNQMtszjC3TsVFMLSNwK"
                           ]
-                      , makeTransferMixin        = 3
+                      , makeTransferMixin        = 1
                       , makeTransferUnlockTime   = 0
                       , makeTransferPaymentId    = Nothing
                       , makeTransferGetTxKey     = False
