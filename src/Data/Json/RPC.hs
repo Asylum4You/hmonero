@@ -35,6 +35,7 @@ import Control.Monad.ST
 
 import Network (PortNumber)
 import Network.HTTP.Client ( Manager, newManager, defaultManagerSettings
+                           , managerResponseTimeout --, responseTimeoutNone
                            , httpLbs, parseUrl, RequestBody (RequestBodyLBS)
                            , requestBody, requestHeaders, method, responseBody
                            )
@@ -110,7 +111,8 @@ data RPCConfig = RPCConfig
 
 newRPCConfig :: IPv4 -> PortNumber -> IO RPCConfig
 newRPCConfig ip p = do
-  m <- newManager defaultManagerSettings
+  m <- newManager $ defaultManagerSettings
+                      { managerResponseTimeout = Nothing }
   i <- stToIO $ newSTRef 0
   pure RPCConfig
     { rpcIp       = ip

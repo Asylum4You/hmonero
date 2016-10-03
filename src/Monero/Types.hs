@@ -42,6 +42,7 @@ newtype PaymentId = PaymentId
   } deriving (Show, Eq, FromJSON, ToJSON, Arbitrary)
 
 
+-- FIXME: Might be incorrect
 newtype TxHash = TxHash
   { getTxHash :: HexString
   } deriving (Show, Eq)
@@ -113,7 +114,7 @@ data Transfer = Transfer
   { transferAmount      :: Word64
   , transferSpent       :: Bool
   , transferGlobalIndex :: Word64
-  , transferTxHash      :: TxHash
+  , transferTxHash      :: HexString
   , transferTxSize      :: Word64
   } deriving (Show, Eq)
 

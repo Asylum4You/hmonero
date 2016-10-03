@@ -26,6 +26,7 @@ import Data.Aeson.Types as A
 import Data.Maybe (fromMaybe)
 import Data.Word (Word64)
 import qualified Data.Text as T
+import Control.Applicative
 
 
 -- * Procedures
@@ -131,7 +132,17 @@ instance FromJSON SweptDust where
   parseJSON (Object o) = SweptDust <$> o .: "tx_hash_list"
   parseJSON x = typeMismatch "SweptDust" x
 
-sweepDust :: RPCConfig -> IO SweptDust
+newtype GotSweptDust = GotSweptDust
+  { gotSweptDust :: Maybe SweptDust
+  } deriving (Show, Eq)
+instance FromJSON GotSweptDust where
+  parseJSON x = fmap GotSweptDust $
+        (Just <$> parseJSON x)
+    <|> ( do EmptyObject <- parseJSON x
+             pure Nothing
+        )
+
+sweepDust :: RPCConfig -> IO GotSweptDust
 sweepDust cfg = rpc cfg "sweep_dust" nada
 
 
