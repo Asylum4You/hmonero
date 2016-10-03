@@ -28,7 +28,7 @@ Library
                       , exceptions
                       , fileneglect
                       , filepath
-                      , http-client == 0.4.29
+                      , http-client <= 0.4.29
                       , iproute
                       , mtl
                       , network
