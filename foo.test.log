@@ -1,0 +1,56 @@
+Monero 'Wolfram Warptangent' (v0.10.0.0-release)
+Logging at log level 2 to /home/athan/dev/moneybit/hmonero/foo.log
+2016-Oct-02 19:31:25.586402 Loading wallet...
+2016-Oct-02 19:31:25.649524 Loaded wallet keys file, with public address: 48aPXdzu2Qt1KVVuPUunjeVTm6zf6Vg3kf38VhSCunCzQjWBzH3rpJjSwDgnE8ocJWYGeEqhEoBWqeoVwbyYs3se6cGdjTx
+2016-Oct-02 19:31:25.676553 Trying to decrypt cache data
+2016-Oct-02 19:31:26.563041 Block is already in blockchain: 4c3c8a2f851ab644ec7afc965bb4ea6f33129a9391ccc9a0847201313c38fc12
+2016-Oct-02 19:31:27.800777 Found new pool tx: <94ab678f745cad3106c26d53844895fa380bae3029ae09e86b64330b0cd92b42>
+2016-Oct-02 19:31:28.210461 Found new pool tx: <02f19bf1fe43ce99e6d6829c3e5d669939fb21734a0a7a643ab729b5511c720c>
+2016-Oct-02 19:31:28.606866 Refresh done, blocks received: 0, balance: 0.000000000000, unlocked: 0.000000000000
+2016-Oct-02 19:31:28.606945 Loaded ok
+2016-Oct-02 19:31:28.607171 Binding on 127.0.0.1:18082
+2016-Oct-02 19:31:28.607361 Starting wallet rpc server
+2016-Oct-02 19:31:28.607468 Run net_service loop( 1 threads)...
+2016-Oct-02 19:31:49.090016 [RPC0]Block is already in blockchain: 4c3c8a2f851ab644ec7afc965bb4ea6f33129a9391ccc9a0847201313c38fc12
+2016-Oct-02 19:31:50.081189 [RPC0]Found new pool tx: <94ab678f745cad3106c26d53844895fa380bae3029ae09e86b64330b0cd92b42>
+2016-Oct-02 19:31:50.416444 [RPC0]Found new pool tx: <02f19bf1fe43ce99e6d6829c3e5d669939fb21734a0a7a643ab729b5511c720c>
+2016-Oct-02 19:31:50.716829 [RPC0]Refresh done, blocks received: 0, balance: 0.000000000000, unlocked: 0.000000000000
+2016-Oct-02 19:32:10.972313 [RPC0]Block is already in blockchain: 4c3c8a2f851ab644ec7afc965bb4ea6f33129a9391ccc9a0847201313c38fc12
+2016-Oct-02 19:32:11.582522 [RPC0]Found new pool tx: <e2647816feabd039fa265a7552fe8d51ee8fe71158d1298dd9066a0320de2425>
+2016-Oct-02 19:32:11.865621 [RPC0]Found new pool tx: <94ab678f745cad3106c26d53844895fa380bae3029ae09e86b64330b0cd92b42>
+2016-Oct-02 19:32:12.117840 [RPC0]Found new pool tx: <02f19bf1fe43ce99e6d6829c3e5d669939fb21734a0a7a643ab729b5511c720c>
+2016-Oct-02 19:32:12.361111 [RPC0]Refresh done, blocks received: 0, balance: 0.000000000000, unlocked: 0.000000000000
+2016-Oct-02 19:32:12.362353 [RPC0]HTTP [127.0.0.1] POST /json_rpc
+2016-Oct-02 19:32:12.362401 [RPC0]/json_rpc[getbalance] processed with 1/0/0ms
+2016-Oct-02 19:32:12.363754 [RPC0]HTTP [127.0.0.1] POST /json_rpc
+2016-Oct-02 19:32:12.363822 [RPC0]/json_rpc[getaddress] processed with 0/0/0ms
+2016-Oct-02 19:32:12.404654 [RPC0]HTTP [127.0.0.1] POST /json_rpc
+2016-Oct-02 19:32:12.404729 [RPC0]/json_rpc[getheight] processed with 0/0/0ms
+2016-Oct-02 19:32:12.444687 [RPC0]HTTP [127.0.0.1] POST /json_rpc
+2016-Oct-02 19:32:13.014326 [RPC0]Using v2 rules
+2016-Oct-02 19:32:13.629914 [RPC0]Not using v3 rules
+2016-Oct-02 19:34:09.470634 [RPC0]/json_rpc[sweep_dust] processed with 0/117026/0ms
+2016-Oct-02 19:34:09.675907 [RPC0]Block is already in blockchain: 4c3c8a2f851ab644ec7afc965bb4ea6f33129a9391ccc9a0847201313c38fc12
+2016-Oct-02 19:34:09.676736 [RPC0]Processed block: <1e5773a093a31930e812d38ad8435f1e48223500b2a0b7cfdafe104f65b18d82>, height 1149138, 1(1/0)ms
+2016-Oct-02 19:34:09.982492 [RPC0]Block is already in blockchain: 4c3c8a2f851ab644ec7afc965bb4ea6f33129a9391ccc9a0847201313c38fc12
+2016-Oct-02 19:34:09.982542 [RPC0]Block is already in blockchain: 1e5773a093a31930e812d38ad8435f1e48223500b2a0b7cfdafe104f65b18d82
+2016-Oct-02 19:34:10.540102 [RPC0]Found new pool tx: <33947c2b73aa837dd260482d40901320e2e622153f9eaa213a74dd75a5b72185>
+2016-Oct-02 19:34:10.867547 [RPC0]Found new pool tx: <5c34e0b709a57c090eb469058386771ad8d5acfcf432cb2773bee7c7628a78c5>
+2016-Oct-02 19:34:11.130037 [RPC0]Found new pool tx: <61402b347ecff8b3b751bc587fdd86165f27b4aecad114fe7747f0176b843510>
+2016-Oct-02 19:34:11.407969 [RPC0]Found new pool tx: <fb8ebe1149523e87f06e8c7212a2eac53cf59af9d9f8ff6d6cfba8f080c82f70>
+2016-Oct-02 19:34:11.719249 [RPC0]Found new pool tx: <e2647816feabd039fa265a7552fe8d51ee8fe71158d1298dd9066a0320de2425>
+2016-Oct-02 19:34:12.123020 [RPC0]Found new pool tx: <94ab678f745cad3106c26d53844895fa380bae3029ae09e86b64330b0cd92b42>
+2016-Oct-02 19:34:12.700610 [RPC0]Found new pool tx: <02f19bf1fe43ce99e6d6829c3e5d669939fb21734a0a7a643ab729b5511c720c>
+2016-Oct-02 19:34:13.194246 [RPC0]Refresh done, blocks received: 1, balance: 0.000000000000, unlocked: 0.000000000000
+2016-Oct-02 19:34:13.195684 [RPC0]HTTP [127.0.0.1] POST /json_rpc
+2016-Oct-02 19:34:13.196505 [RPC0]/json_rpc[query_key] processed with 0/1/0ms
+2016-Oct-02 19:34:13.196947 [RPC0]HTTP [127.0.0.1] POST /json_rpc
+2016-Oct-02 19:34:13.196982 [RPC0]/json_rpc[incoming_transfers] processed with 0/0/0ms
+2016-Oct-02 19:34:13.197476 [RPC0]HTTP [127.0.0.1] POST /json_rpc
+2016-Oct-02 19:34:13.197531 [RPC0]/json_rpc[make_integrated_address] processed with 0/0/0ms
+2016-Oct-02 19:34:13.197980 [RPC0]HTTP [127.0.0.1] POST /json_rpc
+2016-Oct-02 19:34:14.015137 [RPC0]/json_rpc[store] processed with 0/817/0ms
+2016-Oct-02 19:34:14.017370 [SRV_MAIN]net_service loop stopped.
+2016-Oct-02 19:34:14.017420 [SRV_MAIN]Stopped wallet rpc server
+2016-Oct-02 19:34:14.017447 [SRV_MAIN]Storing wallet...
+2016-Oct-02 19:34:14.745573 [SRV_MAIN]Stored ok

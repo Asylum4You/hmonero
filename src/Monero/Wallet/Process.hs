@@ -16,17 +16,15 @@ import Data.IP (IPv4)
 import Data.Default
 import Control.Monad.Catch
 import Control.Monad (void)
+import Control.Concurrent (threadDelay)
 
 import System.FilePath
 import System.IO
 import System.IO.Error (isEOFError)
 import System.Directory (getCurrentDirectory)
 import System.Process (waitForProcess, interruptProcessGroupOf)
-import System.Exit (ExitCode (..))
-import System.Timeout (timeout)
 import System.IDontNotify (neglectFile)
 import Network (HostName, PortNumber)
-import Control.Concurrent (threadDelay)
 
 
 
@@ -150,18 +148,17 @@ openWallet WalletProcessConfig{..} OpenWalletConfig{..} = do
 
 -- * Close Wallet Connection
 
-closeWallet :: RPCConfig
-            -> ProcessHandles
+closeWallet :: ProcessHandles
             -> IO ()
-closeWallet cfg ProcessHandles{..} = do
-  void $ stopWallet cfg
-  e <- waitForProcess processHandle
-  case e of
-    ExitSuccess -> do
-      interruptProcessGroupOf processHandle
-      mapM_ hClose [stdinHandle, stdoutHandle, stderrHandle]
-    ExitFailure i ->
-      throwM $ NonZeroExitCode i
+closeWallet ProcessHandles{..} =
+  bracket_ (pure ())
+    (mapM_ hClose [stdinHandle, stdoutHandle, stderrHandle])
+    $ do  interruptProcessGroupOf processHandle
+          void $ waitForProcess processHandle
+         -- case e of
+         --   ExitSuccess ->
+         --   ExitFailure i ->
+         --     pure () -- throwM $ NonZeroExitCode i -- FIXME: http://unix.stackexchange.com/questions/99112/default-exit-code-when-process-is-terminated
 
 
 second :: Int

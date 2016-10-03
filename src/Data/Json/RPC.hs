@@ -59,6 +59,8 @@ instance ToJSON ps => ToJSON (RPCRequest ps) where
              Just ps -> ["params" .= ps]
 
 
+
+
 data RPCResponseError = RPCResponseError
   { rpcErrorCode    :: Int
   , rpcErrorMessage :: T.Text
@@ -72,6 +74,8 @@ instance FromJSON RPCResponseError where
     d <- o .:? "data"
     pure $ RPCResponseError c m d
   parseJSON x = typeMismatch "RPCResponseError" x
+
+
 
 data RPCResponse rs = RPCResponse
   { rpcRespId     :: Int

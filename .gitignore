@@ -16,3 +16,6 @@ cabal.sandbox.config
 *.hp
 stack.yaml
 .stack-work/
+
+foo
+foo.keys

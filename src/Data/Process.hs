@@ -12,9 +12,10 @@ import qualified Data.Text as T
 import Data.Attoparsec.Text as A
 import Data.IP (IPv4)
 import Data.List (intercalate)
-import Network (HostName, PortNumber)
+import Network (PortNumber)
 import Control.Applicative
 import Control.Monad.Catch
+import Control.Monad (void)
 
 
 
@@ -122,8 +123,8 @@ parseFeedback =  parseHeader
       LoadedOk <$ A.string "Loaded ok"
     parseBindingOn = do
       ip <- A.string "Binding on "
-         >> (many1 A.digit) `sepBy1` (A.char '.') :: Parser [String]
-      char ':'
+         >> many1 A.digit `sepBy1` A.char '.' :: Parser [String]
+      void $ char ':'
       port <- many1 A.digit
       pure $ BindingOn (read $ intercalate "." ip) (fromInteger $ read port)
     parseStartingRPCServer =

@@ -21,23 +21,25 @@ module Monero.Types where
 import Data.Aeson as A
 import Data.Aeson.Types as A
 import Data.Word (Word64)
-import Data.Char (isHexDigit, isAlphaNum, isAscii)
+import Data.Char (isHexDigit, isAlphaNum, isAscii, toLower, ord, chr)
 import Data.Monoid
 import qualified Data.Text as T
 import Network (PortNumber)
 import Text.Read (readMaybe)
+
+import Test.QuickCheck
 
 
 -- * Components
 
 newtype Address = Address
   { getAddress :: Base58String
-  } deriving (Show, Eq, FromJSON, ToJSON)
+  } deriving (Show, Eq, FromJSON, ToJSON, Arbitrary)
 
 
 newtype PaymentId = PaymentId
   { getPaymentId :: HexString
-  } deriving (Show, Eq, FromJSON, ToJSON)
+  } deriving (Show, Eq, FromJSON, ToJSON, Arbitrary)
 
 
 newtype TxHash = TxHash
@@ -65,7 +67,12 @@ data Balance = Balance
   { balance         :: Word64
   , unlockedBalance :: Word64
   } deriving (Show, Eq)
-
+instance Arbitrary Balance where
+  arbitrary = Balance <$> arbitrary <*> arbitrary
+  shrink Balance{..} = [ Balance b ub
+                       | b  <- shrink balance
+                       , ub <- shrink unlockedBalance
+                       ]
 instance FromJSON Balance where
   parseJSON (Object o) = do
     b <- o .: "balance"
@@ -81,7 +88,6 @@ data Payment = Payment
   , paymentBlockHeight :: Word64
   , paymentUnlockTime  :: Word64
   } deriving (Show, Eq)
-
 instance FromJSON Payment where
   parseJSON (Object o) =
     Payment <$> o .: "payment_id"
@@ -288,8 +294,14 @@ newtype HexString = HexString
   } deriving (Show, Eq, ToJSON)
 instance FromJSON HexString where
   parseJSON (String s) | T.all isHexDigit s = pure $ HexString s
-                       | otherwise = fail "Not hexadecimal"
+                       | otherwise          = fail "Not hexadecimal"
   parseJSON x = typeMismatch "HexString" x
+instance Arbitrary HexString where
+  arbitrary = (HexString . T.pack . map (toHex . toLower)) <$> arbitrary
+    where
+      toHex c | isHexDigit c = c
+              | otherwise    = chr $ ord c `mod` 16
+  shrink (HexString s) = map (HexString . T.pack) . shrink $ T.unpack s
 
 
 newtype Base58String = Base58String
@@ -303,3 +315,12 @@ instance FromJSON Base58String where
         where
           isntMistakeable = c /= 'I' && c /= 'l' && c /= '0' && c /= 'O'
   parseJSON x = typeMismatch "HexString" x
+instance Arbitrary Base58String where
+  arbitrary = (Base58String . T.pack . map toBase58) <$> arbitrary
+    where
+      toBase58 c | isBase58Digit c = c
+                 | otherwise       = 'A'
+      isBase58Digit c = isAlphaNum c && isAscii c && isntMistakeable
+        where
+          isntMistakeable = c /= 'I' && c /= 'l' && c /= '0' && c /= 'O'
+  shrink (Base58String s) = map (Base58String . T.pack) . shrink $ T.unpack s
