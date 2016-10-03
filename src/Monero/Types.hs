@@ -84,7 +84,7 @@ instance FromJSON Balance where
 
 data Payment = Payment
   { paymentId          :: PaymentId
-  , paymentTxHash      :: TxHash
+  , paymentTxHash      :: HexString
   , paymentAmount      :: Word64
   , paymentBlockHeight :: Word64
   , paymentUnlockTime  :: Word64

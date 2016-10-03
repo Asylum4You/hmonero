@@ -20,3 +20,4 @@ stack.yaml
 foo
 foo.keys
 log/
+monero-wallet-cli.log

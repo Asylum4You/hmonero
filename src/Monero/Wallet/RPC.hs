@@ -77,7 +77,7 @@ instance ToJSON MakeTransfer where
            Just p  -> ["payment_id" .= p]
 
 data MadeTransfer = MadeTransfer
-  { transactionHash :: TxHash
+  { transactionHash :: HexString
   , transactionKey  :: Maybe T.Text -- FIXME transaction key
   } deriving (Show, Eq)
 instance FromJSON MadeTransfer where
@@ -113,10 +113,13 @@ instance ToJSON MakeTransferSplit where
            Just p  -> ["payment_id" .= p]
 
 data MadeTransferSplit = MadeTransferSplit
-  { transactionHashList :: [TxHash] -- FIXME no keys?
+  { transactionHashList :: [HexString] -- FIXME no keys?
   } deriving (Show, Eq)
 instance FromJSON MadeTransferSplit where
-  parseJSON (Object o) = MadeTransferSplit <$> o .: "tx_hash_list"
+  parseJSON x@(Object o) = fmap MadeTransferSplit $
+    (o .: "tx_hash_list") <|> ( do EmptyObject <- parseJSON x
+                                   pure []
+                              )
   parseJSON x = typeMismatch "MadeTransferSplit" x
 
 transferSplit :: RPCConfig -> MakeTransferSplit -> IO MadeTransferSplit
