@@ -16,7 +16,7 @@ import Data.IP (IPv4)
 import Data.Default
 import Control.Monad.Catch
 import Control.Monad (void)
-import Control.Concurrent (threadDelay)
+import Control.Concurrent (threadDelay, forkIO)
 
 import System.FilePath
 import System.IO
@@ -138,8 +138,11 @@ openWallet WalletProcessConfig{..} OpenWalletConfig{..} = do
              , "--daemon-port="   ++ show (fromIntegral walletDaemonPort :: Int)
              ]
   hs@ProcessHandles{..} <- mkProcess moneroWalletCliPath args
+  stdLog <- hGetContents stdoutHandle
+  void $ forkIO $ writeFile (name' ++ ".stdout.log") stdLog
+  neglectFile (name' ++ ".stdout.log") second
 
-  threadDelay (2 * second)
+--  threadDelay (2 * second)
   neglectFile (name' ++ ".log") second
 
   cfg <- newRPCConfig walletRpcIp walletRpcPort
