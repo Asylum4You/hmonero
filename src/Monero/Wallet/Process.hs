@@ -15,14 +15,16 @@ import qualified Data.Text.IO as T
 import Data.IP (IPv4)
 import Data.Default
 import Control.Monad.Catch
-import Control.Monad (void)
-import Control.Concurrent (threadDelay, forkIO)
+import Control.Monad (void, unless, forM_, when, forever)
+import Control.Concurrent (threadDelay, forkIO, killThread)
 
 import System.FilePath
 import System.IO
-import System.IO.Error (isEOFError)
-import System.Directory (getCurrentDirectory)
-import System.Process (waitForProcess, interruptProcessGroupOf)
+import System.IO.Error (isEOFError, isDoesNotExistError)
+import System.Exit (ExitCode (..))
+import System.Directory (getCurrentDirectory, removeFile)
+import System.Process (waitForProcess, interruptProcessGroupOf
+                      , readCreateProcessWithExitCode, shell)
 import System.IDontNotify (neglectFile)
 import Network (HostName, PortNumber)
 
@@ -99,17 +101,24 @@ makeWallet WalletProcessConfig{..} MakeWalletConfig{..} = do
              , "--daemon-host="         ++ walletDaemonHost
              , "--daemon-port="         ++ show (fromIntegral walletDaemonPort :: Int)
              ]
+
+  tryRemoveFile $ name' ++ ".log"
+  tryRemoveFile $ name' ++ ".stdout.log"
+
   ProcessHandles{..} <- mkProcess moneroWalletCliPath args
 
   threadDelay (2 * second)
   T.hPutStrLn stdinHandle . T.pack . show $ walletLanguageCode makeWalletLanguage
   hFlush stdinHandle
 
-  threadDelay (2 * second) -- FIXME: don't start neglecting until active?
+  -- threadDelay (2 * second) -- FIXME: don't start neglecting until active?
+  errWatcher <- forkIO $ throwLogging name'
   neglectFile (name' ++ ".log") second
 
   interruptProcessGroupOf processHandle
   mapM_ hClose [stdinHandle, stdoutHandle, stderrHandle]
+
+  killThread errWatcher
 
 
 -- * Opening Existing Wallet
@@ -137,15 +146,27 @@ openWallet WalletProcessConfig{..} OpenWalletConfig{..} = do
              , "--daemon-host="   ++ walletDaemonHost
              , "--daemon-port="   ++ show (fromIntegral walletDaemonPort :: Int)
              ]
-  hs@ProcessHandles{..} <- mkProcess moneroWalletCliPath args
-  stdLog <- hGetContents stdoutHandle
-  void $ forkIO $ writeFile (name' ++ ".stdout.log") stdLog
-  neglectFile (name' ++ ".stdout.log") second
 
---  threadDelay (2 * second)
-  neglectFile (name' ++ ".log") second
+  tryRemoveFile $ name' ++ ".log"
+  tryRemoveFile $ name' ++ ".stdout.log"
+
+  hs@ProcessHandles{stdoutHandle} <- mkProcess moneroWalletCliPath args
+
+  stdLog <- hGetContents stdoutHandle
+  stdLogger <- forkIO $ writeFile (name' ++ ".stdout.log") stdLog
+  errWatcher <- forkIO $ throwLogging name'
+
+  let loop = do
+        threadDelay second
+        xs <- T.lines <$> T.readFile (name' ++ ".log")
+        unless (any ("Starting wallet rpc server" `T.isInfixOf`) xs) loop
+  loop
 
   cfg <- newRPCConfig walletRpcIp walletRpcPort
+
+  killThread stdLogger
+  killThread errWatcher
+
   pure (cfg, hs)
 
 
@@ -168,3 +189,37 @@ second :: Int
 second = 1000000
 
 -- * Utils
+
+
+tryRemoveFile :: FilePath -> IO ()
+tryRemoveFile file =
+  removeFile file `catch` handleError
+  where
+    handleError e | isDoesNotExistError e = pure ()
+                  | otherwise             = throwM e
+
+
+throwLogging :: FilePath -> IO ()
+throwLogging name' = forever $ do
+  threadDelay second
+  xs <- T.lines <$> T.readFile (name' ++ ".log")
+  forM_ xs $ \x -> when ("ERROR" `T.isInfixOf` x) $ do
+                     putStrLn "Found ERROR, stopping..."
+                     throwM $ LoggingError x
+
+
+nextAvailPort :: PortNumber -> IO PortNumber
+nextAvailPort startingPort = go startingPort
+  where
+    go p = do
+      isAvail <- portIsAvail p
+      if isAvail then pure p else go $ p + 1
+
+
+portIsAvail :: PortNumber -> IO Bool
+portIsAvail p = do
+  (e,xs,_) <- readCreateProcessWithExitCode (shell $ "lsof -i :" ++ show p) ""
+  case (e,xs) of
+    (ExitFailure 1, "") -> pure True
+    (ExitSuccess, _)    -> pure False
+    _                   -> error $ "lsof failed: " ++ show (e,xs, "lsof -i :" ++ show p)

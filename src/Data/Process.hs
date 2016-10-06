@@ -74,6 +74,12 @@ data CloseProcessException
 instance Exception CloseProcessException
 
 
+data LoggingProcessException
+  = LoggingError T.Text
+  deriving (Show, Eq, Generic)
+instance Exception LoggingProcessException
+
+
 -- * Feedback
 
 getCmd :: T.Text -> T.Text

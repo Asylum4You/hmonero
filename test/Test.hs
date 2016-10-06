@@ -35,7 +35,7 @@ main = do
                               { openWalletName     = "foo"
                               , openWalletPassword = "asdf"
                               }
-  void $ forkIO $ loggingTo "foo.test.log" $ stdoutHandle hs
+  putStrLn "Opened foo wallet"
   bracket_ (pure ()) (closeWallet hs) $
     defaultMain $ testGroup "hmonero"
       [ testGroup "Wallet"
@@ -50,10 +50,14 @@ main = do
                   bracket_
                     (pure ())
                     (mapM_ removeFile ["bar","bar.log","bar.address.txt","bar.keys"])
-                    $ do  (_,hsO) <- openWallet def OpenWalletConfig
-                                                      { openWalletName     = "bar"
-                                                      , openWalletPassword = "asdf"
-                                                      }
+                    $ do  port <- nextAvailPort 18082
+                          let walletProcessConf = def
+                                { walletRpcPort = port }
+                          (_,hsO) <- openWallet walletProcessConf
+                                       OpenWalletConfig
+                                         { openWalletName     = "bar"
+                                         , openWalletPassword = "asdf"
+                                         }
                           void $ forkIO $ loggingTo "bar.test.log" $ stdoutHandle hsO
                           threadDelay (5 * second) -- FIXME
                           closeWallet hsO
