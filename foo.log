@@ -1,180 +1,557 @@
-2016-Oct-05 22:52:24.232141 Monero 'Wolfram Warptangent' (v0.10.0.0-release)
-2016-Oct-05 22:52:24.232183 Setting log level = 2
-2016-Oct-05 22:52:24.232197 default_log: monero-wallet-cli.log
-2016-Oct-05 22:52:24.232229 Logging at log level 2 to /home/athan/dev/moneybit/hmonero/foo.log
-2016-Oct-05 22:52:24.232267 Loading wallet...
-2016-Oct-05 22:52:24.282217 Loaded wallet keys file, with public address: 48aPXdzu2Qt1KVVuPUunjeVTm6zf6Vg3kf38VhSCunCzQjWBzH3rpJjSwDgnE8ocJWYGeEqhEoBWqeoVwbyYs3se6cGdjTx
-2016-Oct-05 22:52:24.303879 Trying to decrypt cache data
-2016-Oct-05 22:52:25.124066 Block is already in blockchain: 64c4c0842aa7cb018eb0620a1f59c8c6aaecf9414570bf9aa3d3e4296fd2ff63
-2016-Oct-05 22:52:25.683763 Found new pool tx: <fb378661ea544cb9d6a341f77f7b780a545c57639a9f9148e130c49ed6e65d23>
-2016-Oct-05 22:52:26.056890 Refresh done, blocks received: 0, balance: 1.960000000000, unlocked: 1.960000000000
-2016-Oct-05 22:52:26.056969 Loaded ok
-2016-Oct-05 22:52:26.057171 Binding on 127.0.0.1:18082
-2016-Oct-05 22:52:26.057355 Starting wallet rpc server
-2016-Oct-05 22:52:26.057398 Run net_service loop( 1 threads)...
-2016-Oct-05 22:52:46.493618 [RPC0]Block is already in blockchain: 64c4c0842aa7cb018eb0620a1f59c8c6aaecf9414570bf9aa3d3e4296fd2ff63
-2016-Oct-05 22:52:47.333609 [RPC0]Found new pool tx: <357451b54b4f1456b0726e574054b534559f97e2154db6c9edeeb27646b41b62>
-2016-Oct-05 22:52:47.696727 [RPC0]Found new pool tx: <fb378661ea544cb9d6a341f77f7b780a545c57639a9f9148e130c49ed6e65d23>
-2016-Oct-05 22:52:48.039099 [RPC0]Refresh done, blocks received: 0, balance: 1.960000000000, unlocked: 1.960000000000
-2016-Oct-05 22:53:08.410028 [RPC0]Block is already in blockchain: 64c4c0842aa7cb018eb0620a1f59c8c6aaecf9414570bf9aa3d3e4296fd2ff63
-2016-Oct-05 22:53:09.403360 [RPC0]Found new pool tx: <357451b54b4f1456b0726e574054b534559f97e2154db6c9edeeb27646b41b62>
-2016-Oct-05 22:53:09.888825 [RPC0]Found new pool tx: <fb378661ea544cb9d6a341f77f7b780a545c57639a9f9148e130c49ed6e65d23>
-2016-Oct-05 22:53:10.332717 [RPC0]Refresh done, blocks received: 0, balance: 1.960000000000, unlocked: 1.960000000000
-2016-Oct-05 22:53:26.550398 [RPC0]HTTP [127.0.0.1] POST /json_rpc
-2016-Oct-05 22:53:26.550486 [RPC0]/json_rpc[getbalance] processed with 0/0/0ms
-2016-Oct-05 22:53:26.552079 [RPC0]HTTP [127.0.0.1] POST /json_rpc
-2016-Oct-05 22:53:26.552163 [RPC0]/json_rpc[getaddress] processed with 0/0/0ms
-2016-Oct-05 22:53:26.592795 [RPC0]HTTP [127.0.0.1] POST /json_rpc
-2016-Oct-05 22:53:26.592863 [RPC0]/json_rpc[getheight] processed with 0/0/0ms
-2016-Oct-05 22:53:26.632720 [RPC0]HTTP [127.0.0.1] POST /json_rpc
-2016-Oct-05 22:53:27.265874 [RPC0]Using v2 rules
-2016-Oct-05 22:53:27.962899 [RPC0]Not using v3 rules
-2016-Oct-05 22:56:21.385304 [RPC0]/json_rpc[sweep_dust] processed with 0/174752/0ms
-2016-Oct-05 22:56:21.615786 [RPC0]Block is already in blockchain: 64c4c0842aa7cb018eb0620a1f59c8c6aaecf9414570bf9aa3d3e4296fd2ff63
-2016-Oct-05 22:56:22.242745 [RPC0]Found new pool tx: <2cc823b7ed14079b6b61efe6f413150feb1acf93d0cc2bcc5a6ac22f48d53eda>
-2016-Oct-05 22:56:22.530305 [RPC0]Found new pool tx: <4d7edd42b8ae28468f1bf2c104d20ef3c0760e2e3bb8bba73f063acce3f1a7d8>
-2016-Oct-05 22:56:22.801804 [RPC0]Found new pool tx: <598fd0a0f2db810523461d55f9b892143798054a0c6ece572541abf5c4e120a7>
-2016-Oct-05 22:56:23.057471 [RPC0]Found new pool tx: <357451b54b4f1456b0726e574054b534559f97e2154db6c9edeeb27646b41b62>
-2016-Oct-05 22:56:23.572396 [RPC0]Found new pool tx: <fb378661ea544cb9d6a341f77f7b780a545c57639a9f9148e130c49ed6e65d23>
-2016-Oct-05 22:56:23.853444 [RPC0]Refresh done, blocks received: 0, balance: 1.960000000000, unlocked: 1.960000000000
-2016-Oct-05 22:56:23.856703 [RPC0]HTTP [127.0.0.1] POST /json_rpc
-2016-Oct-05 22:56:23.857416 [RPC0]/json_rpc[query_key] processed with 0/0/0ms
-2016-Oct-05 22:56:23.896526 [RPC0]HTTP [127.0.0.1] POST /json_rpc
-2016-Oct-05 22:56:23.896897 [RPC0]/json_rpc[incoming_transfers] processed with 0/0/0ms
-2016-Oct-05 22:56:23.936858 [RPC0]HTTP [127.0.0.1] POST /json_rpc
-2016-Oct-05 22:56:23.936934 [RPC0]/json_rpc[make_integrated_address] processed with 0/0/0ms
-2016-Oct-05 22:56:23.976358 [RPC0]HTTP [127.0.0.1] POST /json_rpc
-2016-Oct-05 22:56:24.366954 [RPC0]/json_rpc[store] processed with 0/391/0ms
-2016-Oct-05 22:56:24.404436 [RPC0]HTTP [127.0.0.1] POST /json_rpc
-2016-Oct-05 22:56:24.404517 [RPC0]/json_rpc[get_payments] processed with 0/0/0ms
-2016-Oct-05 22:56:24.444826 [RPC0]HTTP [127.0.0.1] POST /json_rpc
-2016-Oct-05 22:56:24.444946 [RPC0]/json_rpc[get_payments] processed with 0/0/0ms
-2016-Oct-05 22:56:24.484640 [RPC0]HTTP [127.0.0.1] POST /json_rpc
-2016-Oct-05 22:56:24.484758 [RPC0]/json_rpc[get_bulk_payments] processed with 0/0/0ms
-2016-Oct-05 22:56:24.524593 [RPC0]HTTP [127.0.0.1] POST /json_rpc
-2016-Oct-05 22:56:24.524700 [RPC0]/json_rpc[split_integrated_address] processed with 0/0/0ms
-2016-Oct-05 22:56:24.564382 [RPC0]HTTP [127.0.0.1] POST /json_rpc
-2016-Oct-05 22:56:25.134210 [RPC0]Using v2 rules
-2016-Oct-05 22:56:25.134257 [RPC0]Requested mixin 1 too low for hard fork 2, using 2
-2016-Oct-05 22:56:25.725993 [RPC0]Using v2 rules
-2016-Oct-05 22:56:26.408527 [RPC0]Not using v4 rules
-2016-Oct-05 22:56:27.016501 [RPC0]Not using v3 rules
-2016-Oct-05 22:56:27.016570 [RPC0]transfer: adding 0.001000000000, for a total of 0.001000000000
-2016-Oct-05 22:56:27.016594 [RPC0]Starting with 6 non-dust outputs and 0 dust outputs
-2016-Oct-05 22:56:27.016624 [RPC0]Picking output 12, amount 0.060000000000
-2016-Oct-05 22:56:27.016655 [RPC0]We can fully pay 48iZ4NPuYsTfZEiYYXzKbTeZotimqEsfUB2LgykPAksdHkz4daHT46ZFsnkwRygxu2KR3KmkhpLvNQMtszjC3TsVFMLSNwK for 0.001000000000
-2016-Oct-05 22:56:27.016677 [RPC0]Considering whether to create a tx now, 1 inputs, tx limit 74400
-2016-Oct-05 22:56:27.016694 [RPC0]Trying to create a tx now, with 1 destinations and 1 outputs
-2016-Oct-05 22:56:27.648000 [RPC0]Using v2 rules
-2016-Oct-05 22:56:27.648066 [RPC0]transfer: starting with fee 0.000000000000
-2016-Oct-05 22:56:27.648093 [RPC0]transfer: adding 0.001000000000, for a total of 0.001000000000
-2016-Oct-05 22:56:27.648118 [RPC0]wanted 0.001000000000, found 0.060000000000, fee 0.000000000000
-2016-Oct-05 22:56:27.648141 [RPC0]fake_outputs_count: 2
-2016-Oct-05 22:56:27.963152 [RPC0]base_requested_outputs_count: 5
-2016-Oct-05 22:56:27.963210 [RPC0]232193 outputs of size 0.060000000000
-2016-Oct-05 22:56:27.963250 [RPC0]asking for output 14231 for 0.060000000000
-2016-Oct-05 22:56:27.963269 [RPC0]asking for output 106731 for 0.060000000000
-2016-Oct-05 22:56:27.963286 [RPC0]asking for output 125343 for 0.060000000000
-2016-Oct-05 22:56:27.963303 [RPC0]asking for output 169465 for 0.060000000000
-2016-Oct-05 22:56:27.963319 [RPC0]asking for output 231867 for 0.060000000000
-2016-Oct-05 22:56:28.292726 [RPC0]Looking for 3 outputs of size 0.060000000000
-2016-Oct-05 22:56:28.292876 [RPC0]Index 0/5: idx 14231 (real 231867), unlocked 1, key <114244d2c1c9792893edcaed8cd534bce80610d0413a4e09ee9af692e02a175a>
-2016-Oct-05 22:56:28.292920 [RPC0]Index 3/5: idx 169465 (real 231867), unlocked 1, key <775dc9543353df31d60e086cd02f8dca7c93c24ef6d25954d23a6334a65f5850>
-2016-Oct-05 22:56:28.293771 [RPC0]amount=0.060000000000, real_output=2, real_output_in_tx_index=1, indexes: 14231 169465 231867 
-2016-Oct-05 22:56:28.298998 [RPC0]Made a 355 kB tx, with 0.059000000000 available for fee (0.010000000000 needed)
-2016-Oct-05 22:56:28.299034 [RPC0]We made a tx, adjusting fee and saving it
-2016-Oct-05 22:56:28.918590 [RPC0]Using v2 rules
-2016-Oct-05 22:56:28.918653 [RPC0]transfer: starting with fee 0.010000000000
-2016-Oct-05 22:56:28.918672 [RPC0]transfer: adding 0.001000000000, for a total of 0.011000000000
-2016-Oct-05 22:56:28.918690 [RPC0]wanted 0.011000000000, found 0.060000000000, fee 0.010000000000
-2016-Oct-05 22:56:28.918706 [RPC0]fake_outputs_count: 2
-2016-Oct-05 22:56:29.238634 [RPC0]base_requested_outputs_count: 5
-2016-Oct-05 22:56:29.238709 [RPC0]232193 outputs of size 0.060000000000
-2016-Oct-05 22:56:29.238766 [RPC0]asking for output 142364 for 0.060000000000
-2016-Oct-05 22:56:29.238791 [RPC0]asking for output 158121 for 0.060000000000
-2016-Oct-05 22:56:29.238815 [RPC0]asking for output 188722 for 0.060000000000
-2016-Oct-05 22:56:29.238838 [RPC0]asking for output 197860 for 0.060000000000
-2016-Oct-05 22:56:29.238879 [RPC0]asking for output 231867 for 0.060000000000
-2016-Oct-05 22:56:29.559174 [RPC0]Looking for 3 outputs of size 0.060000000000
-2016-Oct-05 22:56:29.559244 [RPC0]Index 2/5: idx 188722 (real 231867), unlocked 1, key <d5c9aded36b4f4b4c419e4bc77a0ee35067e8b3d196a9afd092d7e3667ea8559>
-2016-Oct-05 22:56:29.559279 [RPC0]Index 3/5: idx 197860 (real 231867), unlocked 1, key <3c6d490f672d29f3c57f0898b0520b162bfbffc704e929e638d9d9caf69c1433>
-2016-Oct-05 22:56:29.560111 [RPC0]amount=0.060000000000, real_output=2, real_output_in_tx_index=1, indexes: 188722 197860 231867 
-2016-Oct-05 22:56:29.565355 [RPC0]Made a final 1 kB tx, with 0.019000000000 fee  and 0.040000000000 change
-2016-Oct-05 22:56:29.565401 [RPC0]Done creating 1 transactions, 0.019000000000 total fee, 0.040000000000 total change
-2016-Oct-05 22:56:29.565426 [RPC0]  Transaction 1/1: 1 kB, sending 0.060000000000 in 1 outputs to 1 destination(s), including 0.019000000000 fee, 0.040000000000 change
-2016-Oct-05 22:56:30.138786 [RPC0]transaction <cee3a002f87129c311155d22db6a1111d44ba226ffe443f47f4b9465f612ae0a> generated ok and sent to daemon, key_images: [<3feac16c69f6a1c84be915183796309921080321856f91d0c8269dbf09b61320> ]
-2016-Oct-05 22:56:30.138870 [RPC0]Setting SPENT at 0: ki <3feac16c69f6a1c84be915183796309921080321856f91d0c8269dbf09b61320>, amount 0.060000000000
-2016-Oct-05 22:56:30.138908 [RPC0]Transaction successfully sent. <<cee3a002f87129c311155d22db6a1111d44ba226ffe443f47f4b9465f612ae0a>>
-Commission: 0.019000000000 (dust sent to dust addr: 0.000000000000)
-Balance: 1.940000000000
-Unlocked: 1.900000000000
-Please, wait for confirmation for your balance to be unlocked.
-2016-Oct-05 22:56:30.139093 [RPC0]/json_rpc[transfer] processed with 0/5575/0ms
-2016-Oct-05 22:56:30.177196 [RPC0]HTTP [127.0.0.1] POST /json_rpc
-2016-Oct-05 22:56:30.741905 [RPC0]Using v2 rules
-2016-Oct-05 22:56:31.358901 [RPC0]Not using v4 rules
-2016-Oct-05 22:56:32.269183 [RPC0]Not using v3 rules
-2016-Oct-05 22:56:32.269256 [RPC0]transfer: adding 0.001000000000, for a total of 0.001000000000
-2016-Oct-05 22:56:32.269285 [RPC0]Starting with 5 non-dust outputs and 0 dust outputs
-2016-Oct-05 22:56:32.269324 [RPC0]Picking output 7, amount 0.900000000000
-2016-Oct-05 22:56:32.269364 [RPC0]We can fully pay 48iZ4NPuYsTfZEiYYXzKbTeZotimqEsfUB2LgykPAksdHkz4daHT46ZFsnkwRygxu2KR3KmkhpLvNQMtszjC3TsVFMLSNwK for 0.001000000000
-2016-Oct-05 22:56:32.269390 [RPC0]Considering whether to create a tx now, 1 inputs, tx limit 74400
-2016-Oct-05 22:56:32.269412 [RPC0]Trying to create a tx now, with 1 destinations and 1 outputs
-2016-Oct-05 22:56:32.953469 [RPC0]Using v2 rules
-2016-Oct-05 22:56:32.953538 [RPC0]transfer: starting with fee 0.000000000000
-2016-Oct-05 22:56:32.953566 [RPC0]transfer: adding 0.001000000000, for a total of 0.001000000000
-2016-Oct-05 22:56:32.953591 [RPC0]wanted 0.001000000000, found 0.900000000000, fee 0.000000000000
-2016-Oct-05 22:56:32.953613 [RPC0]fake_outputs_count: 3
-2016-Oct-05 22:56:33.404973 [RPC0]base_requested_outputs_count: 7
-2016-Oct-05 22:56:33.405045 [RPC0]405218 outputs of size 0.900000000000
-2016-Oct-05 22:56:33.405114 [RPC0]asking for output 56458 for 0.900000000000
-2016-Oct-05 22:56:33.405139 [RPC0]asking for output 72506 for 0.900000000000
-2016-Oct-05 22:56:33.405163 [RPC0]asking for output 158957 for 0.900000000000
-2016-Oct-05 22:56:33.405187 [RPC0]asking for output 173054 for 0.900000000000
-2016-Oct-05 22:56:33.405211 [RPC0]asking for output 306289 for 0.900000000000
-2016-Oct-05 22:56:33.405234 [RPC0]asking for output 373325 for 0.900000000000
-2016-Oct-05 22:56:33.405258 [RPC0]asking for output 404117 for 0.900000000000
-2016-Oct-05 22:56:33.759859 [RPC0]Looking for 4 outputs of size 0.900000000000
-2016-Oct-05 22:56:33.759902 [RPC0]Index 6/7: idx 404117 (real 404117), unlocked 1, key <d38a173b367a1a029e39dcb8ff7b0e17c39f0724dbfc24f892f24ae130a680dc>
-2016-Oct-05 22:56:33.759917 [RPC0]Index 1/7: idx 72506 (real 404117), unlocked 1, key <562ce1f572877f2971762a753ccf4c652933879b299be458dc88251ba955b1c1>
-2016-Oct-05 22:56:33.759929 [RPC0]Index 5/7: idx 373325 (real 404117), unlocked 1, key <bac1dca04b19f1fe5f53f438c003020715ad2fe358980dff8e36babffb29745f>
-2016-Oct-05 22:56:33.759951 [RPC0]Index 0/7: idx 56458 (real 404117), unlocked 1, key <e89dc8c2624f60fb1b81d1b1f64aa5538df07e50178c11faddecb98a6dcaed9d>
-2016-Oct-05 22:56:33.760300 [RPC0]amount=0.900000000000, real_output=3, real_output_in_tx_index=2, indexes: 56458 72506 373325 404117 
-2016-Oct-05 22:56:33.764843 [RPC0]Made a 461 kB tx, with 0.899000000000 available for fee (0.010000000000 needed)
-2016-Oct-05 22:56:33.764883 [RPC0]We made a tx, adjusting fee and saving it
-2016-Oct-05 22:56:34.548946 [RPC0]Using v2 rules
-2016-Oct-05 22:56:34.549018 [RPC0]transfer: starting with fee 0.010000000000
-2016-Oct-05 22:56:34.549045 [RPC0]transfer: adding 0.001000000000, for a total of 0.011000000000
-2016-Oct-05 22:56:34.549070 [RPC0]wanted 0.011000000000, found 0.900000000000, fee 0.010000000000
-2016-Oct-05 22:56:34.549093 [RPC0]fake_outputs_count: 3
-2016-Oct-05 22:56:34.906355 [RPC0]base_requested_outputs_count: 7
-2016-Oct-05 22:56:34.906407 [RPC0]405218 outputs of size 0.900000000000
-2016-Oct-05 22:56:34.906439 [RPC0]asking for output 105169 for 0.900000000000
-2016-Oct-05 22:56:34.906450 [RPC0]asking for output 131116 for 0.900000000000
-2016-Oct-05 22:56:34.906459 [RPC0]asking for output 207254 for 0.900000000000
-2016-Oct-05 22:56:34.906469 [RPC0]asking for output 335707 for 0.900000000000
-2016-Oct-05 22:56:34.906479 [RPC0]asking for output 355669 for 0.900000000000
-2016-Oct-05 22:56:34.906489 [RPC0]asking for output 360716 for 0.900000000000
-2016-Oct-05 22:56:34.906498 [RPC0]asking for output 404117 for 0.900000000000
-2016-Oct-05 22:56:35.240136 [RPC0]Looking for 4 outputs of size 0.900000000000
-2016-Oct-05 22:56:35.240212 [RPC0]Index 4/7: idx 355669 (real 404117), unlocked 1, key <c6958a7bde346b17335bf132c1daf1fea731b56a3b394b5e38c1c47935e18083>
-2016-Oct-05 22:56:35.240247 [RPC0]Index 1/7: idx 131116 (real 404117), unlocked 1, key <82dc4427e1280890da4fab8f2d4ac3b66670ec6a2838a051f77a8f5d62c9d813>
-2016-Oct-05 22:56:35.240278 [RPC0]Index 5/7: idx 360716 (real 404117), unlocked 1, key <a38c19a6504f15dbcddb52a7d7856fbefda62f2729959484d763c8a9c9f80ea1>
-2016-Oct-05 22:56:35.241117 [RPC0]amount=0.900000000000, real_output=3, real_output_in_tx_index=2, indexes: 131116 355669 360716 404117 
-2016-Oct-05 22:56:35.248048 [RPC0]Made a final 1 kB tx, with 0.019000000000 fee  and 0.880000000000 change
-2016-Oct-05 22:56:35.248069 [RPC0]Done creating 1 transactions, 0.019000000000 total fee, 0.880000000000 total change
-2016-Oct-05 22:56:35.248080 [RPC0]  Transaction 1/1: 1 kB, sending 0.900000000000 in 1 outputs to 1 destination(s), including 0.019000000000 fee, 0.880000000000 change
-2016-Oct-05 22:56:35.648382 [RPC0]transaction <284445c0dcf2611672a6ee4d344069846c24674aec0e3f258e4247ac2f299e03> generated ok and sent to daemon, key_images: [<f7bf60047d6797eaca61382add9f5176700095339973d59674994f3518d58683> ]
-2016-Oct-05 22:56:35.648426 [RPC0]Setting SPENT at 0: ki <f7bf60047d6797eaca61382add9f5176700095339973d59674994f3518d58683>, amount 0.900000000000
-2016-Oct-05 22:56:35.648441 [RPC0]Transaction successfully sent. <<284445c0dcf2611672a6ee4d344069846c24674aec0e3f258e4247ac2f299e03>>
-Commission: 0.019000000000 (dust sent to dust addr: 0.000000000000)
-Balance: 1.920000000000
-Unlocked: 1.000000000000
-Please, wait for confirmation for your balance to be unlocked.
-2016-Oct-05 22:56:35.648480 [RPC0]/json_rpc[transfer_split] processed with 0/5471/0ms
-2016-Oct-05 22:56:35.688674 [RPC0]HTTP [127.0.0.1] POST /json_rpc
-2016-Oct-05 22:56:36.085578 [RPC0]/json_rpc[stop_wallet] processed with 0/397/0ms
-2016-Oct-05 22:56:36.124220 [SRV_MAIN]net_service loop stopped.
-2016-Oct-05 22:56:36.124249 [SRV_MAIN]Stopped wallet rpc server
-2016-Oct-05 22:56:36.124265 [SRV_MAIN]Storing wallet...
-2016-Oct-05 22:56:36.484274 [SRV_MAIN]Stored ok
+2016-Oct-07 15:12:26.085335 Monero 'Wolfram Warptangent' (v0.10.0.0-release)
+2016-Oct-07 15:12:26.085397 Setting log level = 2
+2016-Oct-07 15:12:26.085414 default_log: monero-wallet-cli.log
+2016-Oct-07 15:12:26.085457 Logging at log level 2 to /home/athan/dev/moneybit/hmonero/foo.log
+2016-Oct-07 15:12:26.085509 Loading wallet...
+2016-Oct-07 15:12:26.159975 Loaded wallet keys file, with public address: 48aPXdzu2Qt1KVVuPUunjeVTm6zf6Vg3kf38VhSCunCzQjWBzH3rpJjSwDgnE8ocJWYGeEqhEoBWqeoVwbyYs3se6cGdjTx
+2016-Oct-07 15:12:26.217164 Trying to decrypt cache data
+2016-Oct-07 15:12:28.742355 Block is already in blockchain: 0c10d5eb646391608813ce43a095545a82e4460187075ada7c1a7012b22f9e7f
+2016-Oct-07 15:12:28.744728 Processed block: <2c8895afa431f1fe3585712f82d01f3f1db7e3cba4108f71fbd662160693942d>, height 1152492, 3(1/2)ms
+2016-Oct-07 15:12:28.783387 Processed block: <c18e8ce22c47037cfae3655720f0c4246d3f43d81e74116bc3b1a208bf80f653>, height 1152493, 0(0/0)ms
+2016-Oct-07 15:12:28.795140 Setting UNSPENT: ki <a822326317ea2c8e1c48b150e8dac4420b8ba58469d3bece16f5489d04c15e79>, amount 0.060000000000
+2016-Oct-07 15:12:28.795205 Received money: 0.060000000000, with tx: <5a8bf849ca603816e40e7967de5621a828e169824c244647c3e3f359734c2720>
+2016-Oct-07 15:12:28.795236 Spent money: 0.070000000000, with tx: <5a8bf849ca603816e40e7967de5621a828e169824c244647c3e3f359734c2720>
+2016-Oct-07 15:12:28.795259 Setting SPENT at 1152494: ki <fc42a4b328831ee097c9e3e76ffdfe5efa1c78993a8d8e5157b51c7df44b6f75>, amount 0.070000000000
+2016-Oct-07 15:12:28.797713 Setting UNSPENT: ki <dd7d24f8e3f0eaf4ea700ed2f899f4d2608f421a15fb0242835078a359e801c6>, amount 0.090000000000
+2016-Oct-07 15:12:28.797755 Received money: 0.090000000000, with tx: <b4a84de6d53606c39ed536cc1107cb8cc10fd72e7bf2b8b720eaafff6a96241f>
+2016-Oct-07 15:12:28.797779 Setting UNSPENT: ki <1af98a7bbd071a3b6beba7cf83c97401a7d48f11cd267fd0344c6c35a54a3ffa>, amount 0.600000000000
+2016-Oct-07 15:12:28.797801 Received money: 0.600000000000, with tx: <b4a84de6d53606c39ed536cc1107cb8cc10fd72e7bf2b8b720eaafff6a96241f>
+2016-Oct-07 15:12:28.797823 Spent money: 0.700000000000, with tx: <b4a84de6d53606c39ed536cc1107cb8cc10fd72e7bf2b8b720eaafff6a96241f>
+2016-Oct-07 15:12:28.797848 Setting SPENT at 1152494: ki <5f938ef132474ad76138f1e27a239e96badb206fbc48cf87a0155f68b9b09fb0>, amount 0.700000000000
+2016-Oct-07 15:12:28.797885 Processed block: <b9a7c50dcc03f62235a9793a88210d5cfc28c54248d395800e536a746a1982b8>, height 1152494, 15(1/14)ms
+2016-Oct-07 15:12:28.802384 Processed block: <4be7618d77b1e1cf147ddccf96c8d8f5b8f15e07d01e5dea0f5d70ee55841158>, height 1152495, 4(0/4)ms
+2016-Oct-07 15:12:28.812647 Processed block: <a2cc183869155af6aa568a57cde2afb7b14ccb58272077c8809e22c0577b6b23>, height 1152496, 11(1/10)ms
+2016-Oct-07 15:12:28.822797 Processed block: <1078fc685d393653fe5f0eb0a39b10c9e26a8fc5cd7ba104d8ac42b016909a21>, height 1152497, 10(0/10)ms
+2016-Oct-07 15:12:28.828811 Processed block: <6eea2f143ed9094ed38903c113cf404183b48816b8f682b9651c659cf7d2f6a2>, height 1152498, 6(0/6)ms
+2016-Oct-07 15:12:28.832763 Processed block: <6c0d68cc27514e3bb120e7ab82b7bcb8da7a4453bd1c006e2537c8bb06aef240>, height 1152499, 4(1/3)ms
+2016-Oct-07 15:12:28.833248 Processed block: <fedb6d0636ea9f10bba5ee87b3ea1352d7a8db087feaf08cecee974d57817cd0>, height 1152500, 0(0/0)ms
+2016-Oct-07 15:12:28.855058 Processed block: <1eeaaf53ec6dd50abba7d1f81a8471e6f18ec4dea2c50dbd88c974be28f39077>, height 1152501, 22(1/21)ms
+2016-Oct-07 15:12:28.860469 Processed block: <3bf7d1f250f190ccea28be86e8232ff6a43dfce2315a1139d39367e5a7790287>, height 1152502, 5(1/4)ms
+2016-Oct-07 15:12:28.861066 Processed block: <e1f867f53464f26ae9081703af9083b6a2324e9bca79fcd8bba0c92b8d8d48c0>, height 1152503, 1(1/0)ms
+2016-Oct-07 15:12:28.861618 Processed block: <20042ce64bf3befd25ff9d0847a33ce032eddc98890031059d148f999c1ccc8e>, height 1152504, 1(1/0)ms
+2016-Oct-07 15:12:28.862129 Processed block: <9d73b76491ab04dc131b9fb1fe1cbae3ae3cf74bb4e07eca38304ca828c4ba66>, height 1152505, 0(0/0)ms
+2016-Oct-07 15:12:28.879937 Processed block: <9f717926b8d798d3bac6b97b39d0bec803070744e34d0f2c9bef09d6c704371e>, height 1152506, 18(1/17)ms
+2016-Oct-07 15:12:28.888441 Processed block: <59d38dac5503e9ca04badcb3436836605f3c102d5176bb718052854ce827ab83>, height 1152507, 8(1/7)ms
+2016-Oct-07 15:12:28.897738 Processed block: <f8b8de4e3da56da87f48934f0cc726e6768f0f05ca523299522223ca1cc2beb4>, height 1152508, 10(1/9)ms
+2016-Oct-07 15:12:28.913465 Processed block: <535a6251ab81f1e88863112154e4bc6bec0ff501516d1f6e496924f39e914c5a>, height 1152509, 15(0/15)ms
+2016-Oct-07 15:12:28.918424 Processed block: <852c755809e51cbfb1d267021565f19737efa93546906f3741a5c699eab33a96>, height 1152510, 5(1/4)ms
+2016-Oct-07 15:12:28.919257 Processed block: <cfb13b43e464c2ee2fbebe80ebd79a7caea81b0213b8188343422d97c8b80eef>, height 1152511, 1(1/0)ms
+2016-Oct-07 15:12:28.922057 Processed block: <6b17bc4a6073ebb13255f194d8e4d3226185ee0734a063068109926e4b3032ca>, height 1152512, 3(1/2)ms
+2016-Oct-07 15:12:28.922814 Processed block: <65002abd8f81bd2bc13e626644f32bce8d060677d5a6389d6589b052c8085d84>, height 1152513, 1(1/0)ms
+2016-Oct-07 15:12:29.121805 Block is already in blockchain: cfb13b43e464c2ee2fbebe80ebd79a7caea81b0213b8188343422d97c8b80eef
+2016-Oct-07 15:12:29.121865 Block is already in blockchain: 6b17bc4a6073ebb13255f194d8e4d3226185ee0734a063068109926e4b3032ca
+2016-Oct-07 15:12:29.121889 Block is already in blockchain: 65002abd8f81bd2bc13e626644f32bce8d060677d5a6389d6589b052c8085d84
+2016-Oct-07 15:12:29.128407 Processed block: <c981306a325ff777d91deca7241543e420cfc3048500a4fe9c2cf51d49ae7802>, height 1152514, 6(0/6)ms
+2016-Oct-07 15:12:29.435024 Block is already in blockchain: 6b17bc4a6073ebb13255f194d8e4d3226185ee0734a063068109926e4b3032ca
+2016-Oct-07 15:12:29.435113 Block is already in blockchain: 65002abd8f81bd2bc13e626644f32bce8d060677d5a6389d6589b052c8085d84
+2016-Oct-07 15:12:29.435151 Block is already in blockchain: c981306a325ff777d91deca7241543e420cfc3048500a4fe9c2cf51d49ae7802
+2016-Oct-07 15:12:30.109516 Refresh done, blocks received: 23, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:12:30.109615 Loaded ok
+2016-Oct-07 15:12:30.109888 Binding on 127.0.0.1:18082
+2016-Oct-07 15:12:30.110126 Starting wallet rpc server
+2016-Oct-07 15:12:30.110218 Run net_service loop( 1 threads)...
+2016-Oct-07 15:12:50.529791 [RPC0]Block is already in blockchain: c981306a325ff777d91deca7241543e420cfc3048500a4fe9c2cf51d49ae7802
+2016-Oct-07 15:12:52.302864 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:13:18.858892 [RPC0]Block is already in blockchain: c981306a325ff777d91deca7241543e420cfc3048500a4fe9c2cf51d49ae7802
+2016-Oct-07 15:13:21.341571 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:13:42.191652 [RPC0]Block is already in blockchain: c981306a325ff777d91deca7241543e420cfc3048500a4fe9c2cf51d49ae7802
+2016-Oct-07 15:13:42.192374 [RPC0]Processed block: <f649a3ab2bedf00971b97f73fe44f3b5a495433ca2bb47a31ad0c0ef39afc175>, height 1152515, 0(0/0)ms
+2016-Oct-07 15:13:43.285367 [RPC0]Block is already in blockchain: c981306a325ff777d91deca7241543e420cfc3048500a4fe9c2cf51d49ae7802
+2016-Oct-07 15:13:43.285433 [RPC0]Block is already in blockchain: f649a3ab2bedf00971b97f73fe44f3b5a495433ca2bb47a31ad0c0ef39afc175
+2016-Oct-07 15:13:45.591698 [RPC0]Found new pool tx: <773dbd6f65ee29c850f7ea78b70e4c94ae8e32711c6400d732195dfc30ef116a>
+2016-Oct-07 15:13:46.018534 [RPC0]Refresh done, blocks received: 1, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:14:07.172170 [RPC0]Block is already in blockchain: f649a3ab2bedf00971b97f73fe44f3b5a495433ca2bb47a31ad0c0ef39afc175
+2016-Oct-07 15:14:09.915769 [RPC0]Found new pool tx: <773dbd6f65ee29c850f7ea78b70e4c94ae8e32711c6400d732195dfc30ef116a>
+2016-Oct-07 15:14:10.154735 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:14:34.805409 [RPC0]Block is already in blockchain: f649a3ab2bedf00971b97f73fe44f3b5a495433ca2bb47a31ad0c0ef39afc175
+2016-Oct-07 15:14:39.339362 [RPC0]Found new pool tx: <773dbd6f65ee29c850f7ea78b70e4c94ae8e32711c6400d732195dfc30ef116a>
+2016-Oct-07 15:14:39.730035 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:15:00.045994 [RPC0]Block is already in blockchain: f649a3ab2bedf00971b97f73fe44f3b5a495433ca2bb47a31ad0c0ef39afc175
+2016-Oct-07 15:15:05.129077 [RPC0]Found new pool tx: <b0852402412a479d108255c75ec126e09dbf6fb558aec67e6914888f02670318>
+2016-Oct-07 15:15:09.912912 [RPC0]Found new pool tx: <773dbd6f65ee29c850f7ea78b70e4c94ae8e32711c6400d732195dfc30ef116a>
+2016-Oct-07 15:15:10.124841 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:15:31.907331 [RPC0]Block is already in blockchain: f649a3ab2bedf00971b97f73fe44f3b5a495433ca2bb47a31ad0c0ef39afc175
+2016-Oct-07 15:15:37.311809 [RPC0]Found new pool tx: <3ace2e2890227b8dd5aacd08d1763124cb6b624de071d83469ed0aed68162ae7>
+2016-Oct-07 15:15:38.828051 [RPC0]Found new pool tx: <b0852402412a479d108255c75ec126e09dbf6fb558aec67e6914888f02670318>
+2016-Oct-07 15:15:42.426717 [RPC0]Found new pool tx: <773dbd6f65ee29c850f7ea78b70e4c94ae8e32711c6400d732195dfc30ef116a>
+2016-Oct-07 15:15:43.349528 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:16:04.713986 [RPC0]Block is already in blockchain: f649a3ab2bedf00971b97f73fe44f3b5a495433ca2bb47a31ad0c0ef39afc175
+2016-Oct-07 15:16:08.872018 [RPC0]Found new pool tx: <3ace2e2890227b8dd5aacd08d1763124cb6b624de071d83469ed0aed68162ae7>
+2016-Oct-07 15:16:09.715670 [RPC0]Found new pool tx: <b0852402412a479d108255c75ec126e09dbf6fb558aec67e6914888f02670318>
+2016-Oct-07 15:16:10.423164 [RPC0]Found new pool tx: <773dbd6f65ee29c850f7ea78b70e4c94ae8e32711c6400d732195dfc30ef116a>
+2016-Oct-07 15:16:11.538284 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:16:34.193513 [RPC0]Block is already in blockchain: f649a3ab2bedf00971b97f73fe44f3b5a495433ca2bb47a31ad0c0ef39afc175
+2016-Oct-07 15:16:40.335084 [RPC0]Found new pool tx: <3ace2e2890227b8dd5aacd08d1763124cb6b624de071d83469ed0aed68162ae7>
+2016-Oct-07 15:16:42.233706 [RPC0]Found new pool tx: <b0852402412a479d108255c75ec126e09dbf6fb558aec67e6914888f02670318>
+2016-Oct-07 15:16:50.263639 [RPC0]Found new pool tx: <773dbd6f65ee29c850f7ea78b70e4c94ae8e32711c6400d732195dfc30ef116a>
+2016-Oct-07 15:16:51.937923 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:17:15.527255 [RPC0]Block is already in blockchain: f649a3ab2bedf00971b97f73fe44f3b5a495433ca2bb47a31ad0c0ef39afc175
+2016-Oct-07 15:17:17.864261 [RPC0]Found new pool tx: <7fc44649303bfb0df055c66bce12c6c25e13018ba0b05336528de6d8468e1980>
+2016-Oct-07 15:17:18.131964 [RPC0]Found new pool tx: <3ace2e2890227b8dd5aacd08d1763124cb6b624de071d83469ed0aed68162ae7>
+2016-Oct-07 15:17:19.018611 [RPC0]Found new pool tx: <b0852402412a479d108255c75ec126e09dbf6fb558aec67e6914888f02670318>
+2016-Oct-07 15:17:21.084311 [RPC0]Found new pool tx: <773dbd6f65ee29c850f7ea78b70e4c94ae8e32711c6400d732195dfc30ef116a>
+2016-Oct-07 15:17:21.996091 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:17:42.362801 [RPC0]Block is already in blockchain: f649a3ab2bedf00971b97f73fe44f3b5a495433ca2bb47a31ad0c0ef39afc175
+2016-Oct-07 15:17:47.144565 [RPC0]Found new pool tx: <7fc44649303bfb0df055c66bce12c6c25e13018ba0b05336528de6d8468e1980>
+2016-Oct-07 15:17:50.211680 [RPC0]Found new pool tx: <3ace2e2890227b8dd5aacd08d1763124cb6b624de071d83469ed0aed68162ae7>
+2016-Oct-07 15:17:55.979845 [RPC0]Found new pool tx: <b0852402412a479d108255c75ec126e09dbf6fb558aec67e6914888f02670318>
+2016-Oct-07 15:18:00.645799 [RPC0]Found new pool tx: <773dbd6f65ee29c850f7ea78b70e4c94ae8e32711c6400d732195dfc30ef116a>
+2016-Oct-07 15:18:03.537584 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:18:24.633473 [RPC0]Block is already in blockchain: f649a3ab2bedf00971b97f73fe44f3b5a495433ca2bb47a31ad0c0ef39afc175
+2016-Oct-07 15:18:27.760320 [RPC0]Found new pool tx: <585e072293b52edf3c4648417ce5c035eb1a3001473930431b754d3c21a6ca8a>
+2016-Oct-07 15:18:28.499906 [RPC0]Found new pool tx: <b683c3282fc48e90da31d1fe98f588afc6eec5675dd41b49676ea01870a07640>
+2016-Oct-07 15:18:29.364615 [RPC0]Found new pool tx: <7fc44649303bfb0df055c66bce12c6c25e13018ba0b05336528de6d8468e1980>
+2016-Oct-07 15:18:30.016083 [RPC0]Found new pool tx: <3ace2e2890227b8dd5aacd08d1763124cb6b624de071d83469ed0aed68162ae7>
+2016-Oct-07 15:18:30.919113 [RPC0]Found new pool tx: <b0852402412a479d108255c75ec126e09dbf6fb558aec67e6914888f02670318>
+2016-Oct-07 15:18:32.148105 [RPC0]Found new pool tx: <773dbd6f65ee29c850f7ea78b70e4c94ae8e32711c6400d732195dfc30ef116a>
+2016-Oct-07 15:18:33.318015 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:18:55.368577 [RPC0]Block is already in blockchain: f649a3ab2bedf00971b97f73fe44f3b5a495433ca2bb47a31ad0c0ef39afc175
+2016-Oct-07 15:18:55.369317 [RPC0]Processed block: <b2dde9a3aa905d8fb856f0e438409e6a3e0e7ccb22e0a247211b01e066da54e3>, height 1152516, 0(0/0)ms
+2016-Oct-07 15:18:57.451190 [RPC0]Block is already in blockchain: f649a3ab2bedf00971b97f73fe44f3b5a495433ca2bb47a31ad0c0ef39afc175
+2016-Oct-07 15:18:57.451392 [RPC0]Block is already in blockchain: b2dde9a3aa905d8fb856f0e438409e6a3e0e7ccb22e0a247211b01e066da54e3
+2016-Oct-07 15:19:02.684544 [RPC0]Found new pool tx: <d681ef9b0596c857c8612b1b457410156efea27bf5252cfb378d94d03095f751>
+2016-Oct-07 15:19:04.717707 [RPC0]Found new pool tx: <585e072293b52edf3c4648417ce5c035eb1a3001473930431b754d3c21a6ca8a>
+2016-Oct-07 15:19:07.601378 [RPC0]Found new pool tx: <b683c3282fc48e90da31d1fe98f588afc6eec5675dd41b49676ea01870a07640>
+2016-Oct-07 15:19:08.863408 [RPC0]Found new pool tx: <7fc44649303bfb0df055c66bce12c6c25e13018ba0b05336528de6d8468e1980>
+2016-Oct-07 15:19:09.944998 [RPC0]Found new pool tx: <3ace2e2890227b8dd5aacd08d1763124cb6b624de071d83469ed0aed68162ae7>
+2016-Oct-07 15:19:13.171338 [RPC0]Found new pool tx: <b0852402412a479d108255c75ec126e09dbf6fb558aec67e6914888f02670318>
+2016-Oct-07 15:19:19.619334 [RPC0]Found new pool tx: <773dbd6f65ee29c850f7ea78b70e4c94ae8e32711c6400d732195dfc30ef116a>
+2016-Oct-07 15:19:23.213853 [RPC0]Refresh done, blocks received: 1, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:19:44.906132 [RPC0]Block is already in blockchain: b2dde9a3aa905d8fb856f0e438409e6a3e0e7ccb22e0a247211b01e066da54e3
+2016-Oct-07 15:19:47.183725 [RPC0]Found new pool tx: <a3ae3a759352d52fd949c8c21023cbb27b5242fd34ec1b27a024b0d8bcc6076a>
+2016-Oct-07 15:19:48.432371 [RPC0]Found new pool tx: <d681ef9b0596c857c8612b1b457410156efea27bf5252cfb378d94d03095f751>
+2016-Oct-07 15:19:50.252386 [RPC0]Found new pool tx: <585e072293b52edf3c4648417ce5c035eb1a3001473930431b754d3c21a6ca8a>
+2016-Oct-07 15:19:54.220060 [RPC0]Found new pool tx: <b683c3282fc48e90da31d1fe98f588afc6eec5675dd41b49676ea01870a07640>
+2016-Oct-07 15:19:56.220341 [RPC0]Found new pool tx: <7fc44649303bfb0df055c66bce12c6c25e13018ba0b05336528de6d8468e1980>
+2016-Oct-07 15:19:57.081098 [RPC0]Found new pool tx: <3ace2e2890227b8dd5aacd08d1763124cb6b624de071d83469ed0aed68162ae7>
+2016-Oct-07 15:19:57.820591 [RPC0]Found new pool tx: <b0852402412a479d108255c75ec126e09dbf6fb558aec67e6914888f02670318>
+2016-Oct-07 15:19:59.786090 [RPC0]Found new pool tx: <773dbd6f65ee29c850f7ea78b70e4c94ae8e32711c6400d732195dfc30ef116a>
+2016-Oct-07 15:20:00.523391 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:20:21.128163 [RPC0]Block is already in blockchain: b2dde9a3aa905d8fb856f0e438409e6a3e0e7ccb22e0a247211b01e066da54e3
+2016-Oct-07 15:20:24.080980 [RPC0]Found new pool tx: <a3ae3a759352d52fd949c8c21023cbb27b5242fd34ec1b27a024b0d8bcc6076a>
+2016-Oct-07 15:20:25.815434 [RPC0]Found new pool tx: <d681ef9b0596c857c8612b1b457410156efea27bf5252cfb378d94d03095f751>
+2016-Oct-07 15:20:27.209268 [RPC0]Found new pool tx: <585e072293b52edf3c4648417ce5c035eb1a3001473930431b754d3c21a6ca8a>
+2016-Oct-07 15:20:28.253078 [RPC0]Found new pool tx: <b683c3282fc48e90da31d1fe98f588afc6eec5675dd41b49676ea01870a07640>
+2016-Oct-07 15:20:29.278312 [RPC0]Found new pool tx: <7fc44649303bfb0df055c66bce12c6c25e13018ba0b05336528de6d8468e1980>
+2016-Oct-07 15:20:31.020393 [RPC0]Found new pool tx: <3ace2e2890227b8dd5aacd08d1763124cb6b624de071d83469ed0aed68162ae7>
+2016-Oct-07 15:20:32.207945 [RPC0]Found new pool tx: <b0852402412a479d108255c75ec126e09dbf6fb558aec67e6914888f02670318>
+2016-Oct-07 15:20:34.195074 [RPC0]Found new pool tx: <773dbd6f65ee29c850f7ea78b70e4c94ae8e32711c6400d732195dfc30ef116a>
+2016-Oct-07 15:20:35.584276 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:20:56.241781 [RPC0]Block is already in blockchain: b2dde9a3aa905d8fb856f0e438409e6a3e0e7ccb22e0a247211b01e066da54e3
+2016-Oct-07 15:20:56.247321 [RPC0]Processed block: <d082584c170e3110e72794a6e478244b3a38644742f29944b3e64c9217638773>, height 1152517, 5(0/5)ms
+2016-Oct-07 15:20:57.370010 [RPC0]Block is already in blockchain: b2dde9a3aa905d8fb856f0e438409e6a3e0e7ccb22e0a247211b01e066da54e3
+2016-Oct-07 15:20:57.370200 [RPC0]Block is already in blockchain: d082584c170e3110e72794a6e478244b3a38644742f29944b3e64c9217638773
+2016-Oct-07 15:20:59.794147 [RPC0]Found new pool tx: <a3ae3a759352d52fd949c8c21023cbb27b5242fd34ec1b27a024b0d8bcc6076a>
+2016-Oct-07 15:21:00.491637 [RPC0]Found new pool tx: <d681ef9b0596c857c8612b1b457410156efea27bf5252cfb378d94d03095f751>
+2016-Oct-07 15:21:01.061302 [RPC0]Found new pool tx: <3ace2e2890227b8dd5aacd08d1763124cb6b624de071d83469ed0aed68162ae7>
+2016-Oct-07 15:21:01.532837 [RPC0]Found new pool tx: <b0852402412a479d108255c75ec126e09dbf6fb558aec67e6914888f02670318>
+2016-Oct-07 15:21:02.494774 [RPC0]Found new pool tx: <773dbd6f65ee29c850f7ea78b70e4c94ae8e32711c6400d732195dfc30ef116a>
+2016-Oct-07 15:21:03.202990 [RPC0]Refresh done, blocks received: 1, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:21:24.506148 [RPC0]Block is already in blockchain: d082584c170e3110e72794a6e478244b3a38644742f29944b3e64c9217638773
+2016-Oct-07 15:21:28.067722 [RPC0]Found new pool tx: <a3ae3a759352d52fd949c8c21023cbb27b5242fd34ec1b27a024b0d8bcc6076a>
+2016-Oct-07 15:21:28.912384 [RPC0]Found new pool tx: <d681ef9b0596c857c8612b1b457410156efea27bf5252cfb378d94d03095f751>
+2016-Oct-07 15:21:29.675278 [RPC0]Found new pool tx: <3ace2e2890227b8dd5aacd08d1763124cb6b624de071d83469ed0aed68162ae7>
+2016-Oct-07 15:21:31.141688 [RPC0]Found new pool tx: <b0852402412a479d108255c75ec126e09dbf6fb558aec67e6914888f02670318>
+2016-Oct-07 15:21:32.384405 [RPC0]Found new pool tx: <773dbd6f65ee29c850f7ea78b70e4c94ae8e32711c6400d732195dfc30ef116a>
+2016-Oct-07 15:21:33.079994 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:21:54.430100 [RPC0]Block is already in blockchain: d082584c170e3110e72794a6e478244b3a38644742f29944b3e64c9217638773
+2016-Oct-07 15:21:54.443146 [RPC0]Processed block: <6f57882b854662641fa17dd11ad714530719a493625a257c30b7adb72d37c3c5>, height 1152518, 13(1/12)ms
+2016-Oct-07 15:21:55.688796 [RPC0]Block is already in blockchain: d082584c170e3110e72794a6e478244b3a38644742f29944b3e64c9217638773
+2016-Oct-07 15:21:55.688860 [RPC0]Block is already in blockchain: 6f57882b854662641fa17dd11ad714530719a493625a257c30b7adb72d37c3c5
+2016-Oct-07 15:21:58.301425 [RPC0]Refresh done, blocks received: 1, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:22:19.082476 [RPC0]Block is already in blockchain: 6f57882b854662641fa17dd11ad714530719a493625a257c30b7adb72d37c3c5
+2016-Oct-07 15:22:20.709178 [RPC0]Found new pool tx: <f48f0e90c2897d667c7981886de78aa5610b10cf593e38c108c8d0c8745cac10>
+2016-Oct-07 15:22:21.280599 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:22:42.250075 [RPC0]Block is already in blockchain: 6f57882b854662641fa17dd11ad714530719a493625a257c30b7adb72d37c3c5
+2016-Oct-07 15:22:43.621492 [RPC0]Found new pool tx: <93509cd726c2b57fdb500081fe0f83804c1f6263b1637b19c478eeab46ae02df>
+2016-Oct-07 15:22:44.307106 [RPC0]Found new pool tx: <f48f0e90c2897d667c7981886de78aa5610b10cf593e38c108c8d0c8745cac10>
+2016-Oct-07 15:22:45.325437 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:23:06.961950 [RPC0]Block is already in blockchain: 6f57882b854662641fa17dd11ad714530719a493625a257c30b7adb72d37c3c5
+2016-Oct-07 15:23:11.990259 [RPC0]Found new pool tx: <93509cd726c2b57fdb500081fe0f83804c1f6263b1637b19c478eeab46ae02df>
+2016-Oct-07 15:23:15.056070 [RPC0]Found new pool tx: <f48f0e90c2897d667c7981886de78aa5610b10cf593e38c108c8d0c8745cac10>
+2016-Oct-07 15:23:17.776019 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:23:39.788249 [RPC0]Block is already in blockchain: 6f57882b854662641fa17dd11ad714530719a493625a257c30b7adb72d37c3c5
+2016-Oct-07 15:23:43.498982 [RPC0]Found new pool tx: <93509cd726c2b57fdb500081fe0f83804c1f6263b1637b19c478eeab46ae02df>
+2016-Oct-07 15:23:45.335248 [RPC0]Found new pool tx: <f48f0e90c2897d667c7981886de78aa5610b10cf593e38c108c8d0c8745cac10>
+2016-Oct-07 15:23:47.124008 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:24:09.899748 [RPC0]Block is already in blockchain: 6f57882b854662641fa17dd11ad714530719a493625a257c30b7adb72d37c3c5
+2016-Oct-07 15:24:12.279394 [RPC0]Found new pool tx: <93509cd726c2b57fdb500081fe0f83804c1f6263b1637b19c478eeab46ae02df>
+2016-Oct-07 15:24:13.725962 [RPC0]Found new pool tx: <f48f0e90c2897d667c7981886de78aa5610b10cf593e38c108c8d0c8745cac10>
+2016-Oct-07 15:24:14.756033 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:24:35.740635 [RPC0]Block is already in blockchain: 6f57882b854662641fa17dd11ad714530719a493625a257c30b7adb72d37c3c5
+2016-Oct-07 15:24:37.470725 [RPC0]Found new pool tx: <93509cd726c2b57fdb500081fe0f83804c1f6263b1637b19c478eeab46ae02df>
+2016-Oct-07 15:24:38.521989 [RPC0]Found new pool tx: <f48f0e90c2897d667c7981886de78aa5610b10cf593e38c108c8d0c8745cac10>
+2016-Oct-07 15:24:39.423871 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:25:02.030173 [RPC0]Block is already in blockchain: 6f57882b854662641fa17dd11ad714530719a493625a257c30b7adb72d37c3c5
+2016-Oct-07 15:25:08.399990 [RPC0]Found new pool tx: <52c0399b066dc213b32ef392ffdb4cb969474d102f2432b30a91aee2d544a54c>
+2016-Oct-07 15:25:09.898389 [RPC0]Found new pool tx: <93509cd726c2b57fdb500081fe0f83804c1f6263b1637b19c478eeab46ae02df>
+2016-Oct-07 15:25:11.796505 [RPC0]Found new pool tx: <f48f0e90c2897d667c7981886de78aa5610b10cf593e38c108c8d0c8745cac10>
+2016-Oct-07 15:25:13.173736 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:25:36.089669 [RPC0]Block is already in blockchain: 6f57882b854662641fa17dd11ad714530719a493625a257c30b7adb72d37c3c5
+2016-Oct-07 15:25:40.077291 [RPC0]Found new pool tx: <52c0399b066dc213b32ef392ffdb4cb969474d102f2432b30a91aee2d544a54c>
+2016-Oct-07 15:25:45.162642 [RPC0]Found new pool tx: <93509cd726c2b57fdb500081fe0f83804c1f6263b1637b19c478eeab46ae02df>
+2016-Oct-07 15:25:47.130265 [RPC0]Found new pool tx: <f48f0e90c2897d667c7981886de78aa5610b10cf593e38c108c8d0c8745cac10>
+2016-Oct-07 15:25:48.802031 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:26:11.425248 [RPC0]Block is already in blockchain: 6f57882b854662641fa17dd11ad714530719a493625a257c30b7adb72d37c3c5
+2016-Oct-07 15:26:11.425980 [RPC0]Processed block: <17d5a266b15f474e0a0b9590272f4a51645c773d209aecf3597cba0fc0418c44>, height 1152519, 1(1/0)ms
+2016-Oct-07 15:26:12.946000 [RPC0]Block is already in blockchain: 6f57882b854662641fa17dd11ad714530719a493625a257c30b7adb72d37c3c5
+2016-Oct-07 15:26:12.946061 [RPC0]Block is already in blockchain: 17d5a266b15f474e0a0b9590272f4a51645c773d209aecf3597cba0fc0418c44
+2016-Oct-07 15:26:18.770399 [RPC0]Found new pool tx: <52c0399b066dc213b32ef392ffdb4cb969474d102f2432b30a91aee2d544a54c>
+2016-Oct-07 15:26:21.130004 [RPC0]Found new pool tx: <93509cd726c2b57fdb500081fe0f83804c1f6263b1637b19c478eeab46ae02df>
+2016-Oct-07 15:26:29.890830 [RPC0]Found new pool tx: <f48f0e90c2897d667c7981886de78aa5610b10cf593e38c108c8d0c8745cac10>
+2016-Oct-07 15:26:31.453651 [RPC0]Refresh done, blocks received: 1, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:26:52.476243 [RPC0]Block is already in blockchain: 17d5a266b15f474e0a0b9590272f4a51645c773d209aecf3597cba0fc0418c44
+2016-Oct-07 15:26:54.373533 [RPC0]Found new pool tx: <52c0399b066dc213b32ef392ffdb4cb969474d102f2432b30a91aee2d544a54c>
+2016-Oct-07 15:26:55.676683 [RPC0]Found new pool tx: <93509cd726c2b57fdb500081fe0f83804c1f6263b1637b19c478eeab46ae02df>
+2016-Oct-07 15:26:56.808201 [RPC0]Found new pool tx: <f48f0e90c2897d667c7981886de78aa5610b10cf593e38c108c8d0c8745cac10>
+2016-Oct-07 15:26:58.006481 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:27:18.862151 [RPC0]Block is already in blockchain: 17d5a266b15f474e0a0b9590272f4a51645c773d209aecf3597cba0fc0418c44
+2016-Oct-07 15:27:20.797498 [RPC0]Found new pool tx: <7ddffa1d80549e2ad52f15dfa338a4e57ff3c419b2d7cd97ceada8be8d1e6971>
+2016-Oct-07 15:27:21.777846 [RPC0]Found new pool tx: <52c0399b066dc213b32ef392ffdb4cb969474d102f2432b30a91aee2d544a54c>
+2016-Oct-07 15:27:22.472449 [RPC0]Found new pool tx: <93509cd726c2b57fdb500081fe0f83804c1f6263b1637b19c478eeab46ae02df>
+2016-Oct-07 15:27:23.746413 [RPC0]Found new pool tx: <f48f0e90c2897d667c7981886de78aa5610b10cf593e38c108c8d0c8745cac10>
+2016-Oct-07 15:27:25.132253 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:27:47.284777 [RPC0]Block is already in blockchain: 17d5a266b15f474e0a0b9590272f4a51645c773d209aecf3597cba0fc0418c44
+2016-Oct-07 15:27:51.433719 [RPC0]Found new pool tx: <e0614202c1858cf46f130e1adc727c3d90bddd1f26c04c19cf938ea471ffca43>
+2016-Oct-07 15:27:52.728835 [RPC0]Found new pool tx: <7ddffa1d80549e2ad52f15dfa338a4e57ff3c419b2d7cd97ceada8be8d1e6971>
+2016-Oct-07 15:27:53.932035 [RPC0]Found new pool tx: <52c0399b066dc213b32ef392ffdb4cb969474d102f2432b30a91aee2d544a54c>
+2016-Oct-07 15:27:55.274919 [RPC0]Found new pool tx: <93509cd726c2b57fdb500081fe0f83804c1f6263b1637b19c478eeab46ae02df>
+2016-Oct-07 15:27:56.814157 [RPC0]Found new pool tx: <f48f0e90c2897d667c7981886de78aa5610b10cf593e38c108c8d0c8745cac10>
+2016-Oct-07 15:27:59.101067 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:28:20.229495 [RPC0]Block is already in blockchain: 17d5a266b15f474e0a0b9590272f4a51645c773d209aecf3597cba0fc0418c44
+2016-Oct-07 15:28:26.127536 [RPC0]Found new pool tx: <95b19da0ad35b581e7fd9820e2a46c9d1070be78cd436ce82b5be9784a9b2dcc>
+2016-Oct-07 15:28:28.412321 [RPC0]Found new pool tx: <e0614202c1858cf46f130e1adc727c3d90bddd1f26c04c19cf938ea471ffca43>
+2016-Oct-07 15:28:30.748769 [RPC0]Found new pool tx: <7ddffa1d80549e2ad52f15dfa338a4e57ff3c419b2d7cd97ceada8be8d1e6971>
+2016-Oct-07 15:28:33.825519 [RPC0]Found new pool tx: <52c0399b066dc213b32ef392ffdb4cb969474d102f2432b30a91aee2d544a54c>
+2016-Oct-07 15:28:36.360085 [RPC0]Found new pool tx: <93509cd726c2b57fdb500081fe0f83804c1f6263b1637b19c478eeab46ae02df>
+2016-Oct-07 15:28:38.113642 [RPC0]Found new pool tx: <f48f0e90c2897d667c7981886de78aa5610b10cf593e38c108c8d0c8745cac10>
+2016-Oct-07 15:28:39.473669 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:29:01.692216 [RPC0]Block is already in blockchain: 17d5a266b15f474e0a0b9590272f4a51645c773d209aecf3597cba0fc0418c44
+2016-Oct-07 15:29:01.704932 [RPC0]Processed block: <26d3d6f893cb15218e4f750428791850df7f8458980dc94086de6de52069b6a3>, height 1152520, 13(1/12)ms
+2016-Oct-07 15:29:03.206327 [RPC0]Block is already in blockchain: 17d5a266b15f474e0a0b9590272f4a51645c773d209aecf3597cba0fc0418c44
+2016-Oct-07 15:29:03.206411 [RPC0]Block is already in blockchain: 26d3d6f893cb15218e4f750428791850df7f8458980dc94086de6de52069b6a3
+2016-Oct-07 15:29:08.798500 [RPC0]Found new pool tx: <95b19da0ad35b581e7fd9820e2a46c9d1070be78cd436ce82b5be9784a9b2dcc>
+2016-Oct-07 15:29:10.017699 [RPC0]Found new pool tx: <e0614202c1858cf46f130e1adc727c3d90bddd1f26c04c19cf938ea471ffca43>
+2016-Oct-07 15:29:11.466795 [RPC0]Found new pool tx: <7ddffa1d80549e2ad52f15dfa338a4e57ff3c419b2d7cd97ceada8be8d1e6971>
+2016-Oct-07 15:29:12.411260 [RPC0]Refresh done, blocks received: 1, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:29:33.048489 [RPC0]Block is already in blockchain: 26d3d6f893cb15218e4f750428791850df7f8458980dc94086de6de52069b6a3
+2016-Oct-07 15:29:33.067902 [RPC0]Processed block: <cdcc7e4c6a1beebceef7ea07362bcd63c694276b029439ba5da3580a15e89fb6>, height 1152521, 19(0/19)ms
+2016-Oct-07 15:29:33.533998 [RPC0]Block is already in blockchain: 26d3d6f893cb15218e4f750428791850df7f8458980dc94086de6de52069b6a3
+2016-Oct-07 15:29:33.534074 [RPC0]Block is already in blockchain: cdcc7e4c6a1beebceef7ea07362bcd63c694276b029439ba5da3580a15e89fb6
+2016-Oct-07 15:29:35.143730 [RPC0]Found new pool tx: <c8602210efe19e876f131f9ab39dc9635e18f37e70af7eb0f6e1b3dbc49736d3>
+2016-Oct-07 15:29:36.719720 [RPC0]Refresh done, blocks received: 1, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:29:57.043902 [RPC0]Block is already in blockchain: cdcc7e4c6a1beebceef7ea07362bcd63c694276b029439ba5da3580a15e89fb6
+2016-Oct-07 15:30:00.955981 [RPC0]Found new pool tx: <c8602210efe19e876f131f9ab39dc9635e18f37e70af7eb0f6e1b3dbc49736d3>
+2016-Oct-07 15:30:03.305209 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:30:23.750418 [RPC0]Block is already in blockchain: cdcc7e4c6a1beebceef7ea07362bcd63c694276b029439ba5da3580a15e89fb6
+2016-Oct-07 15:30:23.756456 [RPC0]Processed block: <6bd3aeb27275ba26b72a0343c15e930f96b222be421d06c9faa7aa21d49b88c6>, height 1152522, 6(1/5)ms
+2016-Oct-07 15:30:24.012664 [RPC0]Block is already in blockchain: cdcc7e4c6a1beebceef7ea07362bcd63c694276b029439ba5da3580a15e89fb6
+2016-Oct-07 15:30:24.012732 [RPC0]Block is already in blockchain: 6bd3aeb27275ba26b72a0343c15e930f96b222be421d06c9faa7aa21d49b88c6
+2016-Oct-07 15:30:28.765628 [RPC0]Refresh done, blocks received: 1, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:30:51.927674 [RPC0]Block is already in blockchain: 6bd3aeb27275ba26b72a0343c15e930f96b222be421d06c9faa7aa21d49b88c6
+2016-Oct-07 15:30:59.077187 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:31:20.107367 [RPC0]Block is already in blockchain: 6bd3aeb27275ba26b72a0343c15e930f96b222be421d06c9faa7aa21d49b88c6
+2016-Oct-07 15:31:21.646004 [RPC0]Found new pool tx: <6b74b0d5368cf7e6a1ee32d55dcf373c2fb6522d3a4482194e27c69e3d8a1ad9>
+2016-Oct-07 15:31:24.483993 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:31:45.287786 [RPC0]Block is already in blockchain: 6bd3aeb27275ba26b72a0343c15e930f96b222be421d06c9faa7aa21d49b88c6
+2016-Oct-07 15:31:45.289661 [RPC0]Processed block: <cc8f6cd9a46cbe18c6f9797e4163e067d8b61b2419ab30805d7f0a99dc98d133>, height 1152523, 1(1/0)ms
+2016-Oct-07 15:31:46.131056 [RPC0]Block is already in blockchain: 6bd3aeb27275ba26b72a0343c15e930f96b222be421d06c9faa7aa21d49b88c6
+2016-Oct-07 15:31:46.131132 [RPC0]Block is already in blockchain: cc8f6cd9a46cbe18c6f9797e4163e067d8b61b2419ab30805d7f0a99dc98d133
+2016-Oct-07 15:31:48.043646 [RPC0]Found new pool tx: <6b74b0d5368cf7e6a1ee32d55dcf373c2fb6522d3a4482194e27c69e3d8a1ad9>
+2016-Oct-07 15:31:49.425258 [RPC0]Refresh done, blocks received: 1, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:32:10.493067 [RPC0]Block is already in blockchain: cc8f6cd9a46cbe18c6f9797e4163e067d8b61b2419ab30805d7f0a99dc98d133
+2016-Oct-07 15:32:12.334561 [RPC0]Found new pool tx: <6b74b0d5368cf7e6a1ee32d55dcf373c2fb6522d3a4482194e27c69e3d8a1ad9>
+2016-Oct-07 15:32:13.134467 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:32:35.885360 [RPC0]Block is already in blockchain: cc8f6cd9a46cbe18c6f9797e4163e067d8b61b2419ab30805d7f0a99dc98d133
+2016-Oct-07 15:32:47.396477 [RPC0]Found new pool tx: <6b74b0d5368cf7e6a1ee32d55dcf373c2fb6522d3a4482194e27c69e3d8a1ad9>
+2016-Oct-07 15:32:51.091508 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:33:14.068900 [RPC0]Block is already in blockchain: cc8f6cd9a46cbe18c6f9797e4163e067d8b61b2419ab30805d7f0a99dc98d133
+2016-Oct-07 15:33:20.129513 [RPC0]Found new pool tx: <6b74b0d5368cf7e6a1ee32d55dcf373c2fb6522d3a4482194e27c69e3d8a1ad9>
+2016-Oct-07 15:33:23.222294 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:33:46.291130 [RPC0]Block is already in blockchain: cc8f6cd9a46cbe18c6f9797e4163e067d8b61b2419ab30805d7f0a99dc98d133
+2016-Oct-07 15:33:53.017042 [RPC0]Found new pool tx: <6b74b0d5368cf7e6a1ee32d55dcf373c2fb6522d3a4482194e27c69e3d8a1ad9>
+2016-Oct-07 15:33:55.963790 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:34:19.273004 [RPC0]Block is already in blockchain: cc8f6cd9a46cbe18c6f9797e4163e067d8b61b2419ab30805d7f0a99dc98d133
+2016-Oct-07 15:34:27.324557 [RPC0]Found new pool tx: <86b7c303155546c0b93c40b9f3b5d9da3661e9118dc3137c7e81ce611eef8d53>
+2016-Oct-07 15:34:30.202557 [RPC0]Found new pool tx: <6b74b0d5368cf7e6a1ee32d55dcf373c2fb6522d3a4482194e27c69e3d8a1ad9>
+2016-Oct-07 15:34:31.237713 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:34:51.888352 [RPC0]Block is already in blockchain: cc8f6cd9a46cbe18c6f9797e4163e067d8b61b2419ab30805d7f0a99dc98d133
+2016-Oct-07 15:34:54.905647 [RPC0]Found new pool tx: <86b7c303155546c0b93c40b9f3b5d9da3661e9118dc3137c7e81ce611eef8d53>
+2016-Oct-07 15:34:56.107766 [RPC0]Found new pool tx: <6b74b0d5368cf7e6a1ee32d55dcf373c2fb6522d3a4482194e27c69e3d8a1ad9>
+2016-Oct-07 15:34:57.377650 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:35:18.776716 [RPC0]Block is already in blockchain: cc8f6cd9a46cbe18c6f9797e4163e067d8b61b2419ab30805d7f0a99dc98d133
+2016-Oct-07 15:35:22.868882 [RPC0]Found new pool tx: <e5eebfa3c1dbbf291df5ccfbd2be3dc7a945e781361bc2de7eadd85f14e2b7af>
+2016-Oct-07 15:35:24.507062 [RPC0]Found new pool tx: <86b7c303155546c0b93c40b9f3b5d9da3661e9118dc3137c7e81ce611eef8d53>
+2016-Oct-07 15:35:26.732070 [RPC0]Found new pool tx: <6b74b0d5368cf7e6a1ee32d55dcf373c2fb6522d3a4482194e27c69e3d8a1ad9>
+2016-Oct-07 15:35:28.274498 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:35:50.205400 [RPC0]Block is already in blockchain: cc8f6cd9a46cbe18c6f9797e4163e067d8b61b2419ab30805d7f0a99dc98d133
+2016-Oct-07 15:35:52.617078 [RPC0]Found new pool tx: <4b23199373b0034e7e4749a5ca0aaec6d9c08b02cf759c530102bc7af19b616d>
+2016-Oct-07 15:35:53.795871 [RPC0]Found new pool tx: <e5eebfa3c1dbbf291df5ccfbd2be3dc7a945e781361bc2de7eadd85f14e2b7af>
+2016-Oct-07 15:35:54.689866 [RPC0]Found new pool tx: <86b7c303155546c0b93c40b9f3b5d9da3661e9118dc3137c7e81ce611eef8d53>
+2016-Oct-07 15:35:55.340966 [RPC0]Found new pool tx: <6b74b0d5368cf7e6a1ee32d55dcf373c2fb6522d3a4482194e27c69e3d8a1ad9>
+2016-Oct-07 15:35:56.137328 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:36:17.843266 [RPC0]Block is already in blockchain: cc8f6cd9a46cbe18c6f9797e4163e067d8b61b2419ab30805d7f0a99dc98d133
+2016-Oct-07 15:36:25.409136 [RPC0]Found new pool tx: <246584d19004a9529f5de2cbb11f8a15fb015da6017cc3274c59c5c3666a95f7>
+2016-Oct-07 15:36:27.857400 [RPC0]Found new pool tx: <4b23199373b0034e7e4749a5ca0aaec6d9c08b02cf759c530102bc7af19b616d>
+2016-Oct-07 15:36:31.967803 [RPC0]Found new pool tx: <e5eebfa3c1dbbf291df5ccfbd2be3dc7a945e781361bc2de7eadd85f14e2b7af>
+2016-Oct-07 15:36:34.890509 [RPC0]Found new pool tx: <86b7c303155546c0b93c40b9f3b5d9da3661e9118dc3137c7e81ce611eef8d53>
+2016-Oct-07 15:36:36.390657 [RPC0]Found new pool tx: <6b74b0d5368cf7e6a1ee32d55dcf373c2fb6522d3a4482194e27c69e3d8a1ad9>
+2016-Oct-07 15:36:38.164006 [RPC0]Tx <6b74b0d5368cf7e6a1ee32d55dcf373c2fb6522d3a4482194e27c69e3d8a1ad9> was in pool, but is no more
+2016-Oct-07 15:36:38.164120 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:36:59.056514 [RPC0]Block is already in blockchain: cc8f6cd9a46cbe18c6f9797e4163e067d8b61b2419ab30805d7f0a99dc98d133
+2016-Oct-07 15:36:59.061931 [RPC0]Processed block: <bba8d1ef88188d1c2abb9af75047aca18ca4cea2fc61fec37a756fa559fbfb01>, height 1152524, 5(0/5)ms
+2016-Oct-07 15:37:00.149488 [RPC0]Block is already in blockchain: cc8f6cd9a46cbe18c6f9797e4163e067d8b61b2419ab30805d7f0a99dc98d133
+2016-Oct-07 15:37:00.149551 [RPC0]Block is already in blockchain: bba8d1ef88188d1c2abb9af75047aca18ca4cea2fc61fec37a756fa559fbfb01
+2016-Oct-07 15:37:02.726326 [RPC0]Found new pool tx: <246584d19004a9529f5de2cbb11f8a15fb015da6017cc3274c59c5c3666a95f7>
+2016-Oct-07 15:37:03.683357 [RPC0]Found new pool tx: <4b23199373b0034e7e4749a5ca0aaec6d9c08b02cf759c530102bc7af19b616d>
+2016-Oct-07 15:37:05.188635 [RPC0]Found new pool tx: <e5eebfa3c1dbbf291df5ccfbd2be3dc7a945e781361bc2de7eadd85f14e2b7af>
+2016-Oct-07 15:37:06.048450 [RPC0]Found new pool tx: <86b7c303155546c0b93c40b9f3b5d9da3661e9118dc3137c7e81ce611eef8d53>
+2016-Oct-07 15:37:06.904331 [RPC0]Refresh done, blocks received: 1, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:37:27.726475 [RPC0]Block is already in blockchain: bba8d1ef88188d1c2abb9af75047aca18ca4cea2fc61fec37a756fa559fbfb01
+2016-Oct-07 15:37:30.255786 [RPC0]Found new pool tx: <246584d19004a9529f5de2cbb11f8a15fb015da6017cc3274c59c5c3666a95f7>
+2016-Oct-07 15:37:31.410079 [RPC0]Found new pool tx: <4b23199373b0034e7e4749a5ca0aaec6d9c08b02cf759c530102bc7af19b616d>
+2016-Oct-07 15:37:32.377091 [RPC0]Found new pool tx: <e5eebfa3c1dbbf291df5ccfbd2be3dc7a945e781361bc2de7eadd85f14e2b7af>
+2016-Oct-07 15:37:34.023144 [RPC0]Found new pool tx: <86b7c303155546c0b93c40b9f3b5d9da3661e9118dc3137c7e81ce611eef8d53>
+2016-Oct-07 15:37:34.988988 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:37:57.121801 [RPC0]Block is already in blockchain: bba8d1ef88188d1c2abb9af75047aca18ca4cea2fc61fec37a756fa559fbfb01
+2016-Oct-07 15:38:01.818024 [RPC0]Found new pool tx: <246584d19004a9529f5de2cbb11f8a15fb015da6017cc3274c59c5c3666a95f7>
+2016-Oct-07 15:38:02.828266 [RPC0]Found new pool tx: <4b23199373b0034e7e4749a5ca0aaec6d9c08b02cf759c530102bc7af19b616d>
+2016-Oct-07 15:38:03.953112 [RPC0]Found new pool tx: <e5eebfa3c1dbbf291df5ccfbd2be3dc7a945e781361bc2de7eadd85f14e2b7af>
+2016-Oct-07 15:38:05.475020 [RPC0]Found new pool tx: <86b7c303155546c0b93c40b9f3b5d9da3661e9118dc3137c7e81ce611eef8d53>
+2016-Oct-07 15:38:06.871545 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:38:29.948130 [RPC0]Block is already in blockchain: bba8d1ef88188d1c2abb9af75047aca18ca4cea2fc61fec37a756fa559fbfb01
+2016-Oct-07 15:38:36.620071 [RPC0]Found new pool tx: <246584d19004a9529f5de2cbb11f8a15fb015da6017cc3274c59c5c3666a95f7>
+2016-Oct-07 15:38:39.346924 [RPC0]Found new pool tx: <4b23199373b0034e7e4749a5ca0aaec6d9c08b02cf759c530102bc7af19b616d>
+2016-Oct-07 15:38:40.835411 [RPC0]Found new pool tx: <e5eebfa3c1dbbf291df5ccfbd2be3dc7a945e781361bc2de7eadd85f14e2b7af>
+2016-Oct-07 15:38:42.994231 [RPC0]Found new pool tx: <86b7c303155546c0b93c40b9f3b5d9da3661e9118dc3137c7e81ce611eef8d53>
+2016-Oct-07 15:38:45.071125 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:39:06.462894 [RPC0]Block is already in blockchain: bba8d1ef88188d1c2abb9af75047aca18ca4cea2fc61fec37a756fa559fbfb01
+2016-Oct-07 15:39:09.589664 [RPC0]Found new pool tx: <246584d19004a9529f5de2cbb11f8a15fb015da6017cc3274c59c5c3666a95f7>
+2016-Oct-07 15:39:11.071850 [RPC0]Found new pool tx: <4b23199373b0034e7e4749a5ca0aaec6d9c08b02cf759c530102bc7af19b616d>
+2016-Oct-07 15:39:13.483701 [RPC0]Found new pool tx: <e5eebfa3c1dbbf291df5ccfbd2be3dc7a945e781361bc2de7eadd85f14e2b7af>
+2016-Oct-07 15:39:14.996221 [RPC0]Found new pool tx: <86b7c303155546c0b93c40b9f3b5d9da3661e9118dc3137c7e81ce611eef8d53>
+2016-Oct-07 15:39:17.067165 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:39:46.317778 [RPC0]Block is already in blockchain: bba8d1ef88188d1c2abb9af75047aca18ca4cea2fc61fec37a756fa559fbfb01
+2016-Oct-07 15:39:46.328322 [RPC0]Processed block: <9e16d2ab9dbfe57fa1539e326b3de65cd6994c994c6624dbb38f3495a69ecaf0>, height 1152525, 10(0/10)ms
+2016-Oct-07 15:39:48.193855 [RPC0]Block is already in blockchain: bba8d1ef88188d1c2abb9af75047aca18ca4cea2fc61fec37a756fa559fbfb01
+2016-Oct-07 15:39:48.193919 [RPC0]Block is already in blockchain: 9e16d2ab9dbfe57fa1539e326b3de65cd6994c994c6624dbb38f3495a69ecaf0
+2016-Oct-07 15:39:52.396019 [RPC0]Refresh done, blocks received: 1, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:40:15.518606 [RPC0]Block is already in blockchain: 9e16d2ab9dbfe57fa1539e326b3de65cd6994c994c6624dbb38f3495a69ecaf0
+2016-Oct-07 15:40:20.495616 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:40:41.789812 [RPC0]Block is already in blockchain: 9e16d2ab9dbfe57fa1539e326b3de65cd6994c994c6624dbb38f3495a69ecaf0
+2016-Oct-07 15:40:41.790349 [RPC0]Processed block: <ac0df277e19f83c9a28aa3fe742f41feb36926c1c98c447877c81c71e6cc4863>, height 1152526, 0(0/0)ms
+2016-Oct-07 15:40:43.820871 [RPC0]Block is already in blockchain: 9e16d2ab9dbfe57fa1539e326b3de65cd6994c994c6624dbb38f3495a69ecaf0
+2016-Oct-07 15:40:43.820941 [RPC0]Block is already in blockchain: ac0df277e19f83c9a28aa3fe742f41feb36926c1c98c447877c81c71e6cc4863
+2016-Oct-07 15:40:46.107404 [RPC0]Refresh done, blocks received: 1, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:41:07.285681 [RPC0]Block is already in blockchain: ac0df277e19f83c9a28aa3fe742f41feb36926c1c98c447877c81c71e6cc4863
+2016-Oct-07 15:41:09.401370 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:41:30.166900 [RPC0]Block is already in blockchain: ac0df277e19f83c9a28aa3fe742f41feb36926c1c98c447877c81c71e6cc4863
+2016-Oct-07 15:41:31.767314 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:41:54.112018 [RPC0]Block is already in blockchain: ac0df277e19f83c9a28aa3fe742f41feb36926c1c98c447877c81c71e6cc4863
+2016-Oct-07 15:42:01.208778 [RPC0]Found new pool tx: <3e92fa25bba0f02c3125438164bfb50e5222c6ac3dbb672098b65f95c77dcc6b>
+2016-Oct-07 15:42:02.060306 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:42:23.379629 [RPC0]Block is already in blockchain: ac0df277e19f83c9a28aa3fe742f41feb36926c1c98c447877c81c71e6cc4863
+2016-Oct-07 15:42:25.550453 [RPC0]Found new pool tx: <3e92fa25bba0f02c3125438164bfb50e5222c6ac3dbb672098b65f95c77dcc6b>
+2016-Oct-07 15:42:27.046153 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:42:47.715541 [RPC0]Block is already in blockchain: ac0df277e19f83c9a28aa3fe742f41feb36926c1c98c447877c81c71e6cc4863
+2016-Oct-07 15:42:47.716151 [RPC0]Processed block: <1bd18400c79d14739bbfc50bd122f1f532b0e25ef33f903ffa0cf6f2e3986492>, height 1152527, 0(0/0)ms
+2016-Oct-07 15:42:48.443746 [RPC0]Block is already in blockchain: ac0df277e19f83c9a28aa3fe742f41feb36926c1c98c447877c81c71e6cc4863
+2016-Oct-07 15:42:48.443797 [RPC0]Block is already in blockchain: 1bd18400c79d14739bbfc50bd122f1f532b0e25ef33f903ffa0cf6f2e3986492
+2016-Oct-07 15:42:50.817503 [RPC0]Found new pool tx: <3e92fa25bba0f02c3125438164bfb50e5222c6ac3dbb672098b65f95c77dcc6b>
+2016-Oct-07 15:42:51.916643 [RPC0]Refresh done, blocks received: 1, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:43:13.757279 [RPC0]Block is already in blockchain: 1bd18400c79d14739bbfc50bd122f1f532b0e25ef33f903ffa0cf6f2e3986492
+2016-Oct-07 15:43:16.821965 [RPC0]Found new pool tx: <3dfc4684bbae714c7d31cf2a82c844882c490fcebfb16685c9567b1b38dc472a>
+2016-Oct-07 15:43:17.689142 [RPC0]Found new pool tx: <3e92fa25bba0f02c3125438164bfb50e5222c6ac3dbb672098b65f95c77dcc6b>
+2016-Oct-07 15:43:18.665175 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:43:40.722024 [RPC0]Block is already in blockchain: 1bd18400c79d14739bbfc50bd122f1f532b0e25ef33f903ffa0cf6f2e3986492
+2016-Oct-07 15:43:44.696641 [RPC0]Found new pool tx: <0c8d77279dec2b80e9952ec9ff9c2c0916ac3b435c29eebd58bcf45320ffffbc>
+2016-Oct-07 15:43:46.209254 [RPC0]Found new pool tx: <9d9b86c4973f112703e26a010465e899333fe87ea212a1de77883b9a018e0565>
+2016-Oct-07 15:43:47.433260 [RPC0]Found new pool tx: <3dfc4684bbae714c7d31cf2a82c844882c490fcebfb16685c9567b1b38dc472a>
+2016-Oct-07 15:43:48.499341 [RPC0]Found new pool tx: <3e92fa25bba0f02c3125438164bfb50e5222c6ac3dbb672098b65f95c77dcc6b>
+2016-Oct-07 15:43:49.657095 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:44:10.378227 [RPC0]Block is already in blockchain: 1bd18400c79d14739bbfc50bd122f1f532b0e25ef33f903ffa0cf6f2e3986492
+2016-Oct-07 15:44:12.934348 [RPC0]Found new pool tx: <00bd85bd3886328ed6f6d8c870a40b881dd8ed01461c82508478e2fb0e7c6e04>
+2016-Oct-07 15:44:13.835823 [RPC0]Found new pool tx: <a96259cb9b169ab28ea3ae38fa15f33ba5bc7645d729e3bf00e71b38fe71bf7a>
+2016-Oct-07 15:44:14.695722 [RPC0]Found new pool tx: <0c8d77279dec2b80e9952ec9ff9c2c0916ac3b435c29eebd58bcf45320ffffbc>
+2016-Oct-07 15:44:15.464264 [RPC0]Found new pool tx: <9d9b86c4973f112703e26a010465e899333fe87ea212a1de77883b9a018e0565>
+2016-Oct-07 15:44:16.232121 [RPC0]Found new pool tx: <3dfc4684bbae714c7d31cf2a82c844882c490fcebfb16685c9567b1b38dc472a>
+2016-Oct-07 15:44:16.819965 [RPC0]Found new pool tx: <3e92fa25bba0f02c3125438164bfb50e5222c6ac3dbb672098b65f95c77dcc6b>
+2016-Oct-07 15:44:17.468105 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:44:38.178973 [RPC0]Block is already in blockchain: 1bd18400c79d14739bbfc50bd122f1f532b0e25ef33f903ffa0cf6f2e3986492
+2016-Oct-07 15:44:39.881903 [RPC0]Found new pool tx: <e3aa2a54b4f24bdc5f133bd4bbcef8ed0eda5490aeaec777a184297450496774>
+2016-Oct-07 15:44:40.594059 [RPC0]Found new pool tx: <00bd85bd3886328ed6f6d8c870a40b881dd8ed01461c82508478e2fb0e7c6e04>
+2016-Oct-07 15:44:41.402596 [RPC0]Found new pool tx: <a96259cb9b169ab28ea3ae38fa15f33ba5bc7645d729e3bf00e71b38fe71bf7a>
+2016-Oct-07 15:44:42.055706 [RPC0]Found new pool tx: <0c8d77279dec2b80e9952ec9ff9c2c0916ac3b435c29eebd58bcf45320ffffbc>
+2016-Oct-07 15:44:42.681011 [RPC0]Found new pool tx: <9d9b86c4973f112703e26a010465e899333fe87ea212a1de77883b9a018e0565>
+2016-Oct-07 15:44:43.334270 [RPC0]Found new pool tx: <3dfc4684bbae714c7d31cf2a82c844882c490fcebfb16685c9567b1b38dc472a>
+2016-Oct-07 15:44:44.004467 [RPC0]Found new pool tx: <3e92fa25bba0f02c3125438164bfb50e5222c6ac3dbb672098b65f95c77dcc6b>
+2016-Oct-07 15:44:44.655907 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:45:05.665242 [RPC0]Block is already in blockchain: 1bd18400c79d14739bbfc50bd122f1f532b0e25ef33f903ffa0cf6f2e3986492
+2016-Oct-07 15:45:08.208968 [RPC0]Found new pool tx: <e3aa2a54b4f24bdc5f133bd4bbcef8ed0eda5490aeaec777a184297450496774>
+2016-Oct-07 15:45:08.932965 [RPC0]Found new pool tx: <00bd85bd3886328ed6f6d8c870a40b881dd8ed01461c82508478e2fb0e7c6e04>
+2016-Oct-07 15:45:09.787917 [RPC0]Found new pool tx: <a96259cb9b169ab28ea3ae38fa15f33ba5bc7645d729e3bf00e71b38fe71bf7a>
+2016-Oct-07 15:45:10.495790 [RPC0]Found new pool tx: <0c8d77279dec2b80e9952ec9ff9c2c0916ac3b435c29eebd58bcf45320ffffbc>
+2016-Oct-07 15:45:11.518545 [RPC0]Found new pool tx: <9d9b86c4973f112703e26a010465e899333fe87ea212a1de77883b9a018e0565>
+2016-Oct-07 15:45:12.299399 [RPC0]Found new pool tx: <3dfc4684bbae714c7d31cf2a82c844882c490fcebfb16685c9567b1b38dc472a>
+2016-Oct-07 15:45:12.992941 [RPC0]Found new pool tx: <3e92fa25bba0f02c3125438164bfb50e5222c6ac3dbb672098b65f95c77dcc6b>
+2016-Oct-07 15:45:13.683303 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:45:34.891454 [RPC0]Block is already in blockchain: 1bd18400c79d14739bbfc50bd122f1f532b0e25ef33f903ffa0cf6f2e3986492
+2016-Oct-07 15:45:36.914927 [RPC0]Found new pool tx: <e3aa2a54b4f24bdc5f133bd4bbcef8ed0eda5490aeaec777a184297450496774>
+2016-Oct-07 15:45:38.208111 [RPC0]Found new pool tx: <00bd85bd3886328ed6f6d8c870a40b881dd8ed01461c82508478e2fb0e7c6e04>
+2016-Oct-07 15:45:39.047118 [RPC0]Found new pool tx: <a96259cb9b169ab28ea3ae38fa15f33ba5bc7645d729e3bf00e71b38fe71bf7a>
+2016-Oct-07 15:45:40.027941 [RPC0]Found new pool tx: <0c8d77279dec2b80e9952ec9ff9c2c0916ac3b435c29eebd58bcf45320ffffbc>
+2016-Oct-07 15:45:40.806818 [RPC0]Found new pool tx: <9d9b86c4973f112703e26a010465e899333fe87ea212a1de77883b9a018e0565>
+2016-Oct-07 15:45:41.643680 [RPC0]Found new pool tx: <3dfc4684bbae714c7d31cf2a82c844882c490fcebfb16685c9567b1b38dc472a>
+2016-Oct-07 15:45:42.478532 [RPC0]Found new pool tx: <3e92fa25bba0f02c3125438164bfb50e5222c6ac3dbb672098b65f95c77dcc6b>
+2016-Oct-07 15:45:43.249166 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:46:04.017517 [RPC0]Block is already in blockchain: 1bd18400c79d14739bbfc50bd122f1f532b0e25ef33f903ffa0cf6f2e3986492
+2016-Oct-07 15:46:04.022232 [RPC0]Processed block: <37a7c79ac7817ff323147a11ebf88a4f58a463e66f1d8fb809356c38dd8fc6fa>, height 1152528, 4(0/4)ms
+2016-Oct-07 15:46:04.663664 [RPC0]Block is already in blockchain: 1bd18400c79d14739bbfc50bd122f1f532b0e25ef33f903ffa0cf6f2e3986492
+2016-Oct-07 15:46:04.663738 [RPC0]Block is already in blockchain: 37a7c79ac7817ff323147a11ebf88a4f58a463e66f1d8fb809356c38dd8fc6fa
+2016-Oct-07 15:46:06.387396 [RPC0]Found new pool tx: <e3aa2a54b4f24bdc5f133bd4bbcef8ed0eda5490aeaec777a184297450496774>
+2016-Oct-07 15:46:07.043229 [RPC0]Found new pool tx: <00bd85bd3886328ed6f6d8c870a40b881dd8ed01461c82508478e2fb0e7c6e04>
+2016-Oct-07 15:46:07.745868 [RPC0]Found new pool tx: <a96259cb9b169ab28ea3ae38fa15f33ba5bc7645d729e3bf00e71b38fe71bf7a>
+2016-Oct-07 15:46:08.634378 [RPC0]Found new pool tx: <0c8d77279dec2b80e9952ec9ff9c2c0916ac3b435c29eebd58bcf45320ffffbc>
+2016-Oct-07 15:46:09.278381 [RPC0]Found new pool tx: <9d9b86c4973f112703e26a010465e899333fe87ea212a1de77883b9a018e0565>
+2016-Oct-07 15:46:09.982785 [RPC0]Found new pool tx: <3dfc4684bbae714c7d31cf2a82c844882c490fcebfb16685c9567b1b38dc472a>
+2016-Oct-07 15:46:10.570919 [RPC0]Refresh done, blocks received: 1, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:46:31.775779 [RPC0]Block is already in blockchain: 37a7c79ac7817ff323147a11ebf88a4f58a463e66f1d8fb809356c38dd8fc6fa
+2016-Oct-07 15:46:31.792581 [RPC0]Processed block: <93d986da38d5401f634f2baa377b915aa27a01a1990a8db96188958448740464>, height 1152529, 17(0/17)ms
+2016-Oct-07 15:46:32.588008 [RPC0]Block is already in blockchain: 37a7c79ac7817ff323147a11ebf88a4f58a463e66f1d8fb809356c38dd8fc6fa
+2016-Oct-07 15:46:32.588068 [RPC0]Block is already in blockchain: 93d986da38d5401f634f2baa377b915aa27a01a1990a8db96188958448740464
+2016-Oct-07 15:46:34.725862 [RPC0]Refresh done, blocks received: 1, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:46:55.567817 [RPC0]Block is already in blockchain: 93d986da38d5401f634f2baa377b915aa27a01a1990a8db96188958448740464
+2016-Oct-07 15:46:57.404228 [RPC0]Found new pool tx: <b4e08da3b789f6fdda1393979c810b4ec061721cfb4fede50f074c84affdb2b2>
+2016-Oct-07 15:46:58.291357 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:47:18.995934 [RPC0]Block is already in blockchain: 93d986da38d5401f634f2baa377b915aa27a01a1990a8db96188958448740464
+2016-Oct-07 15:47:21.290408 [RPC0]Found new pool tx: <b4e08da3b789f6fdda1393979c810b4ec061721cfb4fede50f074c84affdb2b2>
+2016-Oct-07 15:47:22.414176 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:47:43.357526 [RPC0]Block is already in blockchain: 93d986da38d5401f634f2baa377b915aa27a01a1990a8db96188958448740464
+2016-Oct-07 15:47:44.618871 [RPC0]Found new pool tx: <b4e08da3b789f6fdda1393979c810b4ec061721cfb4fede50f074c84affdb2b2>
+2016-Oct-07 15:47:45.162148 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:48:05.958781 [RPC0]Block is already in blockchain: 93d986da38d5401f634f2baa377b915aa27a01a1990a8db96188958448740464
+2016-Oct-07 15:48:05.959365 [RPC0]Processed block: <29eec5227f2720ec9f94ae3b5a2aa456f62c023a6037024cf9322c309267cd19>, height 1152530, 0(0/0)ms
+2016-Oct-07 15:48:06.702252 [RPC0]Block is already in blockchain: 93d986da38d5401f634f2baa377b915aa27a01a1990a8db96188958448740464
+2016-Oct-07 15:48:06.702325 [RPC0]Block is already in blockchain: 29eec5227f2720ec9f94ae3b5a2aa456f62c023a6037024cf9322c309267cd19
+2016-Oct-07 15:48:08.645185 [RPC0]Found new pool tx: <b4e08da3b789f6fdda1393979c810b4ec061721cfb4fede50f074c84affdb2b2>
+2016-Oct-07 15:48:09.285462 [RPC0]Refresh done, blocks received: 1, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:48:31.772991 [RPC0]Block is already in blockchain: 29eec5227f2720ec9f94ae3b5a2aa456f62c023a6037024cf9322c309267cd19
+2016-Oct-07 15:48:38.588499 [RPC0]Found new pool tx: <a97d4c880a11c58f326aa07e765cf41c7a17eb512a14705c0c470f8f13aa0ca7>
+2016-Oct-07 15:48:39.511548 [RPC0]Found new pool tx: <fba551216088c808c3595f4a31a71d9cfae8c705e79cf025026ecd4f6e946bab>
+2016-Oct-07 15:48:40.637308 [RPC0]Found new pool tx: <d9a3862b2acef336ba0905773a72ec76739b9d64c89e2bc5021be13c3ece8fa6>
+2016-Oct-07 15:48:42.611488 [RPC0]Found new pool tx: <b4e08da3b789f6fdda1393979c810b4ec061721cfb4fede50f074c84affdb2b2>
+2016-Oct-07 15:48:52.387352 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:49:14.707993 [RPC0]Block is already in blockchain: 29eec5227f2720ec9f94ae3b5a2aa456f62c023a6037024cf9322c309267cd19
+2016-Oct-07 15:49:18.879748 [RPC0]Found new pool tx: <a97d4c880a11c58f326aa07e765cf41c7a17eb512a14705c0c470f8f13aa0ca7>
+2016-Oct-07 15:49:20.611809 [RPC0]Found new pool tx: <fba551216088c808c3595f4a31a71d9cfae8c705e79cf025026ecd4f6e946bab>
+2016-Oct-07 15:49:21.657719 [RPC0]Found new pool tx: <d9a3862b2acef336ba0905773a72ec76739b9d64c89e2bc5021be13c3ece8fa6>
+2016-Oct-07 15:49:23.194953 [RPC0]Found new pool tx: <b4e08da3b789f6fdda1393979c810b4ec061721cfb4fede50f074c84affdb2b2>
+2016-Oct-07 15:49:24.405923 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:49:47.499136 [RPC0]Block is already in blockchain: 29eec5227f2720ec9f94ae3b5a2aa456f62c023a6037024cf9322c309267cd19
+2016-Oct-07 15:49:52.838607 [RPC0]Found new pool tx: <206f4326303c631f426643b3858dc9b52bb09228b50c5f0d323a249782e91aa8>
+2016-Oct-07 15:49:54.142340 [RPC0]Found new pool tx: <a97d4c880a11c58f326aa07e765cf41c7a17eb512a14705c0c470f8f13aa0ca7>
+2016-Oct-07 15:49:55.058050 [RPC0]Found new pool tx: <fba551216088c808c3595f4a31a71d9cfae8c705e79cf025026ecd4f6e946bab>
+2016-Oct-07 15:49:55.871001 [RPC0]Found new pool tx: <d9a3862b2acef336ba0905773a72ec76739b9d64c89e2bc5021be13c3ece8fa6>
+2016-Oct-07 15:49:57.103748 [RPC0]Found new pool tx: <b4e08da3b789f6fdda1393979c810b4ec061721cfb4fede50f074c84affdb2b2>
+2016-Oct-07 15:49:58.190317 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:50:19.673766 [RPC0]Block is already in blockchain: 29eec5227f2720ec9f94ae3b5a2aa456f62c023a6037024cf9322c309267cd19
+2016-Oct-07 15:50:24.884230 [RPC0]Found new pool tx: <206f4326303c631f426643b3858dc9b52bb09228b50c5f0d323a249782e91aa8>
+2016-Oct-07 15:50:26.540394 [RPC0]Found new pool tx: <a97d4c880a11c58f326aa07e765cf41c7a17eb512a14705c0c470f8f13aa0ca7>
+2016-Oct-07 15:50:27.810362 [RPC0]Found new pool tx: <fba551216088c808c3595f4a31a71d9cfae8c705e79cf025026ecd4f6e946bab>
+2016-Oct-07 15:50:30.378534 [RPC0]Found new pool tx: <d9a3862b2acef336ba0905773a72ec76739b9d64c89e2bc5021be13c3ece8fa6>
+2016-Oct-07 15:50:33.516345 [RPC0]Found new pool tx: <b4e08da3b789f6fdda1393979c810b4ec061721cfb4fede50f074c84affdb2b2>
+2016-Oct-07 15:50:36.874883 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:50:57.675746 [RPC0]Block is already in blockchain: 29eec5227f2720ec9f94ae3b5a2aa456f62c023a6037024cf9322c309267cd19
+2016-Oct-07 15:51:00.036472 [RPC0]Found new pool tx: <eaa73661ab9ee755b65679ea723b3ab4e50fa5bf4d99ccbd8db3d1a0341ea4db>
+2016-Oct-07 15:51:01.145393 [RPC0]Found new pool tx: <ff45187c51fbf0b69e72ed0859a14fb8e67316e323a3724a455c8cafbbd857a5>
+2016-Oct-07 15:51:02.029060 [RPC0]Found new pool tx: <ee5bea43a7a4a372608e86c66ed729f3619a30b612aeff23da2b1c1ad5933ca5>
+2016-Oct-07 15:51:02.893943 [RPC0]Found new pool tx: <888368b0b5fff30ca7f1dd7f70bc10bf564c93229f45fdee32e6a591f7e18b36>
+2016-Oct-07 15:51:03.939820 [RPC0]Found new pool tx: <bb86fa1a8bf49a81597a135a525a8f74772732035ac5b6de8ff7d284aeb65782>
+2016-Oct-07 15:51:04.577226 [RPC0]Found new pool tx: <206f4326303c631f426643b3858dc9b52bb09228b50c5f0d323a249782e91aa8>
+2016-Oct-07 15:51:05.328150 [RPC0]Found new pool tx: <a97d4c880a11c58f326aa07e765cf41c7a17eb512a14705c0c470f8f13aa0ca7>
+2016-Oct-07 15:51:06.107454 [RPC0]Found new pool tx: <fba551216088c808c3595f4a31a71d9cfae8c705e79cf025026ecd4f6e946bab>
+2016-Oct-07 15:51:06.815690 [RPC0]Found new pool tx: <d9a3862b2acef336ba0905773a72ec76739b9d64c89e2bc5021be13c3ece8fa6>
+2016-Oct-07 15:51:07.471687 [RPC0]Found new pool tx: <b4e08da3b789f6fdda1393979c810b4ec061721cfb4fede50f074c84affdb2b2>
+2016-Oct-07 15:51:08.395893 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:51:30.106246 [RPC0]Block is already in blockchain: 29eec5227f2720ec9f94ae3b5a2aa456f62c023a6037024cf9322c309267cd19
+2016-Oct-07 15:51:32.609387 [RPC0]Found new pool tx: <eaa73661ab9ee755b65679ea723b3ab4e50fa5bf4d99ccbd8db3d1a0341ea4db>
+2016-Oct-07 15:51:35.928138 [RPC0]Found new pool tx: <ff45187c51fbf0b69e72ed0859a14fb8e67316e323a3724a455c8cafbbd857a5>
+2016-Oct-07 15:51:49.036450 [RPC0]Found new pool tx: <ee5bea43a7a4a372608e86c66ed729f3619a30b612aeff23da2b1c1ad5933ca5>
+2016-Oct-07 15:51:51.475606 [RPC0]Found new pool tx: <888368b0b5fff30ca7f1dd7f70bc10bf564c93229f45fdee32e6a591f7e18b36>
+2016-Oct-07 15:51:53.907389 [RPC0]Found new pool tx: <bb86fa1a8bf49a81597a135a525a8f74772732035ac5b6de8ff7d284aeb65782>
+2016-Oct-07 15:51:58.386410 [RPC0]Found new pool tx: <206f4326303c631f426643b3858dc9b52bb09228b50c5f0d323a249782e91aa8>
+2016-Oct-07 15:52:07.611696 [RPC0]Found new pool tx: <a97d4c880a11c58f326aa07e765cf41c7a17eb512a14705c0c470f8f13aa0ca7>
+2016-Oct-07 15:52:12.039886 [RPC0]Found new pool tx: <fba551216088c808c3595f4a31a71d9cfae8c705e79cf025026ecd4f6e946bab>
+2016-Oct-07 15:52:13.548679 [RPC0]Found new pool tx: <d9a3862b2acef336ba0905773a72ec76739b9d64c89e2bc5021be13c3ece8fa6>
+2016-Oct-07 15:52:14.585172 [RPC0]Found new pool tx: <b4e08da3b789f6fdda1393979c810b4ec061721cfb4fede50f074c84affdb2b2>
+2016-Oct-07 15:52:15.601636 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:52:36.459090 [RPC0]Block is already in blockchain: 29eec5227f2720ec9f94ae3b5a2aa456f62c023a6037024cf9322c309267cd19
+2016-Oct-07 15:52:39.240748 [RPC0]Found new pool tx: <5070a36a45a64a41cc87d7adbd8df5cdaab6f5612a794c6b457faa76e2dfd6af>
+2016-Oct-07 15:52:39.949225 [RPC0]Found new pool tx: <eaa73661ab9ee755b65679ea723b3ab4e50fa5bf4d99ccbd8db3d1a0341ea4db>
+2016-Oct-07 15:52:40.819513 [RPC0]Found new pool tx: <ff45187c51fbf0b69e72ed0859a14fb8e67316e323a3724a455c8cafbbd857a5>
+2016-Oct-07 15:52:41.762653 [RPC0]Found new pool tx: <ee5bea43a7a4a372608e86c66ed729f3619a30b612aeff23da2b1c1ad5933ca5>
+2016-Oct-07 15:52:42.559727 [RPC0]Found new pool tx: <888368b0b5fff30ca7f1dd7f70bc10bf564c93229f45fdee32e6a591f7e18b36>
+2016-Oct-07 15:52:43.409565 [RPC0]Found new pool tx: <bb86fa1a8bf49a81597a135a525a8f74772732035ac5b6de8ff7d284aeb65782>
+2016-Oct-07 15:52:44.208611 [RPC0]Found new pool tx: <206f4326303c631f426643b3858dc9b52bb09228b50c5f0d323a249782e91aa8>
+2016-Oct-07 15:52:45.182896 [RPC0]Found new pool tx: <a97d4c880a11c58f326aa07e765cf41c7a17eb512a14705c0c470f8f13aa0ca7>
+2016-Oct-07 15:52:45.924673 [RPC0]Found new pool tx: <fba551216088c808c3595f4a31a71d9cfae8c705e79cf025026ecd4f6e946bab>
+2016-Oct-07 15:52:46.773679 [RPC0]Found new pool tx: <d9a3862b2acef336ba0905773a72ec76739b9d64c89e2bc5021be13c3ece8fa6>
+2016-Oct-07 15:52:48.142716 [RPC0]Found new pool tx: <b4e08da3b789f6fdda1393979c810b4ec061721cfb4fede50f074c84affdb2b2>
+2016-Oct-07 15:52:48.879434 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:53:09.945503 [RPC0]Block is already in blockchain: 29eec5227f2720ec9f94ae3b5a2aa456f62c023a6037024cf9322c309267cd19
+2016-Oct-07 15:53:09.948611 [RPC0]Processed block: <8c99a32e6694200973e8e5cf450707ea06c6422958296c8f74112506914a8850>, height 1152531, 3(0/3)ms
+2016-Oct-07 15:53:10.946067 [RPC0]Block is already in blockchain: 29eec5227f2720ec9f94ae3b5a2aa456f62c023a6037024cf9322c309267cd19
+2016-Oct-07 15:53:10.946137 [RPC0]Block is already in blockchain: 8c99a32e6694200973e8e5cf450707ea06c6422958296c8f74112506914a8850
+2016-Oct-07 15:53:13.537970 [RPC0]Found new pool tx: <e9e4e753fdefc836d3fcb2b2b192d43dfc8320147eb241420961fe859e6ae520>
+2016-Oct-07 15:53:14.388933 [RPC0]Found new pool tx: <5070a36a45a64a41cc87d7adbd8df5cdaab6f5612a794c6b457faa76e2dfd6af>
+2016-Oct-07 15:53:15.128928 [RPC0]Found new pool tx: <eaa73661ab9ee755b65679ea723b3ab4e50fa5bf4d99ccbd8db3d1a0341ea4db>
+2016-Oct-07 15:53:15.848079 [RPC0]Found new pool tx: <ff45187c51fbf0b69e72ed0859a14fb8e67316e323a3724a455c8cafbbd857a5>
+2016-Oct-07 15:53:16.586375 [RPC0]Found new pool tx: <ee5bea43a7a4a372608e86c66ed729f3619a30b612aeff23da2b1c1ad5933ca5>
+2016-Oct-07 15:53:17.616824 [RPC0]Found new pool tx: <888368b0b5fff30ca7f1dd7f70bc10bf564c93229f45fdee32e6a591f7e18b36>
+2016-Oct-07 15:53:18.291516 [RPC0]Found new pool tx: <bb86fa1a8bf49a81597a135a525a8f74772732035ac5b6de8ff7d284aeb65782>
+2016-Oct-07 15:53:19.041773 [RPC0]Found new pool tx: <206f4326303c631f426643b3858dc9b52bb09228b50c5f0d323a249782e91aa8>
+2016-Oct-07 15:53:19.767020 [RPC0]Found new pool tx: <a97d4c880a11c58f326aa07e765cf41c7a17eb512a14705c0c470f8f13aa0ca7>
+2016-Oct-07 15:53:20.387855 [RPC0]Found new pool tx: <fba551216088c808c3595f4a31a71d9cfae8c705e79cf025026ecd4f6e946bab>
+2016-Oct-07 15:53:21.011163 [RPC0]Found new pool tx: <d9a3862b2acef336ba0905773a72ec76739b9d64c89e2bc5021be13c3ece8fa6>
+2016-Oct-07 15:53:21.954179 [RPC0]Refresh done, blocks received: 1, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:53:42.615908 [RPC0]Block is already in blockchain: 8c99a32e6694200973e8e5cf450707ea06c6422958296c8f74112506914a8850
+2016-Oct-07 15:53:42.645706 [RPC0]Processed block: <930c93d266bcef6b92bcab7302b5d58b5a22f52b16505abe845a01be59fb8908>, height 1152532, 30(1/29)ms
+2016-Oct-07 15:53:43.329534 [RPC0]Block is already in blockchain: 8c99a32e6694200973e8e5cf450707ea06c6422958296c8f74112506914a8850
+2016-Oct-07 15:53:43.329609 [RPC0]Block is already in blockchain: 930c93d266bcef6b92bcab7302b5d58b5a22f52b16505abe845a01be59fb8908
+2016-Oct-07 15:53:44.707302 [RPC0]Refresh done, blocks received: 1, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:54:05.542451 [RPC0]Block is already in blockchain: 930c93d266bcef6b92bcab7302b5d58b5a22f52b16505abe845a01be59fb8908
+2016-Oct-07 15:54:06.985993 [RPC0]Found new pool tx: <1564fa9618b6176a417c36cbbd75291b883d2761b51f2eafabe5e607f8e23c41>
+2016-Oct-07 15:54:07.703053 [RPC0]Found new pool tx: <d6ca2dd2f3ea26c98956a5442bb997d13cee297fb717a5b50512ec0dc9b621cb>
+2016-Oct-07 15:54:08.320149 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:54:28.718220 [RPC0]Block is already in blockchain: 930c93d266bcef6b92bcab7302b5d58b5a22f52b16505abe845a01be59fb8908
+2016-Oct-07 15:54:29.338712 [RPC0]Found new pool tx: <1564fa9618b6176a417c36cbbd75291b883d2761b51f2eafabe5e607f8e23c41>
+2016-Oct-07 15:54:29.826560 [RPC0]Found new pool tx: <d6ca2dd2f3ea26c98956a5442bb997d13cee297fb717a5b50512ec0dc9b621cb>
+2016-Oct-07 15:54:30.595199 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 15:54:53.098832 [RPC0]Block is already in blockchain: 930c93d266bcef6b92bcab7302b5d58b5a22f52b16505abe845a01be59fb8908
+2016-Oct-07 15:54:54.122825 [RPC0]Found new pool tx: <1caac02841a3586bdd9f0f4329ada23b1e5353644ed3077590f8eff07fa52082>
+2016-Oct-07 15:54:56.333860 [RPC0]Found new pool tx: <1564fa9618b6176a417c36cbbd75291b883d2761b51f2eafabe5e607f8e23c41>
+2016-Oct-07 15:54:59.082221 [RPC0]Found new pool tx: <d6ca2dd2f3ea26c98956a5442bb997d13cee297fb717a5b50512ec0dc9b621cb>
+2016-Oct-07 15:55:01.588878 [RPC0]Refresh done, blocks received: 0, balance: 1.880000000000, unlocked: 1.880000000000
+2016-Oct-07 18:28:50.968101 [RPC0]Failed to invoke http request to  http://node.moneybit.science:18081/getblocks.bin
+2016-Oct-07 18:28:50.968184 [RPC0]ERROR /home/athan/dev/monero/src/wallet/wallet2.cpp:774 !r. THROW EXCEPTION: error::no_connection_to_daemon
+2016-Oct-07 18:28:50.968248 [RPC0]/home/athan/dev/monero/src/wallet/wallet2.cpp:774:N5tools5error23no_connection_to_daemonE: no connection to daemon, request = getblocks.bin
+2016-Oct-07 18:28:50.968308 [RPC0]Exception: tools::error::no_connection_to_daemon
+2016-Oct-07 18:28:50.968333 [RPC0]Unwinded call stack:
+2016-Oct-07 18:28:50.968860 [RPC0]     1                  0x726a00 __cxa_throw + 0x70
+2016-Oct-07 18:28:50.969363 [RPC0]     2                  0x6869db void tools::error::throw_wallet_ex<tools::error::no_connection_to_daemon, char [14]>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&, char const (&) [14]) [clone .constprop.1043] + 0x17b
+2016-Oct-07 18:28:50.969837 [RPC0]     3                  0x518869 tools::wallet2::pull_blocks(unsigned long, unsigned long&, std::__cxx11::list<crypto::hash, std::allocator<crypto::hash> > const&, std::__cxx11::list<cryptonote::block_complete_entry, std::allocator<cryptonote::block_complete_entry> >&, std::vector<cryptonote::COMMAND_RPC_GET_BLOCKS_FAST::block_output_indices, std::allocator<cryptonote::COMMAND_RPC_GET_BLOCKS_FAST::block_output_indices> >&) + 0x2b99
+2016-Oct-07 18:28:50.970241 [RPC0]     4                  0x52a2f8 tools::wallet2::refresh(unsigned long, unsigned long&, bool&) + 0x1a8
+2016-Oct-07 18:28:50.971645 [RPC0]     5                  0x61de02 tools::wallet_rpc_server::run()::{lambda()#1}::operator()() const [clone .constprop.253] + 0x32
+2016-Oct-07 18:28:50.972098 [RPC0]     6                  0x5cf475 epee::net_utils::boosted_tcp_server<epee::net_utils::http::http_custom_handler<epee::net_utils::connection_context_base> >::global_timer_handler(boost::shared_ptr<epee::net_utils::boosted_tcp_server<epee::net_utils::http::http_custom_handler<epee::net_utils::connection_context_base> >::idle_callback_conext_base>) + 0x15
+2016-Oct-07 18:28:50.972591 [RPC0]     7                  0x5cd61c boost::asio::detail::wait_handler<boost::_bi::bind_t<bool, boost::_mfi::mf1<bool, epee::net_utils::boosted_tcp_server<epee::net_utils::http::http_custom_handler<epee::net_utils::connection_context_base> >, boost::shared_ptr<epee::net_utils::boosted_tcp_server<epee::net_utils::http::http_custom_handler<epee::net_utils::connection_context_base> >::idle_callback_conext_base> >, boost::_bi::list2<boost::_bi::value<epee::net_utils::boosted_tcp_server<epee::net_utils::http::http_custom_handler<epee::net_utils::connection_context_base> >*>, boost::_bi::value<boost::shared_ptr<epee::net_utils::boosted_tcp_server<epee::net_utils::http::http_custom_handler<epee::net_utils::connection_context_base> >::idle_callback_conext_base> > > > >::do_complete(boost::asio::detail::task_io_service*, boost::asio::detail::task_io_service_operation*, boost::system::error_code const&, unsigned long) + 0xec
+2016-Oct-07 18:28:50.973142 [RPC0]     8                  0x759964 boost::asio::detail::task_io_service::run(boost::system::error_code&) [clone .constprop.1684] + 0x444
+2016-Oct-07 18:28:50.973624 [RPC0]     9                  0x5d6aef epee::net_utils::boosted_tcp_server<epee::net_utils::http::http_custom_handler<epee::net_utils::connection_context_base> >::worker_thread() + 0x2af
+2016-Oct-07 18:28:50.974203 [RPC0]    10                  0x7f31725305d5 boost::this_thread::interruption_point() + 0x145
+2016-Oct-07 18:28:50.974915 [RPC0]    11                  0x7f31733b76fa start_thread + 0xca
+2016-Oct-07 18:28:50.975678 [RPC0]    12                  0x7f31730edb5d clone + 0x6d
+2016-Oct-07 18:28:50.976396 [RPC0]    13                  0x0
+2016-Oct-07 18:28:50.998753 [RPC0]ERROR /home/athan/dev/monero/src/wallet/wallet_rpc_server.cpp:67 Exception at while refreshing, what=no connection to daemon
+2016-Oct-07 18:28:50.998955 [SRV_MAIN]net_service loop stopped.
+2016-Oct-07 18:28:50.998987 [SRV_MAIN]Stopped wallet rpc server
+2016-Oct-07 18:28:50.999035 [SRV_MAIN]Storing wallet...
+2016-Oct-07 18:28:51.566600 [SRV_MAIN]Stored ok

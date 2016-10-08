@@ -18,6 +18,7 @@ import Test.Tasty.HUnit
 import Test.HUnit
 
 import Data.Default
+import qualified Data.Text.IO as T
 import System.Directory (removeFile)
 import System.IO (stdout)
 import System.IO.Error (isEOFError)
@@ -41,10 +42,22 @@ main = do
       [ testGroup "Wallet"
           [ testGroup "Process"
               [ testCase "makeWallet" $
+                  bracket_
+                    (pure ())
+                    (mapM_ removeFile ["bar","bar.log","bar.address.txt","bar.keys"])
+                    $ makeWallet def MakeWalletConfig
+                                  { makeWalletName     = "bar"
+                                  , makeWalletPassword = "asdf"
+                                  , makeWalletLanguage = English
+                                  , makeWalletSeed     = Nothing
+                                  }
+              , testCase "makeWallet mnemonic" $ do
+                  mn <- T.readFile "bar.mnemonic"
                   makeWallet def MakeWalletConfig
                                   { makeWalletName     = "bar"
                                   , makeWalletPassword = "asdf"
                                   , makeWalletLanguage = English
+                                  , makeWalletSeed     = Just mn
                                   }
               , testCase "openWallet closeWallet" $
                   bracket_
@@ -58,7 +71,6 @@ main = do
                                          { openWalletName     = "bar"
                                          , openWalletPassword = "asdf"
                                          }
-                          void $ forkIO $ loggingTo "bar.test.log" $ stdoutHandle hsO
                           threadDelay (5 * second) -- FIXME
                           closeWallet hsO
               ]

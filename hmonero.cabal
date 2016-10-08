@@ -46,6 +46,7 @@ Test-Suite spec
                       , hmonero
                       , data-default
                       , directory
+                      , text
                       , HUnit
                       , tasty
                       , tasty-quickcheck

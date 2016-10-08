@@ -80,6 +80,7 @@ data MakeWalletConfig = MakeWalletConfig
   { makeWalletName     :: T.Text -- ^ Names need to be unique
   , makeWalletPassword :: T.Text
   , makeWalletLanguage :: WalletLanguage
+  , makeWalletSeed     :: Maybe T.Text -- ^ Electrum-style seed
   } deriving (Show, Eq)
 
 
@@ -100,7 +101,11 @@ makeWallet WalletProcessConfig{..} MakeWalletConfig{..} = do
              -- , "--rpc-bind-port"        ++ show (fromIntegral walletRpcPort :: Int)
              , "--daemon-host="         ++ walletDaemonHost
              , "--daemon-port="         ++ show (fromIntegral walletDaemonPort :: Int)
-             ]
+             ] ++ case makeWalletSeed of
+                    Nothing -> []
+                    Just s  -> [ "--restore-deterministic-wallet"
+                               , "--electrum-seed=" ++ T.unpack s
+                               ]
 
   tryRemoveFile $ name' ++ ".log"
   tryRemoveFile $ name' ++ ".stdout.log"
@@ -108,7 +113,10 @@ makeWallet WalletProcessConfig{..} MakeWalletConfig{..} = do
   ProcessHandles{..} <- mkProcess moneroWalletCliPath args
 
   threadDelay (2 * second)
-  T.hPutStrLn stdinHandle . T.pack . show $ walletLanguageCode makeWalletLanguage
+  T.hPutStrLn stdinHandle . T.pack . show $
+    case makeWalletSeed of
+      Nothing -> walletLanguageCode makeWalletLanguage
+      Just _  -> 0 :: Int -- FIXME: blockchain height - Weird behavior
   hFlush stdinHandle
 
   -- threadDelay (2 * second) -- FIXME: don't start neglecting until active?
