@@ -3,7 +3,8 @@ dependencies:
     - "~/.stack"
   pre:
     - wget https://downloads.getmonero.org/monero.linux.x64.v0-10-0-0.tar.bz2 -O /tmp/monero.tar.bz2
-    - tar -xvjf /tmp/monero.linux.x64.v0-10-0-0.tar.bz2 -C /tmp/monero/
+    - mkdir /tmp/monero/
+    - tar -xvjf /tmp/monero.tar.bz2 -C /tmp/monero/
     - sudo mv /tmp/monero/monero-wallet-cli /usr/bin/monero-wallet-cli
 
     - wget https://github.com/commercialhaskell/stack/releases/download/v1.2.0/stack-1.2.0-linux-x86_64.tar.gz -O /tmp/stack.tar.gz
