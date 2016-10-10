@@ -13,6 +13,8 @@ dependencies:
     # - mv /tmp/stack/stack-1.2.0-linux-x86_64/* /tmp/stack/
     - sudo mv /tmp/stack/stack-1.2.0-linux-x86_64/stack /usr/bin/stack
   override:
+    - ls -lah
+    - pwd
     - stack build --no-system-ghc --install-ghc
 
 test:
