@@ -2,9 +2,9 @@ dependencies:
   cache_directories:
     - "~/.stack"
   pre:
-    - wget https://github.com/commercialhaskell/stack/releases/download/v1.2.0/stack-1.2.0-linux-x86_64.tar.gz -O /tmp/stack.gz
-    - gunzip /tmp/stack.gz && chmod +x /tmp/stack
-    - sudo mv /tmp/stack /usr/bin/stack
+    - wget https://github.com/commercialhaskell/stack/releases/download/v1.2.0/stack-1.2.0-linux-x86_64.tar.gz -O /tmp/stack.tar.gz
+    - tar -xvzf /tmp/stack.tar.gz && chmod +x /tmp/stack-1.2.0-linux-x86_64/stack
+    - sudo mv /tmp/stack-1.2.0-linux-x86_64/stack /usr/bin/stack
   override:
     - stack build --no-system-ghc --install-ghc
 
