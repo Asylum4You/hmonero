@@ -7,13 +7,13 @@ dependencies:
     - tar -xvjf /tmp/monero.tar.bz2 -C /tmp/monero/
     - sudo mv /tmp/monero/monero-wallet-cli /usr/bin/monero-wallet-cli
 
+    - monero-wallet-cli --generate-wallet-file=foo --password=asdf --daemon-host=node.moneybit.science --restore-deterministic-wallet --electrum-seed="eternal digit injury popular vampire austere seismic cottage juggled upon annoyed summon deity catch dullness nuns object fountain code knapsack gifts inactive abnormal anxiety upon" <<< "0"
+
     - wget https://github.com/commercialhaskell/stack/releases/download/v1.2.0/stack-1.2.0-linux-x86_64.tar.gz -O /tmp/stack.tar.gz
     - mkdir /tmp/stack/
     - tar -xvzf /tmp/stack.tar.gz -C /tmp/stack/
     - sudo mv /tmp/stack/stack-1.2.0-linux-x86_64/stack /usr/bin/stack
   override:
-    - ls -lah
-    - pwd
     - stack build --no-system-ghc --install-ghc
 
 test:
