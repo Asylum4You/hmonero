@@ -21,6 +21,7 @@ Library
                         Data.Process
   Build-Depends:        base >= 4.8 && < 5
                       , aeson
+                      , async
                       , attoparsec
                       , bytestring
                       , data-default

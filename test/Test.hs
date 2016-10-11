@@ -52,6 +52,7 @@ main = do
                                   , makeWalletSeed     = Nothing
                                   }
               , testCase "makeWallet mnemonic" $ do
+                  threadDelay 1000000
                   mn <- T.readFile "bar.mnemonic"
                   makeWallet def MakeWalletConfig
                                   { makeWalletName     = "bar"

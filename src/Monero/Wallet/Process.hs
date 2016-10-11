@@ -17,6 +17,7 @@ import Data.Default
 import Control.Monad.Catch
 import Control.Monad (void, unless, forM_, when, forever)
 import Control.Concurrent (threadDelay, forkIO, forkFinally, ThreadId, killThread)
+import Control.Concurrent.Async
 
 import System.FilePath
 import System.IO
@@ -120,13 +121,12 @@ makeWallet WalletProcessConfig{..} MakeWalletConfig{..} = do
   hFlush stdinHandle
 
   -- threadDelay (2 * second) -- FIXME: don't start neglecting until active?
-  errWatcher <- forkAndThrow $ throwLogging name'
+  errWatcher <- async $ throwLogging name'
+  link errWatcher
   neglectFile (name' ++ ".log") second
 
   interruptProcessGroupOf processHandle
   mapM_ hClose [stdinHandle, stdoutHandle, stderrHandle]
-
-  killThread errWatcher
 
 
 -- * Opening Existing Wallet
@@ -161,8 +161,9 @@ openWallet WalletProcessConfig{..} OpenWalletConfig{..} = do
   hs@ProcessHandles{stdoutHandle} <- mkProcess moneroWalletCliPath args
 
   stdLog <- hGetContents stdoutHandle
-  stdLogger <- forkIO $ writeFile (name' ++ ".stdout.log") stdLog
-  errWatcher <- forkAndThrow $ throwLogging name'
+  stdLogger  <- forkIO $ writeFile (name' ++ ".stdout.log") stdLog
+  errWatcher <- async $ throwLogging name'
+  link errWatcher
 
   let loop = do
         threadDelay second
@@ -173,7 +174,6 @@ openWallet WalletProcessConfig{..} OpenWalletConfig{..} = do
   cfg <- newRPCConfig walletRpcIp walletRpcPort
 
   killThread stdLogger
-  killThread errWatcher
 
   pure (cfg, hs)
 
@@ -211,13 +211,11 @@ throwLogging :: FilePath -> IO ()
 throwLogging name' = forever $ do
   threadDelay second
   xs <- T.lines <$> T.readFile (name' ++ ".log")
-  forM_ xs $ \x -> when ("ERROR" `T.isInfixOf` x) $ do
-                     putStrLn "Found ERROR, stopping..."
-                     throwM $ LoggingError x
+  forM_ xs $ \x -> when ("ERROR" `T.isInfixOf` x) $ throwM $ LoggingError x
 
 
 nextAvailPort :: PortNumber -> IO PortNumber
-nextAvailPort startingPort = go startingPort
+nextAvailPort = go
   where
     go p = do
       isAvail <- portIsAvail p
@@ -231,10 +229,3 @@ portIsAvail p = do
     (ExitFailure 1, "") -> pure True
     (ExitSuccess, _)    -> pure False
     _                   -> error $ "lsof failed: " ++ show (e,xs, "lsof -i :" ++ show p)
-
-
-forkAndThrow :: IO () -> IO ThreadId
-forkAndThrow x = forkFinally x $ \me ->
-  case me of
-    Left e  -> throwM e
-    Right x -> pure ()
