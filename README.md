@@ -1,5 +1,8 @@
 # hmonero
 
+[![CircleCI](https://circleci.com/gh/moneybit/hmonero.svg?style=svg)](https://circleci.com/gh/moneybit/hmonero)
+
+
 This is a very simple haskell-accessible wrapper over the `monero-wallet-cli`
 executable (and in the future, the `monderod` executable) for the
 [MoneyBit monero client](http://moneybit.science).
