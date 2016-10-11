@@ -16,7 +16,7 @@ import Data.IP (IPv4)
 import Data.Default
 import Control.Monad.Catch
 import Control.Monad (void, unless, forM_, when, forever)
-import Control.Concurrent (threadDelay, forkIO, killThread)
+import Control.Concurrent (threadDelay, forkIO, forkFinally, ThreadId, killThread)
 
 import System.FilePath
 import System.IO
@@ -120,7 +120,7 @@ makeWallet WalletProcessConfig{..} MakeWalletConfig{..} = do
   hFlush stdinHandle
 
   -- threadDelay (2 * second) -- FIXME: don't start neglecting until active?
-  errWatcher <- forkIO $ throwLogging name'
+  errWatcher <- forkAndThrow $ throwLogging name'
   neglectFile (name' ++ ".log") second
 
   interruptProcessGroupOf processHandle
@@ -162,7 +162,7 @@ openWallet WalletProcessConfig{..} OpenWalletConfig{..} = do
 
   stdLog <- hGetContents stdoutHandle
   stdLogger <- forkIO $ writeFile (name' ++ ".stdout.log") stdLog
-  errWatcher <- forkIO $ throwLogging name'
+  errWatcher <- forkAndThrow $ throwLogging name'
 
   let loop = do
         threadDelay second
@@ -231,3 +231,10 @@ portIsAvail p = do
     (ExitFailure 1, "") -> pure True
     (ExitSuccess, _)    -> pure False
     _                   -> error $ "lsof failed: " ++ show (e,xs, "lsof -i :" ++ show p)
+
+
+forkAndThrow :: IO () -> IO ThreadId
+forkAndThrow x = forkFinally x $ \me ->
+  case me of
+    Left e  -> throwM e
+    Right x -> pure ()
