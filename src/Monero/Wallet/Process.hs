@@ -26,7 +26,6 @@ import System.Exit (ExitCode (..))
 import System.Directory (getCurrentDirectory, removeFile)
 import System.Process (waitForProcess, interruptProcessGroupOf
                       , readCreateProcessWithExitCode, shell)
-import System.IDontNotify (neglectFile)
 import Network (HostName, PortNumber)
 
 
@@ -123,7 +122,8 @@ makeWallet WalletProcessConfig{..} MakeWalletConfig{..} = do
   -- threadDelay (2 * second) -- FIXME: don't start neglecting until active?
   errWatcher <- async $ throwLogging name'
   link errWatcher
-  neglectFile (name' ++ ".log") second
+  -- neglectFile (name' ++ ".log") second
+  threadDelay $ 10 * second
 
   interruptProcessGroupOf processHandle
   mapM_ hClose [stdinHandle, stdoutHandle, stderrHandle]

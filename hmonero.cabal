@@ -27,7 +27,7 @@ Library
                       , data-default
                       , directory
                       , exceptions
-                      , fileneglect
+                      -- , fileneglect
                       , filepath
                       , http-client <= 0.4.29
                       , iproute
