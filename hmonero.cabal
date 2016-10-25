@@ -38,6 +38,8 @@ Library
                       , text
                       , QuickCheck
                       , wreq
+  if os(windows)
+    Build-Depends:      Win32   
 
 Test-Suite spec
   Type:                 exitcode-stdio-1.0
