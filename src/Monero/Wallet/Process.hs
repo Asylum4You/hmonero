@@ -2,6 +2,7 @@
     RecordWildCards
   , NamedFieldPuns
   , OverloadedStrings
+  , CPP
   #-}
 
 module Monero.Wallet.Process where
@@ -14,6 +15,7 @@ import qualified Data.Text as T
 import qualified Data.Text.IO as T
 import Data.IP (IPv4)
 import Data.Default
+import Data.Aeson.Lens (key)
 import Control.Monad.Catch
 import Control.Monad (void, unless, forM_, when, forever)
 import Control.Concurrent (threadDelay, forkIO, forkFinally, ThreadId, killThread)
@@ -26,7 +28,16 @@ import System.Exit (ExitCode (..))
 import System.Directory (getCurrentDirectory, removeFile)
 import System.Process (waitForProcess, interruptProcessGroupOf
                       , readCreateProcessWithExitCode, shell)
+#ifdef mingw32_HOST_OS
+import qualified System.Win32 as Win32
+#endif
+
 import Network (HostName, PortNumber)
+import Network.Wreq (get, responseBody)
+import Control.Lens ((^?))
+
+
+
 
 
 
@@ -44,7 +55,11 @@ data WalletProcessConfig = WalletProcessConfig
 instance Default WalletProcessConfig where
   def = WalletProcessConfig
           { walletsDir = "."
+#ifdef mingw32_HOST_OS
+          , moneroWalletCliPath = "monero-wallet-cli.exe"
+#else
           , moneroWalletCliPath = "monero-wallet-cli"
+#endif
           , walletRpcIp = "127.0.0.1"
           , walletRpcPort = 18082
           , walletDaemonHost = "node.moneybit.science"
@@ -77,11 +92,39 @@ walletLanguageCode l =
 -- * Wallet Creation
 
 data MakeWalletConfig = MakeWalletConfig
-  { makeWalletName     :: T.Text -- ^ Names need to be unique
+  { makeWalletName     :: T.Text          -- ^ Names need to be unique
   , makeWalletPassword :: T.Text
   , makeWalletLanguage :: WalletLanguage
-  , makeWalletSeed     :: Maybe T.Text -- ^ Electrum-style seed
-  } deriving (Show, Eq)
+  , makeWalletSeed     :: Maybe T.Text    -- ^ Electrum-style seed
+  , makeWalletInterval :: Int             -- ^ In picoseconds
+  , makeWalletProgress :: Double -> IO () -- ^ Callback to invoke
+  }
+
+instance Show MakeWalletConfig where
+  show MakeWalletConfig{..} =
+       "MakeWalletConfig { makeWalletName = " ++ show makeWalletName
+                     ++ ", makeWalletPassword = " ++ show makeWalletPassword
+                     ++ ", makeWalletLanguage = " ++ show makeWalletLanguage
+                     ++ ", makeWalletSeed = " ++ show makeWalletSeed
+                     ++ ", makeWalletInterval = " ++ show makeWalletInterval
+                     ++ ", makeWalletProgress = <function> } "
+
+instance Eq MakeWalletConfig where
+  (==)  (MakeWalletConfig
+          { makeWalletName = n1
+          , makeWalletPassword = p1
+          , makeWalletLanguage = l1
+          , makeWalletSeed = s1
+          , makeWalletInterval = i1
+          })
+        (MakeWalletConfig
+          { makeWalletName = n2
+          , makeWalletPassword = p2
+          , makeWalletLanguage = l2
+          , makeWalletSeed = s2
+          , makeWalletInterval = i2
+          })
+        = n1 == n2 && p1 == p2 && l1 == l2 && s1 == s2 && i1 == i2
 
 
 -- TODO: Recover from mnemonic
@@ -119,9 +162,18 @@ makeWallet WalletProcessConfig{..} MakeWalletConfig{..} = do
       Just _  -> 0 :: Int -- FIXME: blockchain height - Weird behavior
   hFlush stdinHandle
 
-  -- threadDelay (2 * second) -- FIXME: don't start neglecting until active?
   errWatcher <- async $ throwLogging name'
   link errWatcher
+
+  maxHeightResp <- get "http://moneroblocks.info/api/get_stats/"
+  let maxHeight = maxHeightResp ^? responseBody . key "height"
+
+  progressWatcher <- async $ forever $ do
+    -- read last line of name' <.> "log"
+    -- parse it, try and get the current block height so far
+    -- invoke callback if value was parsed, and is 0 <= parsed/maxHeight <= 1
+    threadDelay makeWalletInterval
+
   -- neglectFile (name' ++ ".log") second
   threadDelay $ 10 * second
 

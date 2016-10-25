@@ -27,15 +27,17 @@ Library
                       , data-default
                       , directory
                       , exceptions
-                      -- , fileneglect
                       , filepath
                       , http-client <= 0.4.29
                       , iproute
+                      , lens
+                      , lens-aeson
                       , mtl
                       , network
                       , process
                       , text
                       , QuickCheck
+                      , wreq
 
 Test-Suite spec
   Type:                 exitcode-stdio-1.0
