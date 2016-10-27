@@ -3,6 +3,7 @@
   , NamedFieldPuns
   , OverloadedStrings
   , CPP
+  , DeriveGeneric
   #-}
 
 module Monero.Wallet.Process where
@@ -15,11 +16,17 @@ import qualified Data.Text as T
 import qualified Data.Text.IO as T
 import Data.IP (IPv4)
 import Data.Default
+import Data.Aeson as Aeson
 import Data.Aeson.Lens (key)
+import Data.Attoparsec.Text as A
+import Data.Scientific (toRealFloat)
+import Data.Word (Word8)
 import Control.Monad.Catch
-import Control.Monad (void, unless, forM_, when, forever)
-import Control.Concurrent (threadDelay, forkIO, forkFinally, ThreadId, killThread)
+import Control.Monad (void, unless, forM_, when, forever, replicateM)
+import Control.Applicative
+import Control.Concurrent (threadDelay, forkIO, forkFinally, ThreadId, myThreadId, killThread)
 import Control.Concurrent.Async
+import Control.Lens ((^?))
 
 import System.FilePath
 import System.IO
@@ -34,10 +41,14 @@ import qualified System.Win32 as Win32
 
 import Network (HostName, PortNumber)
 import Network.Wreq (get, responseBody)
-import Control.Lens ((^?))
+
+import GHC.Generics
+
+import Debug.Trace
 
 
 
+for = flip map
 
 
 
@@ -100,32 +111,6 @@ data MakeWalletConfig = MakeWalletConfig
   , makeWalletProgress :: Double -> IO () -- ^ Callback to invoke
   }
 
-instance Show MakeWalletConfig where
-  show MakeWalletConfig{..} =
-       "MakeWalletConfig { makeWalletName = " ++ show makeWalletName
-                     ++ ", makeWalletPassword = " ++ show makeWalletPassword
-                     ++ ", makeWalletLanguage = " ++ show makeWalletLanguage
-                     ++ ", makeWalletSeed = " ++ show makeWalletSeed
-                     ++ ", makeWalletInterval = " ++ show makeWalletInterval
-                     ++ ", makeWalletProgress = <function> } "
-
-instance Eq MakeWalletConfig where
-  (==)  (MakeWalletConfig
-          { makeWalletName = n1
-          , makeWalletPassword = p1
-          , makeWalletLanguage = l1
-          , makeWalletSeed = s1
-          , makeWalletInterval = i1
-          })
-        (MakeWalletConfig
-          { makeWalletName = n2
-          , makeWalletPassword = p2
-          , makeWalletLanguage = l2
-          , makeWalletSeed = s2
-          , makeWalletInterval = i2
-          })
-        = n1 == n2 && p1 == p2 && l1 == l2 && s1 == s2 && i1 == i2
-
 
 -- TODO: Recover from mnemonic
 makeWallet :: WalletProcessConfig
@@ -137,7 +122,7 @@ makeWallet WalletProcessConfig{..} MakeWalletConfig{..} = do
          else pure walletsDir
   let name' = dir </> T.unpack makeWalletName
       args = [ "--generate-new-wallet=" ++ name'
-             , "--log-file="            ++ name' ++ ".log"
+             , "--log-file="            ++ name' <.> "log"
              , "--log-level=2"
              , "--password="            ++ T.unpack makeWalletPassword
              -- , "--rpc-bind-ip="         ++ show walletRpcIp
@@ -150,8 +135,8 @@ makeWallet WalletProcessConfig{..} MakeWalletConfig{..} = do
                                , "--electrum-seed=" ++ T.unpack s
                                ]
 
-  tryRemoveFile $ name' ++ ".log"
-  tryRemoveFile $ name' ++ ".stdout.log"
+  tryRemoveFile $ name' <.> "log"
+  tryRemoveFile $ name' <.> "stdout.log"
 
   ProcessHandles{..} <- mkProcess moneroWalletCliPath args
 
@@ -162,20 +147,36 @@ makeWallet WalletProcessConfig{..} MakeWalletConfig{..} = do
       Just _  -> 0 :: Int -- FIXME: blockchain height - Weird behavior
   hFlush stdinHandle
 
-  errWatcher <- async $ throwLogging name'
-  link errWatcher
-
   maxHeightResp <- get "http://moneroblocks.info/api/get_stats/"
-  let maxHeight = maxHeightResp ^? responseBody . key "height"
+  let mMaxHeight = maxHeightResp ^? responseBody . key "height"
+
+  maxHeight <- case mMaxHeight of
+    Nothing -> error "moneroblocks.info not reachable"
+    Just x@(Aeson.String h) -> case A.parseOnly (A.many1 A.digit) h of
+      Left _ -> error $ "moneroblocks.info responded with unexpected data: " ++ show x
+      Right h' -> pure $ read h' :: IO Int
+    Just x -> error $ "moneroblocks.info responded with unexpected data: " ++ show x
 
   progressWatcher <- async $ forever $ do
-    -- read last line of name' <.> "log"
-    -- parse it, try and get the current block height so far
-    -- invoke callback if value was parsed, and is 0 <= parsed/maxHeight <= 1
+    (_,mH) <- parseLogLines name'
+    case mH of
+      Nothing -> pure ()
+      Just h  -> do
+        let r = fromIntegral h / fromIntegral maxHeight
+        makeWalletProgress $
+          if r < 0
+          then 0
+          else if r > 1
+          then 1
+          else r
+        when (r >= 0.95) $ do
+          self <- myThreadId
+          killThread self
     threadDelay makeWalletInterval
+  link progressWatcher
 
   -- neglectFile (name' ++ ".log") second
-  threadDelay $ 10 * second
+  threadDelay $ 5 * second
 
   interruptProcessGroupOf processHandle
   mapM_ hClose [stdinHandle, stdoutHandle, stderrHandle]
@@ -186,7 +187,12 @@ makeWallet WalletProcessConfig{..} MakeWalletConfig{..} = do
 data OpenWalletConfig = OpenWalletConfig
   { openWalletName     :: T.Text
   , openWalletPassword :: T.Text
-  } deriving (Show, Eq)
+  , openWalletInterval :: Int             -- ^ In picoseconds
+  , openWalletProgress :: Double -> IO () -- ^ Callback to invoke
+  }
+
+data Continue = Continue deriving (Show, Generic)
+instance Exception Continue
 
 
 openWallet :: WalletProcessConfig
@@ -198,7 +204,7 @@ openWallet WalletProcessConfig{..} OpenWalletConfig{..} = do
          else pure walletsDir
   let name' = dir </> T.unpack openWalletName
       args = [ "--wallet-file="   ++ name'
-             , "--log-file="      ++ name' ++ ".log"
+             , "--log-file="      ++ name' <.> "log"
              , "--log-level=2"
              , "--password="      ++ T.unpack openWalletPassword
              , "--rpc-bind-ip="   ++ show walletRpcIp
@@ -207,25 +213,43 @@ openWallet WalletProcessConfig{..} OpenWalletConfig{..} = do
              , "--daemon-port="   ++ show (fromIntegral walletDaemonPort :: Int)
              ]
 
-  tryRemoveFile $ name' ++ ".log"
-  tryRemoveFile $ name' ++ ".stdout.log"
+  tryRemoveFile $ name' <.> "log"
+  tryRemoveFile $ name' <.> "stdout.log"
 
   hs@ProcessHandles{stdoutHandle} <- mkProcess moneroWalletCliPath args
 
   stdLog <- hGetContents stdoutHandle
-  stdLogger  <- forkIO $ writeFile (name' ++ ".stdout.log") stdLog
-  errWatcher <- async $ throwLogging name'
-  link errWatcher
+  stdLogger  <- async $ writeFile (name' <.> "stdout.log") stdLog
+  link stdLogger
 
-  let loop = do
-        threadDelay second
-        xs <- T.lines <$> T.readFile (name' ++ ".log")
-        unless (any ("Starting wallet rpc server" `T.isInfixOf`) xs) loop
-  loop
+
+  maxHeightResp <- get "http://moneroblocks.info/api/get_stats/"
+  let mMaxHeight = maxHeightResp ^? responseBody . key "height"
+
+  maxHeight <- case mMaxHeight of
+    Nothing -> error "moneroblocks.info not reachable"
+    Just x@(Aeson.String h) -> case A.parseOnly (A.many1 A.digit) h of
+      Left _ -> error $ "moneroblocks.info responded with unexpected data: " ++ show x
+      Right h' -> pure $ read h' :: IO Int
+    Just x -> error $ "moneroblocks.info responded with unexpected data: " ++ show x
+
+  progressWatcher <- async $
+    let x = forever $ do
+              (rpcStarted, mH) <- parseLogLines name'
+              if rpcStarted
+              then throwM Continue
+              else case mH of
+                Nothing -> pure ()
+                Just h  -> openWalletProgress $
+                            let r = fromIntegral h / fromIntegral maxHeight
+                            in  if r < 0 then 0 else if r > 1 then 1 else r
+              threadDelay openWalletInterval
+    in  x `catch` (\Continue -> pure ())
+  link progressWatcher
+
+  putStrLn "JSON RPC server started"
 
   cfg <- newRPCConfig walletRpcIp walletRpcPort
-
-  killThread stdLogger
 
   pure (cfg, hs)
 
@@ -250,6 +274,25 @@ second = 1000000
 
 -- * Utils
 
+data WalletLogFileLine
+  = WalletLogFileError String
+  | WalletLogFileHeight Int
+  | WalletLogFileOther
+
+instance Monoid WalletLogFileLine where
+  mempty = WalletLogFileOther
+  x `mappend` y =
+    case (x,y) of
+      (WalletLogFileHeight hX, WalletLogFileHeight hY) ->
+        WalletLogFileHeight $ max hX hY
+      (WalletLogFileError eX, WalletLogFileError eY) ->
+        WalletLogFileError $ unlines [eX, eY]
+      (WalletLogFileError _, _) -> x
+      (_, WalletLogFileError _) -> y
+      (WalletLogFileOther,_) -> y
+      (_,WalletLogFileOther) -> x
+
+
 
 tryRemoveFile :: FilePath -> IO ()
 tryRemoveFile file =
@@ -259,11 +302,70 @@ tryRemoveFile file =
                   | otherwise             = throwM e
 
 
-throwLogging :: FilePath -> IO ()
-throwLogging name' = forever $ do
-  threadDelay second
-  xs <- T.lines <$> T.readFile (name' ++ ".log")
-  forM_ xs $ \x -> when ("ERROR" `T.isInfixOf` x) $ throwM $ LoggingError x
+parseLogLines :: FilePath -> IO (Bool, Maybe Int)
+parseLogLines name' = do
+  xs <- T.lines <$> T.readFile (name' <.> "log")
+  let (rpcStarted, ys) = unzip $ for xs $ \x ->
+        if "ERROR" `T.isInfixOf` x
+        then (False, WalletLogFileError $ show x)
+        else if "Starting wallet rpc server" `T.isInfixOf` x
+        then (True, WalletLogFileOther)
+        else case A.parseOnly lineParser $ T.drop 28 x of
+              Left e ->
+                          traceShow (e, T.drop 28 x)
+                            (False, WalletLogFileOther)
+              Right (y@(WalletLogFileHeight _)) -> (False, y)
+              _ -> error $ "Somehow parsed something not possible :| "
+                          ++ show x
+                          ++ " :: all lines :| "
+                          ++ show xs
+  case mconcat ys of
+    WalletLogFileOther    -> pure (any id rpcStarted, Nothing)
+    WalletLogFileError e  -> throwM $ LoggingError $ T.pack e
+    WalletLogFileHeight h -> pure (any id rpcStarted, Just h)
+  where
+    lineParser :: A.Parser WalletLogFileLine
+    lineParser = do
+      parseHeight1 <|> parseHeight3 <|> parseHeight2
+      where
+        parseHeight1 :: A.Parser WalletLogFileLine
+        parseHeight1 = do
+          _ <- A.string "Skipped block by height: " <?> "skipping block by height"
+
+          cs <- A.many1 A.digit <?> "height"
+
+          A.endOfLine
+
+          pure $ WalletLogFileHeight $ read cs
+
+        parseHeight2 :: A.Parser WalletLogFileLine
+        parseHeight2 = do
+          _ <- A.string "Processed block: <" <?> "processed block"
+          void $ replicateM 64 (A.hexadecimal :: A.Parser Word8)
+          _ <- A.string ">, height " <?> "end processed block"
+
+          cs <- A.many1 A.digit <?> "height"
+          void $ A.char ','
+
+          _ <- A.many1 A.anyChar <?> "rest of processed block"
+
+          A.endOfLine
+
+          pure $ WalletLogFileHeight $ read cs
+
+        parseHeight3 :: A.Parser WalletLogFileLine
+        parseHeight3 = do
+          _ <- A.string "Skipped block by timestamp, height: " <?> "skipping block by height"
+
+          cs <- A.many1 A.digit <?> "height"
+
+          void $ A.char ','
+
+          _ <- A.many1 A.anyChar <?> "rest of skipped timestamp"
+
+          A.endOfLine
+
+          pure $ WalletLogFileHeight $ read cs
 
 
 nextAvailPort :: PortNumber -> IO PortNumber

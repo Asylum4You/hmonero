@@ -35,6 +35,7 @@ Library
                       , mtl
                       , network
                       , process
+                      , scientific
                       , text
                       , QuickCheck
                       , wreq

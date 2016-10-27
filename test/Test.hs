@@ -35,6 +35,8 @@ main = do
   (cfg,hs) <- openWallet def OpenWalletConfig
                               { openWalletName     = "foo"
                               , openWalletPassword = "asdf"
+                              , openWalletInterval = 1000000
+                              , openWalletProgress = \r -> print r
                               }
   putStrLn "Opened foo wallet"
   bracket_ (pure ()) (closeWallet hs) $
@@ -50,6 +52,8 @@ main = do
                                   , makeWalletPassword = "asdf"
                                   , makeWalletLanguage = English
                                   , makeWalletSeed     = Nothing
+                                  , makeWalletInterval = 1000000
+                                  , makeWalletProgress = \r -> print r
                                   }
               , testCase "makeWallet mnemonic" $ do
                   threadDelay 1000000
@@ -59,6 +63,8 @@ main = do
                                   , makeWalletPassword = "asdf"
                                   , makeWalletLanguage = English
                                   , makeWalletSeed     = Just mn
+                                  , makeWalletInterval = 1000000
+                                  , makeWalletProgress = \r -> print r
                                   }
               , testCase "openWallet closeWallet" $
                   bracket_
@@ -71,6 +77,8 @@ main = do
                                        OpenWalletConfig
                                          { openWalletName     = "bar"
                                          , openWalletPassword = "asdf"
+                                         , openWalletInterval = 1000000
+                                         , openWalletProgress = \r -> print r
                                          }
                           threadDelay (5 * second) -- FIXME
                           closeWallet hsO
