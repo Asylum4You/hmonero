@@ -369,11 +369,9 @@ parseLogLines name' = do
 
 
 nextAvailPort :: PortNumber -> IO PortNumber
-nextAvailPort = go
-  where
-    go p = do
-      isAvail <- portIsAvail p
-      if isAvail then pure p else go $ p + 1
+nextAvailPort p = do
+  isAvail <- portIsAvail p
+  if isAvail then pure p else nextAvailPort $ p + 1
 
 
 portIsAvail :: PortNumber -> IO Bool
