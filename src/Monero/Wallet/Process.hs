@@ -157,26 +157,24 @@ makeWallet WalletProcessConfig{..} MakeWalletConfig{..} = do
       Right h' -> pure $ read h' :: IO Int
     Just x -> error $ "moneroblocks.info responded with unexpected data: " ++ show x
 
-  progressWatcher <- async $ forever $ do
-    (_,mH) <- parseLogLines name'
-    case mH of
-      Nothing -> pure ()
-      Just h  -> do
-        let r = fromIntegral h / fromIntegral maxHeight
-        makeWalletProgress $
-          if r < 0
-          then 0
-          else if r > 1
-          then 1
-          else r
-        when (r >= 0.95) $ do
-          self <- myThreadId
-          killThread self
-    threadDelay makeWalletInterval
-  link progressWatcher
-
-  -- neglectFile (name' ++ ".log") second
-  threadDelay $ 5 * second
+  let loop = do
+        (_,mH) <- parseLogLines name'
+        case mH of
+          Nothing -> do
+            threadDelay makeWalletInterval
+            loop
+          Just h  -> do
+            let r = fromIntegral h / fromIntegral maxHeight
+            makeWalletProgress $
+              if r < 0
+              then 0
+              else if r > 1
+              then 1
+              else r
+            unless (r >= 0.95) $ do
+              threadDelay makeWalletInterval
+              loop
+  loop
 
   interruptProcessGroupOf processHandle
   mapM_ hClose [stdinHandle, stdoutHandle, stderrHandle]
@@ -233,19 +231,27 @@ openWallet WalletProcessConfig{..} OpenWalletConfig{..} = do
       Right h' -> pure $ read h' :: IO Int
     Just x -> error $ "moneroblocks.info responded with unexpected data: " ++ show x
 
-  progressWatcher <- async $
-    let x = forever $ do
-              (rpcStarted, mH) <- parseLogLines name'
-              if rpcStarted
-              then throwM Continue
-              else case mH of
-                Nothing -> pure ()
-                Just h  -> openWalletProgress $
-                            let r = fromIntegral h / fromIntegral maxHeight
-                            in  if r < 0 then 0 else if r > 1 then 1 else r
+  let loop = do
+        (rpcStarted, mH) <- parseLogLines name'
+        if rpcStarted
+        then pure ()
+        else do
+          case mH of
+            Nothing -> do
               threadDelay openWalletInterval
-    in  x `catch` (\Continue -> pure ())
-  link progressWatcher
+              loop
+            Just h  -> do
+              let r = fromIntegral h / fromIntegral maxHeight
+              openWalletProgress $
+                if r < 0
+                then 0
+                else if r > 1
+                then 1
+                else r
+              unless (r >= 0.95) $ do
+                threadDelay openWalletInterval
+                loop
+  loop
 
   putStrLn "JSON RPC server started"
 

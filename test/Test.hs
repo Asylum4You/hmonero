@@ -48,14 +48,14 @@ main = do
               [ testCase "makeWallet" $
                   bracket_
                     (pure ())
-                    (mapM_ removeFile ["bar","bar.log","bar.address.txt","bar.keys"])
+                    (mapM_ tryRemoveFile ["bar","bar.log","bar.address.txt","bar.keys"])
                     $ makeWallet def MakeWalletConfig
                                   { makeWalletName     = "bar"
                                   , makeWalletPassword = "asdf"
                                   , makeWalletLanguage = English
                                   , makeWalletSeed     = Nothing
                                   , makeWalletInterval = 1000000
-                                  , makeWalletProgress = \r -> traceShow r $ print r
+                                  , makeWalletProgress = \r -> print r
                                   }
               , testCase "makeWallet mnemonic" $ do
                   threadDelay 1000000
@@ -66,7 +66,7 @@ main = do
                                   , makeWalletLanguage = English
                                   , makeWalletSeed     = Just mn
                                   , makeWalletInterval = 1000000
-                                  , makeWalletProgress = \r -> traceShow r $ print r
+                                  , makeWalletProgress = \r -> print r
                                   }
               , testCase "openWallet closeWallet" $
                   bracket_
@@ -80,7 +80,7 @@ main = do
                                          { openWalletName     = "bar"
                                          , openWalletPassword = "asdf"
                                          , openWalletInterval = 1000000
-                                         , openWalletProgress = \r -> traceShow r $ print r
+                                         , openWalletProgress = \r -> print r
                                          }
                           threadDelay (5 * second) -- FIXME
                           closeWallet hsO
