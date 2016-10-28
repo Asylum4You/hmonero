@@ -1,200 +1,39 @@
-2016-Oct-27 07:38:22.822698 Monero 'Wolfram Warptangent' (v0.10.0.0-release)
-2016-Oct-27 07:38:22.822741 Setting log level = 2
-2016-Oct-27 07:38:22.822752 default_log: monero-wallet-cli.log
-2016-Oct-27 07:38:22.822776 Logging at log level 2 to /home/athan/dev/moneybit/hmonero/foo.log
-2016-Oct-27 07:38:22.822814 Loading wallet...
-2016-Oct-27 07:38:22.867917 Loaded wallet keys file, with public address: 48aPXdzu2Qt1KVVuPUunjeVTm6zf6Vg3kf38VhSCunCzQjWBzH3rpJjSwDgnE8ocJWYGeEqhEoBWqeoVwbyYs3se6cGdjTx
-2016-Oct-27 07:38:22.880346 Trying to decrypt cache data
-2016-Oct-27 07:38:23.486977 Block is already in blockchain: 572d6e1d3536c31701deeb3554ebe4a7a9589d21d6034c5308d0d9a829aee93d
-2016-Oct-27 07:38:23.487873 Processed block: <038293b3975cddb1c4d09af81c8113c4feeb44da2bd7f800a88f54451a7cde57>, height 1166697, 1(1/0)ms
-2016-Oct-27 07:38:23.517084 Processed block: <0c301fa3b08107962682175e0eadde94d89cc0c39af4f2d1cc11ec44feceea06>, height 1166698, 1(1/0)ms
-2016-Oct-27 07:38:23.532429 Setting UNSPENT: ki <d817e78dd30fca101c0bc40ad23bce750feb7af9b487f4b2d38a36905740231e>, amount 0.080000000000
-2016-Oct-27 07:38:23.532470 Received money: 0.080000000000, with tx: <fa2a0b999905563913e0d9b54944444604d41362e79e71ae8c58a181a72127b9>
-2016-Oct-27 07:38:23.532484 Spent money: 0.090000000000, with tx: <fa2a0b999905563913e0d9b54944444604d41362e79e71ae8c58a181a72127b9>
-2016-Oct-27 07:38:23.532495 Setting SPENT at 1166699: ki <b14ed629874b0df982a43944ca3667191f03192fd8182576b41fc44bdaf7a007>, amount 0.090000000000
-2016-Oct-27 07:38:23.534722 Setting UNSPENT: ki <4082e4bbbb96b341e6a3f40c1e2145505c6298592103fd6de464205ab5f7d81e>, amount 0.090000000000
-2016-Oct-27 07:38:23.534753 Received money: 0.090000000000, with tx: <dc1f3c300e979919e204ef9479b4d673eb40e3b79df4742b959e273e2141091c>
-2016-Oct-27 07:38:23.534764 Setting UNSPENT: ki <2356289b1059e1697badf26b7aab98cfe707599ed3c470e1939ad351e658f2b8>, amount 0.500000000000
-2016-Oct-27 07:38:23.534775 Received money: 0.500000000000, with tx: <dc1f3c300e979919e204ef9479b4d673eb40e3b79df4742b959e273e2141091c>
-2016-Oct-27 07:38:23.534786 Spent money: 0.600000000000, with tx: <dc1f3c300e979919e204ef9479b4d673eb40e3b79df4742b959e273e2141091c>
-2016-Oct-27 07:38:23.534796 Setting SPENT at 1166699: ki <1af98a7bbd071a3b6beba7cf83c97401a7d48f11cd267fd0344c6c35a54a3ffa>, amount 0.600000000000
-2016-Oct-27 07:38:23.534817 Processed block: <e4265682819e3d1d122b5c399fc7637ca859795aeb0cfb2749e53935782d86af>, height 1166699, 18(1/17)ms
-2016-Oct-27 07:38:23.536717 Processed block: <6095d5a9a11473eaba286a89551fe0bc716aa97ff08398b0b982ec10cdec0bd6>, height 1166700, 2(0/2)ms
-2016-Oct-27 07:38:23.537001 Processed block: <ea831403d4287fe03846256eadb2cc34ddba38e8f80f4a5f2067a61278e99625>, height 1166701, 0(0/0)ms
-2016-Oct-27 07:38:23.553896 Processed block: <758a79459d46a4b0ca87c1b410bea957de9ee1b9ebdf1c746394992d46c0c0bb>, height 1166702, 17(0/17)ms
-2016-Oct-27 07:38:23.559014 Processed block: <5d2fd1d3e2ff437be22d05aef6719cff9676a7332eee4b64eb756e0f7b3b752c>, height 1166703, 5(0/5)ms
-2016-Oct-27 07:38:23.559491 Processed block: <22e82d43f909948b8c92569a05a15983dd7f2c75421540e1793bd79bbc7938e2>, height 1166704, 0(0/0)ms
-2016-Oct-27 07:38:23.562354 Processed block: <d116b9dfc353894f3f480cea797754b1a48938ee94f979483b65c341c7fdc68f>, height 1166705, 3(1/2)ms
-2016-Oct-27 07:38:23.567649 Processed block: <231f753427a3f6ba40211ceaba805eee2ca9cdec80575aa64cd0cb2bc67c2aa4>, height 1166706, 6(1/5)ms
-2016-Oct-27 07:38:23.567931 Processed block: <b3e7be3d8bff3b75b70f4496b84d4e4f095479f2a27b6baa3d6026b4a7c09e09>, height 1166707, 0(0/0)ms
-2016-Oct-27 07:38:23.568240 Processed block: <28d2ce1191e15f8fd361c8d93205a8edfce7d48fe622bae890150dc61007bd9a>, height 1166708, 0(0/0)ms
-2016-Oct-27 07:38:23.732253 Block is already in blockchain: 231f753427a3f6ba40211ceaba805eee2ca9cdec80575aa64cd0cb2bc67c2aa4
-2016-Oct-27 07:38:23.732293 Block is already in blockchain: b3e7be3d8bff3b75b70f4496b84d4e4f095479f2a27b6baa3d6026b4a7c09e09
-2016-Oct-27 07:38:23.732307 Block is already in blockchain: 28d2ce1191e15f8fd361c8d93205a8edfce7d48fe622bae890150dc61007bd9a
-2016-Oct-27 07:38:24.284603 Refresh done, blocks received: 12, balance: 1.800000000000, unlocked: 1.800000000000
-2016-Oct-27 07:38:24.284652 Loaded ok
-2016-Oct-27 07:38:24.284759 Binding on 127.0.0.1:18082
-2016-Oct-27 07:38:24.284892 Starting wallet rpc server
-2016-Oct-27 07:38:24.284918 Run net_service loop( 1 threads)...
-2016-Oct-27 07:38:44.002813 [RPC0]HTTP [127.0.0.1] POST /json_rpc
-2016-Oct-27 07:38:44.002854 [RPC0]/json_rpc[getbalance] processed with 0/0/0ms
-2016-Oct-27 07:38:44.003511 [RPC0]HTTP [127.0.0.1] POST /json_rpc
-2016-Oct-27 07:38:44.003559 [RPC0]/json_rpc[getaddress] processed with 0/0/0ms
-2016-Oct-27 07:38:44.043376 [RPC0]HTTP [127.0.0.1] POST /json_rpc
-2016-Oct-27 07:38:44.043421 [RPC0]/json_rpc[getheight] processed with 0/0/0ms
-2016-Oct-27 07:38:44.084972 [RPC0]HTTP [127.0.0.1] POST /json_rpc
-2016-Oct-27 07:38:44.566402 [RPC0]Using v2 rules
-2016-Oct-27 07:38:45.086400 [RPC0]Using v3 rules
-2016-Oct-27 07:40:51.971289 [RPC0]/json_rpc[sweep_dust] processed with 0/127886/0ms
-2016-Oct-27 07:40:52.157472 [RPC0]Block is already in blockchain: 28d2ce1191e15f8fd361c8d93205a8edfce7d48fe622bae890150dc61007bd9a
-2016-Oct-27 07:40:52.157768 [RPC0]Processed block: <2417074b3362c992ee5dcc2086e863720e8c38409de2f5a4c225d26a36801995>, height 1166709, 1(1/0)ms
-2016-Oct-27 07:40:52.415569 [RPC0]Block is already in blockchain: 28d2ce1191e15f8fd361c8d93205a8edfce7d48fe622bae890150dc61007bd9a
-2016-Oct-27 07:40:52.415629 [RPC0]Block is already in blockchain: 2417074b3362c992ee5dcc2086e863720e8c38409de2f5a4c225d26a36801995
-2016-Oct-27 07:40:52.996832 [RPC0]Found new pool tx: <51c5164f2d825d5d50be05c7fd2c6e1ee3df20f97355abb54b552fab1b9eec3d>
-2016-Oct-27 07:40:53.704160 [RPC0]Found new pool tx: <9f53c6360526938aeb94010e2888d336c5b534ee9b86ea4d03f3e65c77457599>
-2016-Oct-27 07:40:54.133943 [RPC0]Found new pool tx: <84ecf90f02d01dbf471ff3865b9f025f396c8d6d9dce7fccf3bd0916d732419a>
-2016-Oct-27 07:40:55.299010 [RPC0]Found new pool tx: <9a489faffa983e5a1ed2881189d00e0e3ba87b0e4f72fc50c3c2fe93ddeefdc7>
-2016-Oct-27 07:40:55.482857 [RPC0]Found new pool tx: <5a6d350b166827bb291cc141a6544690a106014dee2814ba93be69ed660b657c>
-2016-Oct-27 07:40:55.700163 [RPC0]Found new pool tx: <bee2bd1b6f3f2e5b592635503e50dd5b0909a5e349b0f44e77a5508ecae5b6b1>
-2016-Oct-27 07:40:55.941631 [RPC0]Refresh done, blocks received: 1, balance: 1.800000000000, unlocked: 1.800000000000
-2016-Oct-27 07:40:55.949840 [RPC0]HTTP [127.0.0.1] POST /json_rpc
-2016-Oct-27 07:40:55.952606 [RPC0]/json_rpc[query_key] processed with 0/2/0ms
-2016-Oct-27 07:40:55.992619 [RPC0]HTTP [127.0.0.1] POST /json_rpc
-2016-Oct-27 07:40:55.993882 [RPC0]/json_rpc[incoming_transfers] processed with 0/0/1ms
-2016-Oct-27 07:40:56.033753 [RPC0]HTTP [127.0.0.1] POST /json_rpc
-2016-Oct-27 07:40:56.033994 [RPC0]/json_rpc[make_integrated_address] processed with 0/0/0ms
-2016-Oct-27 07:40:56.072997 [RPC0]HTTP [127.0.0.1] POST /json_rpc
-2016-Oct-27 07:40:56.279914 [RPC0]/json_rpc[store] processed with 0/207/0ms
-2016-Oct-27 07:40:56.319472 [RPC0]HTTP [127.0.0.1] POST /json_rpc
-2016-Oct-27 07:40:56.319541 [RPC0]/json_rpc[get_payments] processed with 0/0/0ms
-2016-Oct-27 07:40:56.360873 [RPC0]HTTP [127.0.0.1] POST /json_rpc
-2016-Oct-27 07:40:56.361183 [RPC0]/json_rpc[get_payments] processed with 0/0/0ms
-2016-Oct-27 07:40:56.400581 [RPC0]HTTP [127.0.0.1] POST /json_rpc
-2016-Oct-27 07:40:56.400880 [RPC0]/json_rpc[get_bulk_payments] processed with 0/0/0ms
-2016-Oct-27 07:40:56.440674 [RPC0]HTTP [127.0.0.1] POST /json_rpc
-2016-Oct-27 07:40:56.441052 [RPC0]/json_rpc[split_integrated_address] processed with 0/0/0ms
-2016-Oct-27 07:40:56.481169 [RPC0]HTTP [127.0.0.1] POST /json_rpc
-2016-Oct-27 07:40:57.577190 [RPC0]Using v2 rules
-2016-Oct-27 07:40:57.577326 [RPC0]Requested mixin 1 too low for hard fork 2, using 2
-2016-Oct-27 07:40:58.095190 [RPC0]Using v2 rules
-2016-Oct-27 07:40:58.617004 [RPC0]Not using v4 rules
-2016-Oct-27 07:41:00.061670 [RPC0]Using v3 rules
-2016-Oct-27 07:41:00.061714 [RPC0]transfer: adding 0.001000000000, for a total of 0.001000000000
-2016-Oct-27 07:41:00.061727 [RPC0]Starting with 11 non-dust outputs and 0 dust outputs
-2016-Oct-27 07:41:00.061757 [RPC0]Picking output 26, amount 0.700000000000
-2016-Oct-27 07:41:00.061776 [RPC0]We can fully pay 48iZ4NPuYsTfZEiYYXzKbTeZotimqEsfUB2LgykPAksdHkz4daHT46ZFsnkwRygxu2KR3KmkhpLvNQMtszjC3TsVFMLSNwK for 0.001000000000
-2016-Oct-27 07:41:00.061786 [RPC0]Considering whether to create a tx now, 1 inputs, tx limit 74400
-2016-Oct-27 07:41:00.061796 [RPC0]Trying to create a tx now, with 1 destinations and 1 outputs
-2016-Oct-27 07:41:00.577208 [RPC0]Using v2 rules
-2016-Oct-27 07:41:00.577268 [RPC0]transfer: starting with fee 0.000000000000
-2016-Oct-27 07:41:00.577289 [RPC0]transfer: adding 0.001000000000, for a total of 0.001000000000
-2016-Oct-27 07:41:00.577308 [RPC0]wanted 0.001000000000, found 0.700000000000, fee 0.000000000000
-2016-Oct-27 07:41:00.577326 [RPC0]fake_outputs_count: 2
-2016-Oct-27 07:41:00.936423 [RPC0]base_requested_outputs_count: 5
-2016-Oct-27 07:41:00.936546 [RPC0]482473 outputs of size 0.700000000000
-2016-Oct-27 07:41:00.936639 [RPC0]asking for output 287289 for 0.700000000000
-2016-Oct-27 07:41:00.936675 [RPC0]asking for output 292891 for 0.700000000000
-2016-Oct-27 07:41:00.936707 [RPC0]asking for output 414599 for 0.700000000000
-2016-Oct-27 07:41:00.936738 [RPC0]asking for output 472754 for 0.700000000000
-2016-Oct-27 07:41:00.936770 [RPC0]asking for output 478155 for 0.700000000000
-2016-Oct-27 07:41:01.497669 [RPC0]Looking for 3 outputs of size 0.700000000000
-2016-Oct-27 07:41:01.497711 [RPC0]Index 2/5: idx 414599 (real 478155), unlocked 1, key <a42605d9794f59fbf26f775fac5267771f5701bc27fa5db921365e0e8a0035dd>
-2016-Oct-27 07:41:01.497730 [RPC0]Index 0/5: idx 287289 (real 478155), unlocked 1, key <dabf6d0028baef4897de5cd488032d8bd3b1fa15b3a12dbe5857eca320c98800>
-2016-Oct-27 07:41:01.498184 [RPC0]amount=0.700000000000, real_output=2, real_output_in_tx_index=2, indexes: 287289 414599 478155 
-2016-Oct-27 07:41:01.501702 [RPC0]Made a 395 kB tx, with 0.699000000000 available for fee (0.002000000000 needed)
-2016-Oct-27 07:41:01.501729 [RPC0]We made a tx, adjusting fee and saving it
-2016-Oct-27 07:41:01.998056 [RPC0]Using v2 rules
-2016-Oct-27 07:41:01.998181 [RPC0]transfer: starting with fee 0.002000000000
-2016-Oct-27 07:41:01.998223 [RPC0]transfer: adding 0.001000000000, for a total of 0.003000000000
-2016-Oct-27 07:41:01.998260 [RPC0]wanted 0.003000000000, found 0.700000000000, fee 0.002000000000
-2016-Oct-27 07:41:01.998291 [RPC0]fake_outputs_count: 2
-2016-Oct-27 07:41:02.276994 [RPC0]base_requested_outputs_count: 5
-2016-Oct-27 07:41:02.277159 [RPC0]482473 outputs of size 0.700000000000
-2016-Oct-27 07:41:02.277306 [RPC0]asking for output 42423 for 0.700000000000
-2016-Oct-27 07:41:02.277374 [RPC0]asking for output 142212 for 0.700000000000
-2016-Oct-27 07:41:02.277435 [RPC0]asking for output 319426 for 0.700000000000
-2016-Oct-27 07:41:02.277495 [RPC0]asking for output 476838 for 0.700000000000
-2016-Oct-27 07:41:02.277557 [RPC0]asking for output 478155 for 0.700000000000
-2016-Oct-27 07:41:03.238883 [RPC0]Looking for 3 outputs of size 0.700000000000
-2016-Oct-27 07:41:03.238950 [RPC0]Index 2/5: idx 319426 (real 478155), unlocked 1, key <e3e290a805f1ab63758a290d3916b253da309ffd21504363d7c60f4857fedc3f>
-2016-Oct-27 07:41:03.238980 [RPC0]Index 4/5: idx 478155 (real 478155), unlocked 1, key <c9f6856caac7a7cda92d4f8d9b1643e0e3092622d0f25cb4dc35d2141e06d5be>
-2016-Oct-27 07:41:03.239003 [RPC0]Index 0/5: idx 42423 (real 478155), unlocked 1, key <f7e1723d0bb297b3ab4771fa367a76c5b73940d52253fd31ade445a04a722682>
-2016-Oct-27 07:41:03.239715 [RPC0]amount=0.700000000000, real_output=2, real_output_in_tx_index=2, indexes: 42423 319426 478155 
-2016-Oct-27 07:41:03.245383 [RPC0]Made a final 1 kB tx, with 0.009000000000 fee  and 0.690000000000 change
-2016-Oct-27 07:41:03.245436 [RPC0]Done creating 1 transactions, 0.009000000000 total fee, 0.690000000000 total change
-2016-Oct-27 07:41:03.245456 [RPC0]  Transaction 1/1: 1 kB, sending 0.700000000000 in 1 outputs to 1 destination(s), including 0.009000000000 fee, 0.690000000000 change
-2016-Oct-27 07:41:03.517243 [RPC0]transaction <229c86127901f3b91370763277d103fea4f72abaaacf8b33cc67e9e4ce46d8bc> generated ok and sent to daemon, key_images: [<15e6133a4a6564f68d131396ced6e29b096be7b66e301a8fad966e54cf85d195> ]
-2016-Oct-27 07:41:03.517285 [RPC0]Setting SPENT at 0: ki <15e6133a4a6564f68d131396ced6e29b096be7b66e301a8fad966e54cf85d195>, amount 0.700000000000
-2016-Oct-27 07:41:03.517298 [RPC0]Transaction successfully sent. <<229c86127901f3b91370763277d103fea4f72abaaacf8b33cc67e9e4ce46d8bc>>
-Commission: 0.009000000000 (dust sent to dust addr: 0.000000000000)
-Balance: 1.790000000000
-Unlocked: 1.100000000000
-Please, wait for confirmation for your balance to be unlocked.
-2016-Oct-27 07:41:03.517327 [RPC0]/json_rpc[transfer] processed with 0/7036/0ms
-2016-Oct-27 07:41:03.555707 [RPC0]HTTP [127.0.0.1] POST /json_rpc
-2016-Oct-27 07:41:03.997146 [RPC0]Using v2 rules
-2016-Oct-27 07:41:04.525121 [RPC0]Not using v4 rules
-2016-Oct-27 07:41:05.058389 [RPC0]Using v3 rules
-2016-Oct-27 07:41:05.058527 [RPC0]transfer: adding 0.001000000000, for a total of 0.001000000000
-2016-Oct-27 07:41:05.058676 [RPC0]Starting with 10 non-dust outputs and 0 dust outputs
-2016-Oct-27 07:41:05.058775 [RPC0]Picking output 20, amount 0.090000000000
-2016-Oct-27 07:41:05.058858 [RPC0]We can fully pay 48iZ4NPuYsTfZEiYYXzKbTeZotimqEsfUB2LgykPAksdHkz4daHT46ZFsnkwRygxu2KR3KmkhpLvNQMtszjC3TsVFMLSNwK for 0.001000000000
-2016-Oct-27 07:41:05.058906 [RPC0]Considering whether to create a tx now, 1 inputs, tx limit 74400
-2016-Oct-27 07:41:05.058942 [RPC0]Trying to create a tx now, with 1 destinations and 1 outputs
-2016-Oct-27 07:41:05.578859 [RPC0]Using v2 rules
-2016-Oct-27 07:41:05.579290 [RPC0]transfer: starting with fee 0.000000000000
-2016-Oct-27 07:41:05.579409 [RPC0]transfer: adding 0.001000000000, for a total of 0.001000000000
-2016-Oct-27 07:41:05.579490 [RPC0]wanted 0.001000000000, found 0.090000000000, fee 0.000000000000
-2016-Oct-27 07:41:05.579552 [RPC0]fake_outputs_count: 3
-2016-Oct-27 07:41:05.835358 [RPC0]base_requested_outputs_count: 7
-2016-Oct-27 07:41:05.835492 [RPC0]272142 outputs of size 0.090000000000
-2016-Oct-27 07:41:05.835649 [RPC0]asking for output 62891 for 0.090000000000
-2016-Oct-27 07:41:05.835752 [RPC0]asking for output 66104 for 0.090000000000
-2016-Oct-27 07:41:05.835820 [RPC0]asking for output 169126 for 0.090000000000
-2016-Oct-27 07:41:05.835873 [RPC0]asking for output 179251 for 0.090000000000
-2016-Oct-27 07:41:05.835930 [RPC0]asking for output 186156 for 0.090000000000
-2016-Oct-27 07:41:05.835990 [RPC0]asking for output 236897 for 0.090000000000
-2016-Oct-27 07:41:05.836049 [RPC0]asking for output 263624 for 0.090000000000
-2016-Oct-27 07:41:06.116307 [RPC0]Looking for 4 outputs of size 0.090000000000
-2016-Oct-27 07:41:06.116351 [RPC0]Index 2/7: idx 169126 (real 263624), unlocked 1, key <f631ca61497de8481acd51440ff089a8c657423a388d52793485df84098498b9>
-2016-Oct-27 07:41:06.116372 [RPC0]Index 4/7: idx 186156 (real 263624), unlocked 1, key <50877dce6df45f80f397f2ed9d3b8369f319d3e9278f1154d4475a3acfe12486>
-2016-Oct-27 07:41:06.116389 [RPC0]Index 1/7: idx 66104 (real 263624), unlocked 1, key <b1fea0b7e8ed341c6dc03795b79a50365aad6a8ea4bc0b06f6db7c90462ff84a>
-2016-Oct-27 07:41:06.116733 [RPC0]amount=0.090000000000, real_output=3, real_output_in_tx_index=1, indexes: 66104 169126 186156 263624 
-2016-Oct-27 07:41:06.119849 [RPC0]Made a 423 kB tx, with 0.089000000000 available for fee (0.002000000000 needed)
-2016-Oct-27 07:41:06.119876 [RPC0]We made a tx, adjusting fee and saving it
-2016-Oct-27 07:41:06.665203 [RPC0]Using v2 rules
-2016-Oct-27 07:41:06.665363 [RPC0]transfer: starting with fee 0.002000000000
-2016-Oct-27 07:41:06.665442 [RPC0]transfer: adding 0.001000000000, for a total of 0.003000000000
-2016-Oct-27 07:41:06.665522 [RPC0]wanted 0.003000000000, found 0.090000000000, fee 0.002000000000
-2016-Oct-27 07:41:06.665595 [RPC0]fake_outputs_count: 3
-2016-Oct-27 07:41:06.918552 [RPC0]base_requested_outputs_count: 7
-2016-Oct-27 07:41:06.918744 [RPC0]272142 outputs of size 0.090000000000
-2016-Oct-27 07:41:06.918915 [RPC0]asking for output 97870 for 0.090000000000
-2016-Oct-27 07:41:06.918983 [RPC0]asking for output 98668 for 0.090000000000
-2016-Oct-27 07:41:06.919079 [RPC0]asking for output 166621 for 0.090000000000
-2016-Oct-27 07:41:06.919148 [RPC0]asking for output 211786 for 0.090000000000
-2016-Oct-27 07:41:06.919214 [RPC0]asking for output 226139 for 0.090000000000
-2016-Oct-27 07:41:06.919269 [RPC0]asking for output 252246 for 0.090000000000
-2016-Oct-27 07:41:06.919319 [RPC0]asking for output 263624 for 0.090000000000
-2016-Oct-27 07:41:07.196682 [RPC0]Looking for 4 outputs of size 0.090000000000
-2016-Oct-27 07:41:07.196736 [RPC0]Index 3/7: idx 211786 (real 263624), unlocked 1, key <c9bd2a46c498338e3464ee9f2bc4f278c887783200809e6af6de66cce961caea>
-2016-Oct-27 07:41:07.196761 [RPC0]Index 4/7: idx 226139 (real 263624), unlocked 1, key <6525013c1a36623a8d32153ee06a631596d3903a1106df1b2f33f8bca44835d8>
-2016-Oct-27 07:41:07.196782 [RPC0]Index 0/7: idx 97870 (real 263624), unlocked 1, key <5ddfe912e66d1a85e131fe9832726cd6beadc6b4d07599d8f94651fc876f8408>
-2016-Oct-27 07:41:07.197245 [RPC0]amount=0.090000000000, real_output=3, real_output_in_tx_index=1, indexes: 97870 211786 226139 263624 
-2016-Oct-27 07:41:07.200946 [RPC0]Made a final 1 kB tx, with 0.009000000000 fee  and 0.080000000000 change
-2016-Oct-27 07:41:07.200980 [RPC0]Done creating 1 transactions, 0.009000000000 total fee, 0.080000000000 total change
-2016-Oct-27 07:41:07.201000 [RPC0]  Transaction 1/1: 1 kB, sending 0.090000000000 in 1 outputs to 1 destination(s), including 0.009000000000 fee, 0.080000000000 change
-2016-Oct-27 07:41:07.508195 [RPC0]transaction <c9e254b5dfa59a64c83e452b447f4c2cfef77ef2cac35df997eb15e79440e915> generated ok and sent to daemon, key_images: [<dd7d24f8e3f0eaf4ea700ed2f899f4d2608f421a15fb0242835078a359e801c6> ]
-2016-Oct-27 07:41:07.508260 [RPC0]Setting SPENT at 0: ki <dd7d24f8e3f0eaf4ea700ed2f899f4d2608f421a15fb0242835078a359e801c6>, amount 0.090000000000
-2016-Oct-27 07:41:07.508295 [RPC0]Transaction successfully sent. <<c9e254b5dfa59a64c83e452b447f4c2cfef77ef2cac35df997eb15e79440e915>>
-Commission: 0.009000000000 (dust sent to dust addr: 0.000000000000)
-Balance: 1.780000000000
-Unlocked: 1.010000000000
-Please, wait for confirmation for your balance to be unlocked.
-2016-Oct-27 07:41:07.508384 [RPC0]/json_rpc[transfer_split] processed with 0/3952/0ms
-2016-Oct-27 07:41:07.547381 [RPC0]HTTP [127.0.0.1] POST /json_rpc
-2016-Oct-27 07:41:07.767200 [RPC0]/json_rpc[stop_wallet] processed with 0/220/0ms
-2016-Oct-27 07:41:07.807130 [SRV_MAIN]net_service loop stopped.
-2016-Oct-27 07:41:07.807167 [SRV_MAIN]Stopped wallet rpc server
-2016-Oct-27 07:41:07.807179 [SRV_MAIN]Storing wallet...
-2016-Oct-27 07:41:08.045850 [SRV_MAIN]Stored ok
+2016-Oct-27 18:09:49.100018 Monero 'Wolfram Warptangent' (v0.10.0.0-release)
+2016-Oct-27 18:09:49.100051 Setting log level = 2
+2016-Oct-27 18:09:49.100062 default_log: monero-wallet-cli.log
+2016-Oct-27 18:09:49.100117 Logging at log level 2 to /home/athan/dev/moneybit/hmonero/foo.log
+2016-Oct-27 18:09:49.100149 Loading wallet...
+2016-Oct-27 18:09:49.133694 Loaded wallet keys file, with public address: 48aPXdzu2Qt1KVVuPUunjeVTm6zf6Vg3kf38VhSCunCzQjWBzH3rpJjSwDgnE8ocJWYGeEqhEoBWqeoVwbyYs3se6cGdjTx
+2016-Oct-27 18:09:49.145889 Trying to decrypt cache data
+2016-Oct-27 18:09:49.992413 Block is already in blockchain: 8f1d2906713059b582a4b0f8cece16a07288f57ada4c0f7060020b7e5614eeed
+2016-Oct-27 18:09:50.017271 Processed block: <d28500c49105313a1e8857a1bea81752c8e3dee5994a937a647ba2d25328b805>, height 1167010, 25(1/24)ms
+2016-Oct-27 18:09:50.033571 Processed block: <2bec0227dfdcc5e1f080b11079745f9619ef94930c476c43d79a6f95b1a0cf39>, height 1167011, 6(0/6)ms
+2016-Oct-27 18:09:50.036146 Processed block: <51ede50e1af3a3cdafeb39a7028e420e856eb580f635e4535840cbf3cc534b78>, height 1167012, 2(0/2)ms
+2016-Oct-27 18:09:50.058283 Processed block: <2433b313be8399ad3920b6720f3721567ebf382959142858525d2dbd3563a0b7>, height 1167013, 22(0/22)ms
+2016-Oct-27 18:09:50.077645 Processed block: <9765c514992d598492d731e4fe782b48b0cf48c52d12f47f18957a3bd605999b>, height 1167014, 19(0/19)ms
+2016-Oct-27 18:09:50.083698 Processed block: <e287e9d7fc38d29593acbebea452e4e7794e6e9816a799a3b60be128cabec762>, height 1167015, 6(0/6)ms
+2016-Oct-27 18:09:50.088176 Processed block: <7444ecea487eba9683f8fa34a7c4bbe231f9f1171b719038f9a6162523007310>, height 1167016, 5(0/5)ms
+2016-Oct-27 18:09:50.256736 Block is already in blockchain: 9765c514992d598492d731e4fe782b48b0cf48c52d12f47f18957a3bd605999b
+2016-Oct-27 18:09:50.256835 Block is already in blockchain: e287e9d7fc38d29593acbebea452e4e7794e6e9816a799a3b60be128cabec762
+2016-Oct-27 18:09:50.256873 Block is already in blockchain: 7444ecea487eba9683f8fa34a7c4bbe231f9f1171b719038f9a6162523007310
+2016-Oct-27 18:09:51.192771 Found new pool tx: <6dfb67c68723921f6cec399007ae1c060427918c4c9aa84ec57b1fdabf673176>
+2016-Oct-27 18:09:51.566009 Found new pool tx: <3b015aa5b0a47ec59f7ada375f50a42566346a3c2e6580e4d6ffd08a9bce7de9>
+2016-Oct-27 18:09:51.792853 Found new pool tx: <3e9558b0d921fe8808ac5d175e3d97da7fb2b1e42f998620d2a2031cfecf8288>
+2016-Oct-27 18:09:52.037509 Found new pool tx: <47c0361f4d00b194f03b5bb0ad0b62b70a1cdeed274f592667c3155041f2adfc>
+2016-Oct-27 18:09:52.307317 Found new pool tx: <ec761911bea714d43e9fe0fcf7da09f01e383a0568be97ebd3da20d66bb3271a>
+2016-Oct-27 18:09:52.558226 Found new pool tx: <43b822b18c88a45c557defd77b68cc3a364fcca6cb2f0ddd23ad4e5d8ace01b4>
+2016-Oct-27 18:09:52.811919 Found new pool tx: <b1912d7b1a81f2528999ca3405fd64ca91339f6efbefeee60fa0d3e00583dcce>
+2016-Oct-27 18:09:53.063842 Refresh done, blocks received: 7, balance: 1.740000000000, unlocked: 1.740000000000
+2016-Oct-27 18:09:53.064011 Loaded ok
+2016-Oct-27 18:09:53.064367 Binding on 127.0.0.1:18082
+2016-Oct-27 18:09:53.064698 Starting wallet rpc server
+2016-Oct-27 18:09:53.064777 Run net_service loop( 1 threads)...
+2016-Oct-27 18:10:12.572061 [RPC0]HTTP [127.0.0.1] POST /json_rpc
+2016-Oct-27 18:10:12.572101 [RPC0]/json_rpc[getbalance] processed with 0/0/0ms
+2016-Oct-27 18:10:12.572559 [RPC0]HTTP [127.0.0.1] POST /json_rpc
+2016-Oct-27 18:10:12.572593 [RPC0]/json_rpc[getaddress] processed with 0/0/0ms
+2016-Oct-27 18:10:12.610903 [RPC0]HTTP [127.0.0.1] POST /json_rpc
+2016-Oct-27 18:10:12.610946 [RPC0]/json_rpc[getheight] processed with 0/0/0ms
+2016-Oct-27 18:10:12.652092 [RPC0]HTTP [127.0.0.1] POST /json_rpc
+2016-Oct-27 18:10:13.361330 [RPC0]Using v2 rules
+2016-Oct-27 18:10:13.915178 [RPC0]Using v3 rules

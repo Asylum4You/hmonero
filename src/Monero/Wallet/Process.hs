@@ -310,11 +310,9 @@ parseLogLines name' = do
         then (False, WalletLogFileError $ show x)
         else if "Starting wallet rpc server" `T.isInfixOf` x
         then (True, WalletLogFileOther)
-        else case A.parseOnly lineParser $ T.drop 28 x of
-              Left e ->
-                          traceShow (e, T.drop 28 x)
-                            (False, WalletLogFileOther)
-              Right (y@(WalletLogFileHeight _)) -> (False, y)
+        else case lineParser $ T.drop 28 x of
+              Nothing                          -> (False, WalletLogFileOther)
+              Just (y@(WalletLogFileHeight _)) -> (False, y)
               _ -> error $ "Somehow parsed something not possible :| "
                           ++ show x
                           ++ " :: all lines :| "
@@ -324,48 +322,32 @@ parseLogLines name' = do
     WalletLogFileError e  -> throwM $ LoggingError $ T.pack e
     WalletLogFileHeight h -> pure (any id rpcStarted, Just h)
   where
-    lineParser :: A.Parser WalletLogFileLine
-    lineParser = do
+    lineParser :: T.Text -> Maybe WalletLogFileLine
+    lineParser x = do
       parseHeight1 <|> parseHeight3 <|> parseHeight2
       where
-        parseHeight1 :: A.Parser WalletLogFileLine
-        parseHeight1 = do
-          _ <- A.string "Skipped block by height: " <?> "skipping block by height"
+        parseHeight1 :: Maybe WalletLogFileLine
+        parseHeight1 =
+          if "Skipped block by height: " `T.isPrefixOf` x
+          then let cs = T.unpack $ T.drop (T.length "Skipped block by height: ") x
+               in  pure $ WalletLogFileHeight $ read cs
+          else Nothing
 
-          cs <- A.many1 A.digit <?> "height"
+        parseHeight2 :: Maybe WalletLogFileLine
+        parseHeight2 =
+          if "Processed block: " `T.isPrefixOf` x && ">, height " `T.isInfixOf` x
+          then let cs = T.unpack $ T.takeWhile (\c -> c /= ',')
+                                 $ T.drop (T.length "Processed block: <" + 64 + T.length ">, height ") x
+               in  pure $ WalletLogFileHeight $ read cs
+          else Nothing
 
-          A.endOfLine
-
-          pure $ WalletLogFileHeight $ read cs
-
-        parseHeight2 :: A.Parser WalletLogFileLine
-        parseHeight2 = do
-          _ <- A.string "Processed block: <" <?> "processed block"
-          void $ replicateM 64 (A.hexadecimal :: A.Parser Word8)
-          _ <- A.string ">, height " <?> "end processed block"
-
-          cs <- A.many1 A.digit <?> "height"
-          void $ A.char ','
-
-          _ <- A.many1 A.anyChar <?> "rest of processed block"
-
-          A.endOfLine
-
-          pure $ WalletLogFileHeight $ read cs
-
-        parseHeight3 :: A.Parser WalletLogFileLine
-        parseHeight3 = do
-          _ <- A.string "Skipped block by timestamp, height: " <?> "skipping block by height"
-
-          cs <- A.many1 A.digit <?> "height"
-
-          void $ A.char ','
-
-          _ <- A.many1 A.anyChar <?> "rest of skipped timestamp"
-
-          A.endOfLine
-
-          pure $ WalletLogFileHeight $ read cs
+        parseHeight3 :: Maybe WalletLogFileLine
+        parseHeight3 =
+          if "Skipped block by timestamp, height: " `T.isInfixOf` x
+          then let cs = T.unpack $ T.takeWhile (\c -> c /= ',')
+                                 $ T.drop (T.length "Skipped block by timestamp, height: ") x
+               in  pure $ WalletLogFileHeight $ read cs
+          else Nothing
 
 
 nextAvailPort :: PortNumber -> IO PortNumber

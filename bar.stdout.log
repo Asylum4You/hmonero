@@ -1,122 +1,103 @@
 Monero 'Wolfram Warptangent' (v0.10.0.0-release)
 Logging at log level 2 to /home/athan/dev/moneybit/hmonero/bar.log
-2016-Oct-27 07:38:38.533484 Loading wallet...
-2016-Oct-27 07:38:38.568170 Loaded wallet keys file, with public address: 45BRD4AuuVy2fX1MuDaxgua8H2mssK2U3FQHAPnKK8jjiLu3esCys72Q6eakWXriCXSwygNnDA9ViizaxtQNZF9T7gJDYz6
-2016-Oct-27 07:38:38.568259 Trying to decrypt cache data
-2016-Oct-27 07:38:39.280345 Block is already in blockchain: 418015bb9ae982a1975da7d79277c2705727a56894ba0fb246adaabb1f4632e3
-2016-Oct-27 07:38:39.287288 Skipped block by timestamp, height: 100, block time 1397822726, account time 1402210800
-2016-Oct-27 07:38:39.291588 Skipped block by timestamp, height: 200, block time 1397827363, account time 1402210800
-2016-Oct-27 07:38:39.295244 Skipped block by timestamp, height: 300, block time 1397834261, account time 1402210800
-2016-Oct-27 07:38:39.298493 Skipped block by timestamp, height: 400, block time 1397839425, account time 1402210800
-2016-Oct-27 07:38:39.301390 Skipped block by timestamp, height: 500, block time 1397844182, account time 1402210800
-2016-Oct-27 07:38:39.304242 Skipped block by timestamp, height: 600, block time 1397850489, account time 1402210800
-2016-Oct-27 07:38:39.306831 Skipped block by timestamp, height: 700, block time 1397856218, account time 1402210800
-2016-Oct-27 07:38:39.309432 Skipped block by timestamp, height: 800, block time 1397861349, account time 1402210800
-2016-Oct-27 07:38:39.312183 Skipped block by timestamp, height: 900, block time 1397866373, account time 1402210800
-2016-Oct-27 07:38:39.671904 Block is already in blockchain: 1492727008d45eaab3fc5013e95648b3c0c39c51e0988a115cb6c25b3f2096e7
-2016-Oct-27 07:38:39.671978 Block is already in blockchain: 761cc38ca3639700dd4ce5f95c442dc95d240d051bd6d71774cbd9c1a00e82a3
-2016-Oct-27 07:38:39.672015 Block is already in blockchain: 5a050ab6c24eb3550b9a5c5ea4b6c056ed8ffef3b89a0289a86f6c90b6a2bb7c
-2016-Oct-27 07:38:39.672042 Skipped block by timestamp, height: 1000, block time 1397871728, account time 1402210800
-2016-Oct-27 07:38:39.679628 Skipped block by timestamp, height: 1100, block time 1397876579, account time 1402210800
-2016-Oct-27 07:38:39.684752 Skipped block by timestamp, height: 1200, block time 1397882473, account time 1402210800
-2016-Oct-27 07:38:39.688552 Skipped block by timestamp, height: 1300, block time 1397888708, account time 1402210800
-2016-Oct-27 07:38:39.691993 Skipped block by timestamp, height: 1400, block time 1397894595, account time 1402210800
-2016-Oct-27 07:38:39.695422 Skipped block by timestamp, height: 1500, block time 1397900458, account time 1402210800
-2016-Oct-27 07:38:39.699416 Skipped block by timestamp, height: 1600, block time 1397907617, account time 1402210800
-2016-Oct-27 07:38:39.702046 Skipped block by timestamp, height: 1700, block time 1397912795, account time 1402210800
-2016-Oct-27 07:38:39.704617 Skipped block by timestamp, height: 1800, block time 1397918204, account time 1402210800
-2016-Oct-27 07:38:39.707286 Skipped block by timestamp, height: 1900, block time 1397923890, account time 1402210800
-2016-Oct-27 07:38:40.154449 Block is already in blockchain: 9b98371438b4f3b0026413fa836f9db70378219f5f05dd385a78d31260150c8e
-2016-Oct-27 07:38:40.154510 Block is already in blockchain: 5270c5494462f81a95ef9752da3f5e1f729befa99ec12b757283c6c287072758
-2016-Oct-27 07:38:40.154539 Block is already in blockchain: 5146d175641dfd84d93f46f181f5e523795c2c58b2b483e00c2daf203489ae45
-2016-Oct-27 07:38:40.154893 Skipped block by timestamp, height: 2000, block time 1397942471, account time 1402210800
-2016-Oct-27 07:38:40.160152 Skipped block by timestamp, height: 2100, block time 1397946652, account time 1402210800
-2016-Oct-27 07:38:40.163884 Skipped block by timestamp, height: 2200, block time 1397950212, account time 1402210800
-2016-Oct-27 07:38:40.167027 Skipped block by timestamp, height: 2300, block time 1397954048, account time 1402210800
-2016-Oct-27 07:38:40.169720 Skipped block by timestamp, height: 2400, block time 1397957632, account time 1402210800
-2016-Oct-27 07:38:40.172579 Skipped block by timestamp, height: 2500, block time 1397961340, account time 1402210800
-2016-Oct-27 07:38:40.175098 Skipped block by timestamp, height: 2600, block time 1397966233, account time 1402210800
-2016-Oct-27 07:38:40.177691 Skipped block by timestamp, height: 2700, block time 1397970964, account time 1402210800
-2016-Oct-27 07:38:40.180330 Skipped block by timestamp, height: 2800, block time 1397976876, account time 1402210800
-2016-Oct-27 07:38:40.183019 Skipped block by timestamp, height: 2900, block time 1397982823, account time 1402210800
-2016-Oct-27 07:38:40.544222 Block is already in blockchain: fe5aafcd79deb789c72e7aec6cff60cb947578c6f414e44bb87767704fda7ff1
-2016-Oct-27 07:38:40.544273 Block is already in blockchain: 45f9637c08888a2c4d0325a6ba0213aeeec2f085a89f270d61e35bcb2dc71b2e
-2016-Oct-27 07:38:40.544291 Block is already in blockchain: 7aa918538fe34f09d57d6e662e69babf0b2915a1df32707e43e4c9dadd916bfa
-2016-Oct-27 07:38:40.544880 Skipped block by timestamp, height: 3000, block time 1397988986, account time 1402210800
-2016-Oct-27 07:38:40.549904 Skipped block by timestamp, height: 3100, block time 1397994463, account time 1402210800
-2016-Oct-27 07:38:40.554341 Skipped block by timestamp, height: 3200, block time 1398000536, account time 1402210800
-2016-Oct-27 07:38:40.557537 Skipped block by timestamp, height: 3300, block time 1398007559, account time 1402210800
-2016-Oct-27 07:38:40.560395 Skipped block by timestamp, height: 3400, block time 1398012236, account time 1402210800
-2016-Oct-27 07:38:40.562987 Skipped block by timestamp, height: 3500, block time 1398017773, account time 1402210800
-2016-Oct-27 07:38:40.565536 Skipped block by timestamp, height: 3600, block time 1398022923, account time 1402210800
-2016-Oct-27 07:38:40.567954 Skipped block by timestamp, height: 3700, block time 1398028087, account time 1402210800
-2016-Oct-27 07:38:40.570334 Skipped block by timestamp, height: 3800, block time 1398032775, account time 1402210800
-2016-Oct-27 07:38:40.572849 Skipped block by timestamp, height: 3900, block time 1398039429, account time 1402210800
-2016-Oct-27 07:38:40.958899 Block is already in blockchain: 5812ce4d5eedc424afc672dc5cafc62dbd85600118c6e4d612b7e8283ef98645
-2016-Oct-27 07:38:40.958969 Block is already in blockchain: cf4785a5e1742583678b38dd34aeeec460e30f30adfe9c5f58291e53db18127c
-2016-Oct-27 07:38:40.958994 Block is already in blockchain: 57172edc621262b8726ae4a8d7028b9c8f7577879a075051b8eecfbc5e0b4923
-2016-Oct-27 07:38:40.960235 Skipped block by timestamp, height: 4000, block time 1398044685, account time 1402210800
-2016-Oct-27 07:38:40.966098 Skipped block by timestamp, height: 4100, block time 1398049136, account time 1402210800
-2016-Oct-27 07:38:40.970608 Skipped block by timestamp, height: 4200, block time 1398055023, account time 1402210800
-2016-Oct-27 07:38:40.978392 Skipped block by timestamp, height: 4300, block time 1398060660, account time 1402210800
-2016-Oct-27 07:38:40.982217 Skipped block by timestamp, height: 4400, block time 1398067000, account time 1402210800
-2016-Oct-27 07:38:40.985488 Skipped block by timestamp, height: 4500, block time 1398072982, account time 1402210800
-2016-Oct-27 07:38:40.988862 Skipped block by timestamp, height: 4600, block time 1398080220, account time 1402210800
-2016-Oct-27 07:38:40.992291 Skipped block by timestamp, height: 4700, block time 1398086470, account time 1402210800
-2016-Oct-27 07:38:40.995902 Skipped block by timestamp, height: 4800, block time 1398092691, account time 1402210800
-2016-Oct-27 07:38:40.999581 Skipped block by timestamp, height: 4900, block time 1398098242, account time 1402210800
-2016-Oct-27 07:38:41.365680 Block is already in blockchain: f1963d75e6692f066ca0635412ed1ca07c8d0bb4c3b5ef163b3d9dfdb90f7462
-2016-Oct-27 07:38:41.365768 Block is already in blockchain: 9c8adb30cf0646934d9cd993f61c16e47edb7754bd78416ce92edf6cf38cfd57
-2016-Oct-27 07:38:41.365814 Block is already in blockchain: 6a785ea6dba43f13ffa9427701fdde415b5fe685067fdfb0481afe69d4e6f970
-2016-Oct-27 07:38:41.367097 Skipped block by timestamp, height: 5000, block time 1398104607, account time 1402210800
-2016-Oct-27 07:38:41.372797 Skipped block by timestamp, height: 5100, block time 1398109783, account time 1402210800
-2016-Oct-27 07:38:41.376860 Skipped block by timestamp, height: 5200, block time 1398113683, account time 1402210800
-2016-Oct-27 07:38:41.380306 Skipped block by timestamp, height: 5300, block time 1398116740, account time 1402210800
-2016-Oct-27 07:38:41.383382 Skipped block by timestamp, height: 5400, block time 1398120402, account time 1402210800
-2016-Oct-27 07:38:41.386160 Skipped block by timestamp, height: 5500, block time 1398124073, account time 1402210800
-2016-Oct-27 07:38:41.389114 Skipped block by timestamp, height: 5600, block time 1398127941, account time 1402210800
-2016-Oct-27 07:38:41.391993 Skipped block by timestamp, height: 5700, block time 1398132646, account time 1402210800
-2016-Oct-27 07:38:41.394680 Skipped block by timestamp, height: 5800, block time 1398137986, account time 1402210800
-2016-Oct-27 07:38:41.397326 Skipped block by timestamp, height: 5900, block time 1398144051, account time 1402210800
-2016-Oct-27 07:38:41.722382 Block is already in blockchain: 78b6cbd97740cafb5862ab69330084baada2c3bbb5e37c74babb35d9eb4c386c
-2016-Oct-27 07:38:41.722450 Block is already in blockchain: c1514bb67aadac10c80f77e7cb07d1f15e8cf0159afb4b45763b3c2a360dfcfd
-2016-Oct-27 07:38:41.722480 Block is already in blockchain: 23fbe2c1d53595e82296b347f84fc044d91887e7bbb92f957813b0cecc42772d
-2016-Oct-27 07:38:41.723495 Skipped block by timestamp, height: 6000, block time 1398150254, account time 1402210800
-2016-Oct-27 07:38:41.727570 Skipped block by timestamp, height: 6100, block time 1398155584, account time 1402210800
-2016-Oct-27 07:38:41.731231 Skipped block by timestamp, height: 6200, block time 1398160797, account time 1402210800
-2016-Oct-27 07:38:41.734726 Skipped block by timestamp, height: 6300, block time 1398166644, account time 1402210800
-2016-Oct-27 07:38:41.737399 Skipped block by timestamp, height: 6400, block time 1398172077, account time 1402210800
-2016-Oct-27 07:38:41.739895 Skipped block by timestamp, height: 6500, block time 1398179033, account time 1402210800
-2016-Oct-27 07:38:41.742099 Skipped block by timestamp, height: 6600, block time 1398186593, account time 1402210800
-2016-Oct-27 07:38:41.744872 Skipped block by timestamp, height: 6700, block time 1398192751, account time 1402210800
-2016-Oct-27 07:38:41.747328 Skipped block by timestamp, height: 6800, block time 1398199131, account time 1402210800
-2016-Oct-27 07:38:41.749574 Skipped block by timestamp, height: 6900, block time 1398204779, account time 1402210800
-2016-Oct-27 07:38:42.142560 Block is already in blockchain: 225d75344c91cf707a168e42f2793c3e831dcd3122cf86b58dc9afe963ef8443
-2016-Oct-27 07:38:42.142661 Block is already in blockchain: f4bb2448c2c63598d2ff3440c510f72c745451f0e6a30eb2e68eb8b37730d655
-2016-Oct-27 07:38:42.142691 Block is already in blockchain: 30437e49db81f2bf016d87e660172f47315f32b5784d8f439b0108c599b2f243
-2016-Oct-27 07:38:42.144514 Skipped block by timestamp, height: 7000, block time 1398211643, account time 1402210800
-2016-Oct-27 07:38:42.151033 Skipped block by timestamp, height: 7100, block time 1398218647, account time 1402210800
-2016-Oct-27 07:38:42.155244 Skipped block by timestamp, height: 7200, block time 1398224453, account time 1402210800
-2016-Oct-27 07:38:42.158534 Skipped block by timestamp, height: 7300, block time 1398229409, account time 1402210800
-2016-Oct-27 07:38:42.161894 Skipped block by timestamp, height: 7400, block time 1398234697, account time 1402210800
-2016-Oct-27 07:38:42.164725 Skipped block by timestamp, height: 7500, block time 1398239439, account time 1402210800
-2016-Oct-27 07:38:42.167584 Skipped block by timestamp, height: 7600, block time 1398243763, account time 1402210800
-2016-Oct-27 07:38:42.170299 Skipped block by timestamp, height: 7700, block time 1398248759, account time 1402210800
-2016-Oct-27 07:38:42.172975 Skipped block by timestamp, height: 7800, block time 1398254326, account time 1402210800
-2016-Oct-27 07:38:42.175560 Skipped block by timestamp, height: 7900, block time 1398260897, account time 1402210800
-2016-Oct-27 07:38:42.941117 Block is already in blockchain: a84173853d64b0362d695575af73406fb9efea67f2f14053605e11106bb668b5
-2016-Oct-27 07:38:42.941189 Block is already in blockchain: 00e4a9235c31a4743d217adc29382df96b5ffb8db823be28fc03e2da69c4a0e1
-2016-Oct-27 07:38:42.941215 Block is already in blockchain: 9f98dcd3c9f0fe520fc4b4f5f832e9d825530a4cada50c1189cbaa9e7e75c3a2
-2016-Oct-27 07:38:42.943440 Skipped block by timestamp, height: 8000, block time 1398267954, account time 1402210800
-2016-Oct-27 07:38:42.949862 Skipped block by timestamp, height: 8100, block time 1398274528, account time 1402210800
-2016-Oct-27 07:38:42.954255 Skipped block by timestamp, height: 8200, block time 1398280812, account time 1402210800
-2016-Oct-27 07:38:42.957798 Skipped block by timestamp, height: 8300, block time 1398286406, account time 1402210800
-2016-Oct-27 07:38:42.960817 Skipped block by timestamp, height: 8400, block time 1398292622, account time 1402210800
-2016-Oct-27 07:38:42.963489 Skipped block by timestamp, height: 8500, block time 1398297593, account time 1402210800
-2016-Oct-27 07:38:42.966105 Skipped block by timestamp, height: 8600, block time 1398302769, account time 1402210800
-2016-Oct-27 07:38:42.968682 Skipped block by timestamp, height: 8700, block time 1398308568, account time 1402210800
-2016-Oct-27 07:38:42.971211 Skipped block by timestamp, height: 8800, block time 1398314262, account time 1402210800
-2016-Oct-27 07:38:42.973909 Skipped block by timestamp, height: 8900, block time 1398320656, account time 1402210800
-2016-Oct-27 07:38:43.944586 Refresh done, blocks received: 8975, balance: 0.000000000000, unlocked: 0.000000000000
-2016-Oct-27 07:38:43.946195 Storing wallet...
-2016-Oct-27 07:38:44.000597 Stored ok
+2016-Oct-27 18:10:04.756752 Loading wallet...
+2016-Oct-27 18:10:04.786487 Loaded wallet keys file, with public address: 45BRD4AuuVy2fX1MuDaxgua8H2mssK2U3FQHAPnKK8jjiLu3esCys72Q6eakWXriCXSwygNnDA9ViizaxtQNZF9T7gJDYz6
+2016-Oct-27 18:10:04.786552 Trying to decrypt cache data
+2016-Oct-27 18:10:05.799876 Block is already in blockchain: 418015bb9ae982a1975da7d79277c2705727a56894ba0fb246adaabb1f4632e3
+2016-Oct-27 18:10:05.806985 Skipped block by timestamp, height: 100, block time 1397822726, account time 1402210800
+2016-Oct-27 18:10:05.811500 Skipped block by timestamp, height: 200, block time 1397827363, account time 1402210800
+2016-Oct-27 18:10:05.815313 Skipped block by timestamp, height: 300, block time 1397834261, account time 1402210800
+2016-Oct-27 18:10:05.818668 Skipped block by timestamp, height: 400, block time 1397839425, account time 1402210800
+2016-Oct-27 18:10:05.821529 Skipped block by timestamp, height: 500, block time 1397844182, account time 1402210800
+2016-Oct-27 18:10:05.824373 Skipped block by timestamp, height: 600, block time 1397850489, account time 1402210800
+2016-Oct-27 18:10:05.826989 Skipped block by timestamp, height: 700, block time 1397856218, account time 1402210800
+2016-Oct-27 18:10:05.829491 Skipped block by timestamp, height: 800, block time 1397861349, account time 1402210800
+2016-Oct-27 18:10:05.832052 Skipped block by timestamp, height: 900, block time 1397866373, account time 1402210800
+2016-Oct-27 18:10:06.418951 Block is already in blockchain: 1492727008d45eaab3fc5013e95648b3c0c39c51e0988a115cb6c25b3f2096e7
+2016-Oct-27 18:10:06.419005 Block is already in blockchain: 761cc38ca3639700dd4ce5f95c442dc95d240d051bd6d71774cbd9c1a00e82a3
+2016-Oct-27 18:10:06.419030 Block is already in blockchain: 5a050ab6c24eb3550b9a5c5ea4b6c056ed8ffef3b89a0289a86f6c90b6a2bb7c
+2016-Oct-27 18:10:06.419047 Skipped block by timestamp, height: 1000, block time 1397871728, account time 1402210800
+2016-Oct-27 18:10:06.424189 Skipped block by timestamp, height: 1100, block time 1397876579, account time 1402210800
+2016-Oct-27 18:10:06.428572 Skipped block by timestamp, height: 1200, block time 1397882473, account time 1402210800
+2016-Oct-27 18:10:06.431870 Skipped block by timestamp, height: 1300, block time 1397888708, account time 1402210800
+2016-Oct-27 18:10:06.434699 Skipped block by timestamp, height: 1400, block time 1397894595, account time 1402210800
+2016-Oct-27 18:10:06.437306 Skipped block by timestamp, height: 1500, block time 1397900458, account time 1402210800
+2016-Oct-27 18:10:06.439872 Skipped block by timestamp, height: 1600, block time 1397907617, account time 1402210800
+2016-Oct-27 18:10:06.442277 Skipped block by timestamp, height: 1700, block time 1397912795, account time 1402210800
+2016-Oct-27 18:10:06.444837 Skipped block by timestamp, height: 1800, block time 1397918204, account time 1402210800
+2016-Oct-27 18:10:06.447285 Skipped block by timestamp, height: 1900, block time 1397923890, account time 1402210800
+2016-Oct-27 18:10:07.125410 Block is already in blockchain: 9b98371438b4f3b0026413fa836f9db70378219f5f05dd385a78d31260150c8e
+2016-Oct-27 18:10:07.125477 Block is already in blockchain: 5270c5494462f81a95ef9752da3f5e1f729befa99ec12b757283c6c287072758
+2016-Oct-27 18:10:07.125509 Block is already in blockchain: 5146d175641dfd84d93f46f181f5e523795c2c58b2b483e00c2daf203489ae45
+2016-Oct-27 18:10:07.126101 Skipped block by timestamp, height: 2000, block time 1397942471, account time 1402210800
+2016-Oct-27 18:10:07.130719 Skipped block by timestamp, height: 2100, block time 1397946652, account time 1402210800
+2016-Oct-27 18:10:07.133962 Skipped block by timestamp, height: 2200, block time 1397950212, account time 1402210800
+2016-Oct-27 18:10:07.136773 Skipped block by timestamp, height: 2300, block time 1397954048, account time 1402210800
+2016-Oct-27 18:10:07.139403 Skipped block by timestamp, height: 2400, block time 1397957632, account time 1402210800
+2016-Oct-27 18:10:07.141779 Skipped block by timestamp, height: 2500, block time 1397961340, account time 1402210800
+2016-Oct-27 18:10:07.144091 Skipped block by timestamp, height: 2600, block time 1397966233, account time 1402210800
+2016-Oct-27 18:10:07.146335 Skipped block by timestamp, height: 2700, block time 1397970964, account time 1402210800
+2016-Oct-27 18:10:07.148757 Skipped block by timestamp, height: 2800, block time 1397976876, account time 1402210800
+2016-Oct-27 18:10:07.151251 Skipped block by timestamp, height: 2900, block time 1397982823, account time 1402210800
+2016-Oct-27 18:10:07.634935 Block is already in blockchain: fe5aafcd79deb789c72e7aec6cff60cb947578c6f414e44bb87767704fda7ff1
+2016-Oct-27 18:10:07.635020 Block is already in blockchain: 45f9637c08888a2c4d0325a6ba0213aeeec2f085a89f270d61e35bcb2dc71b2e
+2016-Oct-27 18:10:07.635368 Block is already in blockchain: 7aa918538fe34f09d57d6e662e69babf0b2915a1df32707e43e4c9dadd916bfa
+2016-Oct-27 18:10:07.636154 Skipped block by timestamp, height: 3000, block time 1397988986, account time 1402210800
+2016-Oct-27 18:10:07.642406 Skipped block by timestamp, height: 3100, block time 1397994463, account time 1402210800
+2016-Oct-27 18:10:07.646701 Skipped block by timestamp, height: 3200, block time 1398000536, account time 1402210800
+2016-Oct-27 18:10:07.650042 Skipped block by timestamp, height: 3300, block time 1398007559, account time 1402210800
+2016-Oct-27 18:10:07.653154 Skipped block by timestamp, height: 3400, block time 1398012236, account time 1402210800
+2016-Oct-27 18:10:07.655946 Skipped block by timestamp, height: 3500, block time 1398017773, account time 1402210800
+2016-Oct-27 18:10:07.658813 Skipped block by timestamp, height: 3600, block time 1398022923, account time 1402210800
+2016-Oct-27 18:10:07.661523 Skipped block by timestamp, height: 3700, block time 1398028087, account time 1402210800
+2016-Oct-27 18:10:07.664200 Skipped block by timestamp, height: 3800, block time 1398032775, account time 1402210800
+2016-Oct-27 18:10:07.666786 Skipped block by timestamp, height: 3900, block time 1398039429, account time 1402210800
+2016-Oct-27 18:10:08.088711 Block is already in blockchain: 5812ce4d5eedc424afc672dc5cafc62dbd85600118c6e4d612b7e8283ef98645
+2016-Oct-27 18:10:08.088766 Block is already in blockchain: cf4785a5e1742583678b38dd34aeeec460e30f30adfe9c5f58291e53db18127c
+2016-Oct-27 18:10:08.088791 Block is already in blockchain: 57172edc621262b8726ae4a8d7028b9c8f7577879a075051b8eecfbc5e0b4923
+2016-Oct-27 18:10:08.089902 Skipped block by timestamp, height: 4000, block time 1398044685, account time 1402210800
+2016-Oct-27 18:10:08.094910 Skipped block by timestamp, height: 4100, block time 1398049136, account time 1402210800
+2016-Oct-27 18:10:08.098729 Skipped block by timestamp, height: 4200, block time 1398055023, account time 1402210800
+2016-Oct-27 18:10:08.101766 Skipped block by timestamp, height: 4300, block time 1398060660, account time 1402210800
+2016-Oct-27 18:10:08.104435 Skipped block by timestamp, height: 4400, block time 1398067000, account time 1402210800
+2016-Oct-27 18:10:08.106987 Skipped block by timestamp, height: 4500, block time 1398072982, account time 1402210800
+2016-Oct-27 18:10:08.109469 Skipped block by timestamp, height: 4600, block time 1398080220, account time 1402210800
+2016-Oct-27 18:10:08.111958 Skipped block by timestamp, height: 4700, block time 1398086470, account time 1402210800
+2016-Oct-27 18:10:08.114275 Skipped block by timestamp, height: 4800, block time 1398092691, account time 1402210800
+2016-Oct-27 18:10:08.116764 Skipped block by timestamp, height: 4900, block time 1398098242, account time 1402210800
+2016-Oct-27 18:10:08.573130 Block is already in blockchain: f1963d75e6692f066ca0635412ed1ca07c8d0bb4c3b5ef163b3d9dfdb90f7462
+2016-Oct-27 18:10:08.573201 Block is already in blockchain: 9c8adb30cf0646934d9cd993f61c16e47edb7754bd78416ce92edf6cf38cfd57
+2016-Oct-27 18:10:08.573227 Block is already in blockchain: 6a785ea6dba43f13ffa9427701fdde415b5fe685067fdfb0481afe69d4e6f970
+2016-Oct-27 18:10:08.573903 Skipped block by timestamp, height: 5000, block time 1398104607, account time 1402210800
+2016-Oct-27 18:10:08.579275 Skipped block by timestamp, height: 5100, block time 1398109783, account time 1402210800
+2016-Oct-27 18:10:08.583181 Skipped block by timestamp, height: 5200, block time 1398113683, account time 1402210800
+2016-Oct-27 18:10:08.586471 Skipped block by timestamp, height: 5300, block time 1398116740, account time 1402210800
+2016-Oct-27 18:10:08.589175 Skipped block by timestamp, height: 5400, block time 1398120402, account time 1402210800
+2016-Oct-27 18:10:08.591926 Skipped block by timestamp, height: 5500, block time 1398124073, account time 1402210800
+2016-Oct-27 18:10:08.594774 Skipped block by timestamp, height: 5600, block time 1398127941, account time 1402210800
+2016-Oct-27 18:10:08.597387 Skipped block by timestamp, height: 5700, block time 1398132646, account time 1402210800
+2016-Oct-27 18:10:08.600055 Skipped block by timestamp, height: 5800, block time 1398137986, account time 1402210800
+2016-Oct-27 18:10:08.602676 Skipped block by timestamp, height: 5900, block time 1398144051, account time 1402210800
+2016-Oct-27 18:10:09.373856 Block is already in blockchain: 78b6cbd97740cafb5862ab69330084baada2c3bbb5e37c74babb35d9eb4c386c
+2016-Oct-27 18:10:09.373908 Block is already in blockchain: c1514bb67aadac10c80f77e7cb07d1f15e8cf0159afb4b45763b3c2a360dfcfd
+2016-Oct-27 18:10:09.373925 Block is already in blockchain: 23fbe2c1d53595e82296b347f84fc044d91887e7bbb92f957813b0cecc42772d
+2016-Oct-27 18:10:09.375012 Skipped block by timestamp, height: 6000, block time 1398150254, account time 1402210800
+2016-Oct-27 18:10:09.380178 Skipped block by timestamp, height: 6100, block time 1398155584, account time 1402210800
+2016-Oct-27 18:10:09.383946 Skipped block by timestamp, height: 6200, block time 1398160797, account time 1402210800
+2016-Oct-27 18:10:09.387172 Skipped block by timestamp, height: 6300, block time 1398166644, account time 1402210800
+2016-Oct-27 18:10:09.390109 Skipped block by timestamp, height: 6400, block time 1398172077, account time 1402210800
+2016-Oct-27 18:10:09.392805 Skipped block by timestamp, height: 6500, block time 1398179033, account time 1402210800
+2016-Oct-27 18:10:09.395508 Skipped block by timestamp, height: 6600, block time 1398186593, account time 1402210800
+2016-Oct-27 18:10:09.397993 Skipped block by timestamp, height: 6700, block time 1398192751, account time 1402210800
+2016-Oct-27 18:10:09.400684 Skipped block by timestamp, height: 6800, block time 1398199131, account time 1402210800
+2016-Oct-27 18:10:09.403306 Skipped block by timestamp, height: 6900, block time 1398204779, account time 1402210800
+2016-Oct-27 18:10:10.236198 Found new pool tx: <6dfb67c68723921f6cec399007ae1c060427918c4c9aa84ec57b1fdabf673176>
+2016-Oct-27 18:10:10.499547 Found new pool tx: <3b015aa5b0a47ec59f7ada375f50a42566346a3c2e6580e4d6ffd08a9bce7de9>
+2016-Oct-27 18:10:10.957274 Found new pool tx: <3e9558b0d921fe8808ac5d175e3d97da7fb2b1e42f998620d2a2031cfecf8288>
+2016-Oct-27 18:10:11.318249 Found new pool tx: <47c0361f4d00b194f03b5bb0ad0b62b70a1cdeed274f592667c3155041f2adfc>
+2016-Oct-27 18:10:11.573188 Found new pool tx: <ec761911bea714d43e9fe0fcf7da09f01e383a0568be97ebd3da20d66bb3271a>
+2016-Oct-27 18:10:11.817594 Found new pool tx: <43b822b18c88a45c557defd77b68cc3a364fcca6cb2f0ddd23ad4e5d8ace01b4>
+2016-Oct-27 18:10:12.107544 Found new pool tx: <b1912d7b1a81f2528999ca3405fd64ca91339f6efbefeee60fa0d3e00583dcce>
+2016-Oct-27 18:10:12.517679 Refresh done, blocks received: 6981, balance: 0.000000000000, unlocked: 0.000000000000
+2016-Oct-27 18:10:12.518935 Storing wallet...
+2016-Oct-27 18:10:12.569939 Stored ok

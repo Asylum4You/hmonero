@@ -27,6 +27,8 @@ import Control.Monad (void)
 import Control.Concurrent (threadDelay, forkIO)
 import Control.Exception
 
+import Debug.Trace
+
 
 
 
@@ -53,7 +55,7 @@ main = do
                                   , makeWalletLanguage = English
                                   , makeWalletSeed     = Nothing
                                   , makeWalletInterval = 1000000
-                                  , makeWalletProgress = \r -> print r
+                                  , makeWalletProgress = \r -> traceShow r $ print r
                                   }
               , testCase "makeWallet mnemonic" $ do
                   threadDelay 1000000
@@ -64,7 +66,7 @@ main = do
                                   , makeWalletLanguage = English
                                   , makeWalletSeed     = Just mn
                                   , makeWalletInterval = 1000000
-                                  , makeWalletProgress = \r -> print r
+                                  , makeWalletProgress = \r -> traceShow r $ print r
                                   }
               , testCase "openWallet closeWallet" $
                   bracket_
@@ -78,7 +80,7 @@ main = do
                                          { openWalletName     = "bar"
                                          , openWalletPassword = "asdf"
                                          , openWalletInterval = 1000000
-                                         , openWalletProgress = \r -> print r
+                                         , openWalletProgress = \r -> traceShow r $ print r
                                          }
                           threadDelay (5 * second) -- FIXME
                           closeWallet hsO
