@@ -22,6 +22,7 @@ import Data.Attoparsec.Text as A
 import Data.Scientific (toRealFloat)
 import Data.Word (Word8)
 import Data.IORef
+import Data.Maybe (isJust)
 import Control.Monad.Catch
 import Control.Monad (void, unless, forM_, when, forever, replicateM)
 import Control.Applicative
@@ -160,6 +161,9 @@ makeWallet WalletProcessConfig{..} MakeWalletConfig{..} = do
       Right h' -> pure $ read h' :: IO Int
     Just x -> error $ "moneroblocks.info responded with unexpected data: " ++ show x
 
+  lastHeight  <- newIORef (0 :: Double)
+  repeatCount <- newIORef (0 :: Int)
+
   let loop = do
         (_,mH) <- parseLogLines name'
         case mH of
@@ -167,16 +171,27 @@ makeWallet WalletProcessConfig{..} MakeWalletConfig{..} = do
             threadDelay makeWalletInterval
             loop
           Just h  -> do
+            repeats <- readIORef repeatCount
+            lastH   <- readIORef lastHeight
             let r = fromIntegral h / fromIntegral maxHeight
-            makeWalletProgress $
-              if r < 0
-              then 0
-              else if r > 1
-              then 1
-              else r
-            unless (r >= 0.99) $ do
-              threadDelay makeWalletInterval
-              loop
+
+            if r == lastH && repeats >= 5 && isJust makeWalletSeed
+            then pure ()
+            else do
+              if r == lastH
+              then writeIORef repeatCount $ repeats + 1
+              else do writeIORef repeatCount 0
+                      writeIORef lastHeight r
+
+              makeWalletProgress $
+                if r < 0
+                then 0
+                else if r > 1
+                then 1
+                else r
+              unless (r >= 0.99) $ do
+                threadDelay makeWalletInterval
+                loop
   loop
 
   interruptProcessGroupOf processHandle

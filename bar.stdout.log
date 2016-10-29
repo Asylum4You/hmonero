@@ -1,7 +1,5 @@
-2016-Oct-29 16:12:15.713101 Monero 'Wolfram Warptangent' (v0.10.0.0-release)
-2016-Oct-29 16:12:15.713158 Setting log level = 2
-2016-Oct-29 16:12:15.713173 default_log: monero-wallet-cli.log
-2016-Oct-29 16:12:15.713200 Logging at log level 2 to /home/athan/dev/moneybit/hmonero/bar.log
+Monero 'Wolfram Warptangent' (v0.10.0.0-release)
+Logging at log level 2 to /home/athan/dev/moneybit/hmonero/bar.log
 2016-Oct-29 16:12:15.713245 Loading wallet...
 2016-Oct-29 16:12:15.713269 ERROR /DISTRIBUTION-BUILD/src/wallet/wallet2.cpp:1850 e || !exists. THROW EXCEPTION: error::file_not_found
 2016-Oct-29 16:12:15.713292 /DISTRIBUTION-BUILD/src/wallet/wallet2.cpp:1850:N5tools5error15file_error_baseILi1EEE: file not found "/home/athan/dev/moneybit/hmonero/bar.keys"

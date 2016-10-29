@@ -75,7 +75,7 @@ main = do
               , testCase "openWallet closeWallet" $
                   bracket_
                     (pure ())
-                    (mapM_ removeFile ["bar","bar.log","bar.address.txt","bar.keys"])
+                    (mapM_ tryRemoveFile ["bar","bar.log","bar.address.txt","bar.keys"])
                     $ do  port <- nextAvailPort 18082
                           let walletProcessConf = def
                                 { walletRpcPort = port }
