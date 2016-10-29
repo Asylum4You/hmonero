@@ -122,7 +122,9 @@ makeWallet WalletProcessConfig{..} MakeWalletConfig{..} = do
          then getCurrentDirectory
          else pure walletsDir
   let name' = dir </> T.unpack makeWalletName
-      args = [ "--generate-new-wallet=" ++ name'
+      args = [ case makeWalletSeed of
+                 Nothing -> "--generate-new-wallet=" ++ name'
+                 Just _  -> "--wallet-file=" ++ name'
              , "--log-file="            ++ name' <.> "log"
              , "--log-level=2"
              , "--password="            ++ T.unpack makeWalletPassword
@@ -151,14 +153,12 @@ makeWallet WalletProcessConfig{..} MakeWalletConfig{..} = do
   maxHeightResp <- get "http://moneroblocks.info/api/get_stats/"
   let mMaxHeight = maxHeightResp ^? responseBody . key "height"
 
-  maxHeight <- case makeWalletSeed of
-    Nothing -> case mMaxHeight of
-      Nothing -> error "moneroblocks.info not reachable"
-      Just x@(Aeson.String h) -> case A.parseOnly (A.many1 A.digit) h of
-        Left _ -> error $ "moneroblocks.info responded with unexpected data: " ++ show x
-        Right h' -> pure $ read h' :: IO Int
-      Just x -> error $ "moneroblocks.info responded with unexpected data: " ++ show x
-    Just _ -> pure 83156
+  maxHeight <- case mMaxHeight of
+    Nothing -> error "moneroblocks.info not reachable"
+    Just x@(Aeson.String h) -> case A.parseOnly (A.many1 A.digit) h of
+      Left _ -> error $ "moneroblocks.info responded with unexpected data: " ++ show x
+      Right h' -> pure $ read h' :: IO Int
+    Just x -> error $ "moneroblocks.info responded with unexpected data: " ++ show x
 
   let loop = do
         (_,mH) <- parseLogLines name'

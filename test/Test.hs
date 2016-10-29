@@ -57,17 +57,21 @@ main = do
                                   , makeWalletInterval = 1000000
                                   , makeWalletProgress = \r -> print r
                                   }
-              , testCase "makeWallet mnemonic" $ do
-                  threadDelay 1000000
-                  mn <- T.readFile "bar.mnemonic"
-                  makeWallet def MakeWalletConfig
-                                  { makeWalletName     = "bar"
-                                  , makeWalletPassword = "asdf"
-                                  , makeWalletLanguage = English
-                                  , makeWalletSeed     = Just mn
-                                  , makeWalletInterval = 1000000
-                                  , makeWalletProgress = \r -> print r
-                                  }
+              , testCase "makeWallet mnemonic" $
+                  bracket_
+                    (pure ())
+                    (mapM_ tryRemoveFile ["bar","bar.log","bar.address.txt","bar.keys"])
+                    $ do
+                    threadDelay 1000000
+                    mn <- T.readFile "bar.mnemonic"
+                    makeWallet def MakeWalletConfig
+                                    { makeWalletName     = "bar"
+                                    , makeWalletPassword = "asdf"
+                                    , makeWalletLanguage = English
+                                    , makeWalletSeed     = Just mn
+                                    , makeWalletInterval = 1000000
+                                    , makeWalletProgress = \r -> print r
+                                    }
               , testCase "openWallet closeWallet" $
                   bracket_
                     (pure ())
