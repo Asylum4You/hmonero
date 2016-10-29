@@ -251,9 +251,8 @@ openWallet WalletProcessConfig{..} OpenWalletConfig{..} = do
                 else if r > 1
                 then 1
                 else r
-              unless (r >= 0.99) $ do
-                threadDelay openWalletInterval
-                loop
+              threadDelay openWalletInterval
+              loop
   loop
 
   putStrLn "JSON RPC server started"
