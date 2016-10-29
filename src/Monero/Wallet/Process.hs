@@ -21,6 +21,7 @@ import Data.Aeson.Lens (key)
 import Data.Attoparsec.Text as A
 import Data.Scientific (toRealFloat)
 import Data.Word (Word8)
+import Data.IORef
 import Control.Monad.Catch
 import Control.Monad (void, unless, forM_, when, forever, replicateM)
 import Control.Applicative
@@ -150,12 +151,14 @@ makeWallet WalletProcessConfig{..} MakeWalletConfig{..} = do
   maxHeightResp <- get "http://moneroblocks.info/api/get_stats/"
   let mMaxHeight = maxHeightResp ^? responseBody . key "height"
 
-  maxHeight <- case mMaxHeight of
-    Nothing -> error "moneroblocks.info not reachable"
-    Just x@(Aeson.String h) -> case A.parseOnly (A.many1 A.digit) h of
-      Left _ -> error $ "moneroblocks.info responded with unexpected data: " ++ show x
-      Right h' -> pure $ read h' :: IO Int
-    Just x -> error $ "moneroblocks.info responded with unexpected data: " ++ show x
+  maxHeight <- case makeWalletSeed of
+    Nothing -> case mMaxHeight of
+      Nothing -> error "moneroblocks.info not reachable"
+      Just x@(Aeson.String h) -> case A.parseOnly (A.many1 A.digit) h of
+        Left _ -> error $ "moneroblocks.info responded with unexpected data: " ++ show x
+        Right h' -> pure $ read h' :: IO Int
+      Just x -> error $ "moneroblocks.info responded with unexpected data: " ++ show x
+    Just _ -> pure 83156
 
   let loop = do
         (_,mH) <- parseLogLines name'
@@ -171,7 +174,7 @@ makeWallet WalletProcessConfig{..} MakeWalletConfig{..} = do
               else if r > 1
               then 1
               else r
-            unless (r >= 0.95) $ do
+            unless (r >= 0.99) $ do
               threadDelay makeWalletInterval
               loop
   loop
@@ -248,7 +251,7 @@ openWallet WalletProcessConfig{..} OpenWalletConfig{..} = do
                 else if r > 1
                 then 1
                 else r
-              unless (r >= 0.95) $ do
+              unless (r >= 0.99) $ do
                 threadDelay openWalletInterval
                 loop
   loop
