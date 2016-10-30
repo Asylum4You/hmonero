@@ -253,7 +253,7 @@ openWallet WalletProcessConfig{..} OpenWalletConfig{..} = do
         (rpcStarted, mH) <- parseLogLines name'
         if rpcStarted
         then pure ()
-        else do
+        else
           case mH of
             Nothing -> do
               threadDelay openWalletInterval
@@ -290,6 +290,12 @@ closeWallet ProcessHandles{..} =
          --   ExitSuccess ->
          --   ExitFailure i ->
          --     pure () -- throwM $ NonZeroExitCode i -- FIXME: http://unix.stackexchange.com/questions/99112/default-exit-code-when-process-is-terminated
+
+
+refreshWallet :: WalletProcessConfig -> OpenWalletConfig -> IO ()
+refreshWallet w o = do
+  (_,hs) <- openWallet w o
+  closeWallet hs
 
 
 second :: Int

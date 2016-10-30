@@ -55,39 +55,33 @@ main = do
                                   , makeWalletLanguage = English
                                   , makeWalletSeed     = Nothing
                                   , makeWalletInterval = 1000000
-                                  , makeWalletProgress = \r -> print r
+                                  , makeWalletProgress = print
                                   }
-              , testCase "makeWallet mnemonic" $
-                  bracket_
-                    (pure ())
-                    (mapM_ tryRemoveFile ["bar","bar.log","bar.address.txt","bar.keys"])
-                    $ do
-                    threadDelay 1000000
-                    mn <- T.readFile "bar.mnemonic"
-                    makeWallet def MakeWalletConfig
-                                    { makeWalletName     = "bar"
-                                    , makeWalletPassword = "asdf"
-                                    , makeWalletLanguage = English
-                                    , makeWalletSeed     = Just mn
-                                    , makeWalletInterval = 1000000
-                                    , makeWalletProgress = \r -> print r
-                                    }
-              , testCase "openWallet closeWallet" $
+              , testCase "makeWallet mnemonic" $ do
+                  threadDelay 1000000
+                  mn <- T.readFile "bar.mnemonic"
+                  makeWallet def MakeWalletConfig
+                                  { makeWalletName     = "bar"
+                                  , makeWalletPassword = "asdf"
+                                  , makeWalletLanguage = English
+                                  , makeWalletSeed     = Just mn
+                                  , makeWalletInterval = 1000000
+                                  , makeWalletProgress = print
+                                  }
+              , testCase "refreshWallet" $
                   bracket_
                     (pure ())
                     (mapM_ tryRemoveFile ["bar","bar.log","bar.address.txt","bar.keys"])
                     $ do  port <- nextAvailPort 18082
                           let walletProcessConf = def
                                 { walletRpcPort = port }
-                          (_,hsO) <- openWallet walletProcessConf
-                                       OpenWalletConfig
-                                         { openWalletName     = "bar"
-                                         , openWalletPassword = "asdf"
-                                         , openWalletInterval = 1000000
-                                         , openWalletProgress = \r -> print r
-                                         }
-                          threadDelay (5 * second) -- FIXME
-                          closeWallet hsO
+                          refreshWallet walletProcessConf
+                            OpenWalletConfig
+                              { openWalletName     = "bar"
+                              , openWalletPassword = "asdf"
+                              , openWalletInterval = 1000000
+                              , openWalletProgress = print
+                              }
               ]
           , testGroup "RPC"
               [ testGroup "Stateless"
