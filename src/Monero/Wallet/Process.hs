@@ -175,7 +175,7 @@ makeWallet WalletProcessConfig{..} MakeWalletConfig{..} = do
             lastH   <- readIORef lastHeight
             let r = fromIntegral h / fromIntegral maxHeight
 
-            if r == lastH && repeats >= 5 && isJust makeWalletSeed
+            if r == lastH && repeats >= 5 -- && isJust makeWalletSeed -- FIXME: Just dies and restarts when locked
             then pure ()
             else do
               if r == lastH
