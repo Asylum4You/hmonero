@@ -1,6 +1,0 @@
-Monero 'Wolfram Warptangent' (v0.10.0.0-release)
-Logging at log level 2 to /home/athan/dev/moneybit/hmonero/bar.log
-2016-Oct-29 16:12:15.713245 Loading wallet...
-2016-Oct-29 16:12:15.713269 ERROR /DISTRIBUTION-BUILD/src/wallet/wallet2.cpp:1850 e || !exists. THROW EXCEPTION: error::file_not_found
-2016-Oct-29 16:12:15.713292 /DISTRIBUTION-BUILD/src/wallet/wallet2.cpp:1850:N5tools5error15file_error_baseILi1EEE: file not found "/home/athan/dev/moneybit/hmonero/bar.keys"
-2016-Oct-29 16:12:15.713381 ERROR /DISTRIBUTION-BUILD/src/simplewallet/simplewallet.cpp:3901 Wallet initialization failed: file not found "/home/athan/dev/moneybit/hmonero/bar.keys"

@@ -18,8 +18,9 @@ cabal.sandbox.config
 
 foo
 foo.keys
+foo.stdout.log
 log/
 monero-wallet-cli.log
 bar
 bar.keys
-
+bar.stdout.log
