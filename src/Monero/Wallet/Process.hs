@@ -249,6 +249,8 @@ openWallet WalletProcessConfig{..} OpenWalletConfig{..} = do
       Right h' -> pure $ read h' :: IO Int
     Just x -> error $ "moneroblocks.info responded with unexpected data: " ++ show x
 
+  firstHeight <- newIORef (Nothing :: Maybe Int)
+
   let loop = do
         (rpcStarted, mH) <- parseLogLines name'
         if rpcStarted
@@ -259,7 +261,11 @@ openWallet WalletProcessConfig{..} OpenWalletConfig{..} = do
               threadDelay openWalletInterval
               loop
             Just h  -> do
-              let r = fromIntegral h / fromIntegral maxHeight
+              mFirstH <- readIORef firstHeight
+              r <- case mFirstH of
+                      Nothing -> do writeIORef firstHeight $ Just h
+                                    pure 0
+                      Just f  -> pure $ fromIntegral (h - f) / fromIntegral (maxHeight - f)
               openWalletProgress $
                 if r < 0
                 then 0
