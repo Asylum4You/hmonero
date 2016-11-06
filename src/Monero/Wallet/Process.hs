@@ -252,11 +252,11 @@ openWallet WalletProcessConfig{..} OpenWalletConfig{..} = do
   firstHeight <- newIORef (Nothing :: Maybe Int)
 
   let loop = do
-        (rpcStarted, mH) <- parseLogLines name'
+        (rpcStarted, mParsedH) <- parseLogLines name'
         if rpcStarted
         then pure ()
         else
-          case mH of
+          case mParsedH of
             Nothing -> do
               threadDelay openWalletInterval
               loop
