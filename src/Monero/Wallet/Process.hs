@@ -188,6 +188,8 @@ makeWallet WalletProcessConfig{..} MakeWalletConfig{..} = do
                 then 0
                 else if r > 1
                 then 1
+                else if isNaN r
+                then 1
                 else r
               unless (r >= 0.99) $ do
                 threadDelay makeWalletInterval
@@ -270,6 +272,8 @@ openWallet WalletProcessConfig{..} OpenWalletConfig{..} = do
                 if r < 0
                 then 0
                 else if r > 1
+                then 1
+                else if isNaN r
                 then 1
                 else r
               threadDelay openWalletInterval
